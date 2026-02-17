@@ -17,7 +17,9 @@ import {
   generarLocalBusinessSchema,
   generarFAQSchema,
   generarBreadcrumbSchema,
+  generarProductSchema,
 } from "@/lib/seo/schema";
+import { moquetaFerialEco } from "@/lib/data/productos";
 import Link from "next/link";
 import { MapPinIcon, BuildingOffice2Icon, CalendarIcon } from "@heroicons/react/24/outline";
 
@@ -29,6 +31,7 @@ export const metadata: Metadata = generarMetadataProvincia(provincia);
 
 export default function MoquetaEcologicaBarcelona() {
   const localBusinessSchema = generarLocalBusinessSchema();
+  const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
   const breadcrumbSchema = generarBreadcrumbSchema([
     { name: "Inicio", url: "https://www.disstands.com" },
@@ -45,6 +48,10 @@ export default function MoquetaEcologicaBarcelona() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <script
         type="application/ld+json"

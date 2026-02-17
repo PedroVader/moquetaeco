@@ -22,7 +22,9 @@ import {
   generarLocalBusinessSchema,
   generarFAQSchema,
   generarBreadcrumbSchema,
+  generarProductSchema,
 } from "@/lib/seo/schema";
+import { moquetaFerialEco } from "@/lib/data/productos";
 import { MapPinIcon, TruckIcon, ClockIcon } from "@heroicons/react/24/outline";
 
 interface Props {
@@ -65,6 +67,7 @@ export default async function MunicipioPage({ params }: Props) {
   const contenido = generarContenidoMunicipio(municipio, provincia);
 
   const localBusinessSchema = generarLocalBusinessSchema();
+  const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqsGenerales.slice(0, 5));
   const breadcrumbSchema = generarBreadcrumbSchema([
     { name: "Inicio", url: "https://www.disstands.com" },
@@ -85,6 +88,10 @@ export default async function MunicipioPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <script
         type="application/ld+json"

@@ -51,7 +51,7 @@ export function generarMetadataProvincia(provincia: Provincia): Metadata {
   const ciudades = provincia.municipiosPrincipales.slice(0, 3).join(", ");
 
   return {
-    title: `Moqueta Ecológica ${provincia.nombre} | Ferias y Eventos | Desde 2,10€/m²`,
+    title: `Moqueta Ecológica ${provincia.nombre} | Desde 2,10€/m²`,
     description: `Moqueta ecológica 100% reciclable en ${provincia.nombre}. Sin látex, certificada Bfl-s1. Instalación en ${ciudades}. Rewind® marca propia Disstands. ☎ 934 850 085`,
     keywords: [
       `moqueta ecológica ${provincia.nombre.toLowerCase()}`,
@@ -87,7 +87,7 @@ export function generarMetadataMunicipio(
   municipioSlug: string
 ): Metadata {
   return {
-    title: `Moqueta Ecológica ${municipioNombre} | Eventos y Ferias | Disstands`,
+    title: `Moqueta Ecológica ${municipioNombre} | Desde 2,10€/m²`,
     description: `Moqueta ecológica en ${municipioNombre}, ${provinciaNombre}. 100% reciclable, sin látex. Desde 2,10€/m². Instalación profesional. ☎ 934 850 085`,
     keywords: [
       `moqueta ecológica ${municipioNombre.toLowerCase()}`,
@@ -121,7 +121,7 @@ export function generarMetadataUso(
   usoSlug: string
 ): Metadata {
   return {
-    title: `Moqueta Ecológica para ${usoNombre} en ${provinciaNombre} | Disstands`,
+    title: `Moqueta Ecológica ${usoNombre} ${provinciaNombre}`,
     description: `Moqueta ecológica para ${usoNombre.toLowerCase()} en ${provinciaNombre}. 100% reciclable, sin látex, certificada Bfl-s1. Instalación profesional. ☎ 934 850 085`,
     keywords: [
       `moqueta ${usoNombre.toLowerCase()}`,
@@ -154,7 +154,7 @@ export function generarMetadataComarca(
   comarcaSlug: string
 ): Metadata {
   return {
-    title: `Moqueta Ecológica ${comarcaNombre} | ${provinciaNombre} | Disstands`,
+    title: `Moqueta Ecológica ${comarcaNombre}, ${provinciaNombre}`,
     description: `Moqueta ecológica en ${comarcaNombre} (${provinciaNombre}). 100% reciclable, sin látex. Desde 2,10€/m². ☎ 934 850 085`,
     openGraph: {
       title: `Moqueta Ecológica ${comarcaNombre} | Disstands`,

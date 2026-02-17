@@ -17,7 +17,10 @@ import {
   generarLocalBusinessSchema,
   generarProductSchema,
   generarFAQSchema,
+  generarBreadcrumbSchema,
 } from "@/lib/seo/schema";
+
+const BASE_URL = "https://www.disstands.com";
 
 export const metadata: Metadata = generarMetadataPrincipal();
 
@@ -27,6 +30,9 @@ export default function HomePage() {
   const productSchemaFlat = generarProductSchema(moquetaFerialEco);
   const productSchemaDilour = generarProductSchema(moquetaDilourEco);
   const faqSchema = generarFAQSchema(faqsGenerales);
+  const breadcrumbSchema = generarBreadcrumbSchema([
+    { name: "Inicio", url: BASE_URL },
+  ]);
 
   return (
     <>
@@ -53,6 +59,12 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
         }}
       />
 

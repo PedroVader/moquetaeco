@@ -124,22 +124,3 @@ export function generarBreadcrumbSchema(
     })),
   };
 }
-
-export function generarWebPageSchema(
-  title: string,
-  description: string,
-  url: string
-) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: title,
-    description: description,
-    url: url,
-    provider: {
-      "@type": "Organization",
-      name: empresa.nombre,
-      url: empresa.web,
-    },
-  };
-}

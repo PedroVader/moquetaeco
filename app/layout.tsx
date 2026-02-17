@@ -13,7 +13,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: "Moqueta Ecológica Cataluña | Disstands - Desde 2,10€/m²",
-    template: "%s | Disstands Moquetas",
+    template: "%s | Disstands",
   },
   description:
     "Moqueta ecológica 100% reciclable para ferias y eventos en Cataluña. Sin látex, certificada Bfl-s1. Rewind® marca propia Disstands. +25 años de experiencia. ☎ 934 850 085",

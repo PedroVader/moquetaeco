@@ -23,7 +23,9 @@ import {
   generarLocalBusinessSchema,
   generarFAQSchema,
   generarBreadcrumbSchema,
+  generarProductSchema,
 } from "@/lib/seo/schema";
+import { moquetaFerialEco } from "@/lib/data/productos";
 
 interface Props {
   params: Promise<{
@@ -72,6 +74,7 @@ export default async function ProvinciaUsoPage({ params }: Props) {
   const faqs = getFaqsByTipo(uso.slug);
 
   const localBusinessSchema = generarLocalBusinessSchema();
+  const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
   const breadcrumbSchema = generarBreadcrumbSchema([
     { name: "Inicio", url: "https://www.disstands.com" },
@@ -92,6 +95,10 @@ export default async function ProvinciaUsoPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
       <script
         type="application/ld+json"

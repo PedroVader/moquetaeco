@@ -27,7 +27,7 @@ export function Hero({
       {mostrarImagen && (
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-img/rewind-hero.jpg"
+            src="/hero-img/hero-img-2.jpeg"
             alt="Moqueta ecológica Rewind"
             fill
             className="object-cover blur-[2px] scale-105"

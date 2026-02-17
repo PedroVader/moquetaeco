@@ -87,6 +87,7 @@ export const provincias: Provincia[] = [
       { slug: "bages", nombre: "Bages", capital: "Manresa" },
       { slug: "osona", nombre: "Osona", capital: "Vic" },
       { slug: "bergueda", nombre: "Berguedà", capital: "Berga" },
+      { slug: "moianes", nombre: "Moianès", capital: "Moià" },
     ],
     recintosFeriales: [
       "Fira Barcelona Montjuïc",

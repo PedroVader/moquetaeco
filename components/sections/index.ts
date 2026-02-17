@@ -1,0 +1,11 @@
+export { Hero } from "./Hero";
+export { ProductShowcase } from "./ProductShowcase";
+export { BeneficiosEco } from "./BeneficiosEco";
+export { Comparativa } from "./Comparativa";
+export { Especificaciones } from "./Especificaciones";
+export { PriceCalculator } from "./PriceCalculator";
+export { Certificaciones } from "./Certificaciones";
+export { FAQ } from "./FAQ";
+export { CTABand } from "./CTABand";
+export { AreasServicio } from "./AreasServicio";
+export { ProductoDetalle } from "./ProductoDetalle";

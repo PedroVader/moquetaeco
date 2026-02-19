@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Disstands Moquetas S.L." }],
   creator: "Disstands Moquetas S.L.",
-  metadataBase: new URL("https://www.disstands.com"),
+  metadataBase: new URL("https://www.moquetaecologica.com"),
   openGraph: {
     type: "website",
     locale: "es_ES",

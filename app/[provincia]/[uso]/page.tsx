@@ -77,15 +77,15 @@ export default async function ProvinciaUsoPage({ params }: Props) {
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
   const breadcrumbSchema = generarBreadcrumbSchema([
-    { name: "Inicio", url: "https://www.disstands.com" },
-    { name: "Moqueta Ecológica", url: "https://www.disstands.com/" },
+    { name: "Inicio", url: "https://www.moquetaecologica.com" },
+    { name: "Moqueta Ecológica", url: "https://www.moquetaecologica.com/" },
     {
       name: provincia.nombre,
-      url: `https://www.disstands.com/moqueta-ecologica-${provincia.slug}`,
+      url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
     },
     {
       name: uso.nombre,
-      url: `https://www.disstands.com/${provincia.slug}/${uso.slug}`,
+      url: `https://www.moquetaecologica.com/${provincia.slug}/${uso.slug}`,
     },
   ]);
 

@@ -6,9 +6,9 @@ export function generarLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.disstands.com/#organization",
+    "@id": "https://www.moquetaecologica.com/#organization",
     name: empresa.nombre,
-    image: "https://www.disstands.com/og-image.jpg",
+    image: "https://www.moquetaecologica.com/og-image.jpg",
     url: empresa.web,
     telephone: empresa.telefonoInternacional,
     email: empresa.emailVentas,

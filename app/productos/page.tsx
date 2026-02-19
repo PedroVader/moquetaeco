@@ -7,7 +7,7 @@ import {
   generarBreadcrumbSchema,
 } from "@/lib/seo/schema";
 
-const BASE_URL = "https://www.disstands.com";
+const BASE_URL = "https://www.moquetaecologica.com";
 
 export const metadata: Metadata = {
   title: "Productos Moqueta Ecológica Rewind | Desde 2,10€/m²",

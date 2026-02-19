@@ -20,7 +20,7 @@ import {
 } from "@/lib/seo/schema";
 import { empresa } from "@/lib/data";
 
-const BASE_URL = "https://www.disstands.com";
+const BASE_URL = "https://www.moquetaecologica.com";
 
 export function generateStaticParams() {
   return getAllPosts().map((post) => ({ slug: post.slug }));

@@ -9,7 +9,7 @@ import {
 } from "@/lib/blog";
 import { generarLocalBusinessSchema } from "@/lib/seo/schema";
 
-const BASE_URL = "https://www.disstands.com";
+const BASE_URL = "https://www.moquetaecologica.com";
 
 export const metadata: Metadata = {
   title: "Blog | Guías y Artículos sobre Moqueta Ecológica",

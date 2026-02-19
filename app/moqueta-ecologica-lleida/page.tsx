@@ -34,11 +34,11 @@ export default function MoquetaEcologicaLleida() {
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
   const breadcrumbSchema = generarBreadcrumbSchema([
-    { name: "Inicio", url: "https://www.disstands.com" },
-    { name: "Moqueta Ecológica", url: "https://www.disstands.com/" },
+    { name: "Inicio", url: "https://www.moquetaecologica.com" },
+    { name: "Moqueta Ecológica", url: "https://www.moquetaecologica.com/" },
     {
       name: `Moqueta Ecológica ${provincia.nombre}`,
-      url: `https://www.disstands.com/moqueta-ecologica-${provincia.slug}`,
+      url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
     },
   ]);
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { Provincia } from "@/lib/data/ubicaciones";
 
-const BASE_URL = "https://www.disstands.com";
+const BASE_URL = "https://www.moquetaecologica.com";
 const OG_IMAGE = {
   url: `${BASE_URL}/og-image.jpg`,
   width: 1200,

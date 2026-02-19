@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { provincias, topMunicipios, tiposUso, getAllComarcas } from "@/lib/data";
 import { getAllPosts } from "@/lib/blog";
 
-const BASE_URL = "https://www.disstands.com";
+const BASE_URL = "https://www.moquetaecologica.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Página principal

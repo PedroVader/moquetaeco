@@ -11,7 +11,7 @@ import {
   generarBreadcrumbSchema,
 } from "@/lib/seo/schema";
 
-const BASE_URL = "https://www.disstands.com";
+const BASE_URL = "https://www.moquetaecologica.com";
 
 export const metadata: Metadata = {
   title: "Rewind Dilour - Moqueta Premium Ecológica | Desde 4,05€/m²",

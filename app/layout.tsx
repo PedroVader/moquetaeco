@@ -54,20 +54,6 @@ export default function RootLayout({
           <Footer />
           <CTAFloat />
         </PresupuestoProvider>
-        {/* Formulario oculto para que Netlify detecte el form en el build */}
-        <form name="presupuesto" data-netlify="true" netlify-honeypot="bot-field" hidden>
-          <input type="text" name="nombre" />
-          <input type="text" name="empresa" />
-          <input type="email" name="email" />
-          <input type="tel" name="telefono" />
-          <input type="text" name="ubicacion" />
-          <textarea name="mensaje" />
-          <input type="text" name="producto" />
-          <input type="text" name="color" />
-          <input type="text" name="tipoVenta" />
-          <input type="text" name="metros" />
-          <input type="text" name="precioEstimado" />
-        </form>
       </body>
     </html>
   );

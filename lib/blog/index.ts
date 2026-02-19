@@ -162,7 +162,7 @@ const posts: BlogPost[] = [
       <p>Para eventos urgentes, disponemos de servicio express. Llámanos al <a href="tel:+34934850085">934 850 085</a>.</p>
 
       <h2>Conclusión</h2>
-      <p>Ya sea que busques la versatilidad de <strong>Rewind Flat</strong> o el confort premium de <strong>Rewind Dilour</strong>, ambas opciones son 100% reciclables, sin látex y certificadas Bfl-s1. La diferencia está en el espesor, el confort y el precio. Para orientarte mejor, usa nuestra <a href="/">calculadora de precios</a> o solicita presupuesto personalizado.</p>
+      <p>Ya sea que busques la versatilidad de <strong>Rewind Flat</strong> o el confort premium de <strong>Rewind Dilour</strong>, ambas opciones son 100% reciclables, sin látex y certificadas Bfl-s1. La diferencia está en el espesor, el confort y el precio. Para orientarte mejor, usa nuestra <a href="/#calculadora">calculadora de precios</a> o solicita presupuesto personalizado.</p>
     `,
   },
   {

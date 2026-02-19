@@ -16,7 +16,7 @@ export function PriceCalculator() {
   const totalMax = (metros * precio.precioMax).toFixed(2).replace(".", ",");
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section id="calculadora" className="py-16 md:py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <span className="inline-flex items-center gap-2 bg-accent/10 text-accent text-sm font-semibold px-4 py-1.5 rounded-full mb-4">

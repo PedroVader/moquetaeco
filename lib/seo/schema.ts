@@ -8,8 +8,7 @@ export function generarLocalBusinessSchema() {
     "@type": "LocalBusiness",
     "@id": "https://www.disstands.com/#organization",
     name: empresa.nombre,
-    image:
-      "https://www.disstands.com/wp-content/uploads/2025/06/logo-disstands.png",
+    image: "https://www.disstands.com/og-image.jpg",
     url: empresa.web,
     telephone: empresa.telefonoInternacional,
     email: empresa.emailVentas,

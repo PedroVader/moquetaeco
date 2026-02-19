@@ -47,20 +47,20 @@ export function Footer() {
             </p>
             <div className="flex gap-3">
               <a
-                href={empresa.redesSociales.instagram}
+                href="https://www.instagram.com/disstands_moquetas_sl/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-primary p-2 rounded-lg transition"
-                aria-label="Instagram"
+                aria-label="Instagram Disstands"
               >
                 <InstagramIcon className="w-5 h-5" />
               </a>
               <a
-                href={empresa.redesSociales.linkedin}
+                href="https://es.linkedin.com/in/disstands-moquetas-sl-martinez-b6832626"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-primary p-2 rounded-lg transition"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn Disstands"
               >
                 <LinkedinIcon className="w-5 h-5" />
               </a>
@@ -142,30 +142,16 @@ export function Footer() {
             </ul>
             <h4 className="text-md font-semibold mt-6 mb-3">Por tipo de evento</h4>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link
-                  href="/barcelona/ferias"
-                  className="text-gray-400 hover:text-white transition"
-                >
-                  Moqueta para ferias
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/barcelona/eventos"
-                  className="text-gray-400 hover:text-white transition"
-                >
-                  Moqueta para eventos
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/barcelona/congresos"
-                  className="text-gray-400 hover:text-white transition"
-                >
-                  Moqueta para congresos
-                </Link>
-              </li>
+              {["ferias", "eventos", "congresos", "stands", "bodas"].map((uso) => (
+                <li key={uso}>
+                  <Link
+                    href={`/barcelona/${uso}`}
+                    className="text-gray-400 hover:text-white transition capitalize"
+                  >
+                    Moqueta para {uso}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

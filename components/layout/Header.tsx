@@ -38,6 +38,7 @@ const navegacion = [
       { label: "Congresos", href: "/barcelona/congresos" },
       { label: "Stands", href: "/barcelona/stands" },
       { label: "Bodas", href: "/barcelona/bodas" },
+      { label: "Ver todas las provincias →", href: "/#provincias" },
     ],
   },
   {

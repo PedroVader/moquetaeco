@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Páginas de producto
   const productPages: MetadataRoute.Sitemap = [
     {
+      url: `${BASE_URL}/productos`,
+      lastModified: new Date("2025-06-01"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/productos/rewind-flat`,
       lastModified: new Date("2025-06-01"),
       changeFrequency: "monthly",

@@ -1,20 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { PhoneIcon, XMarkIcon, ChatBubbleLeftIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
+import { PhoneIcon, XMarkIcon, DocumentTextIcon } from "@heroicons/react/24/outline";
 import { empresa } from "@/lib/data";
 import { usePresupuesto } from "@/context/PresupuestoContext";
 
 export function CTAFloat() {
   const [isExpanded, setIsExpanded] = useState(false);
   const { abrirModal } = usePresupuesto();
-
-  // WhatsApp link (usando el teléfono de la empresa)
-  const whatsappNumber = empresa.telefonoInternacional.replace("+", "");
-  const whatsappMessage = encodeURIComponent(
-    "Hola, me gustaría solicitar información sobre moqueta ecológica para un evento."
-  );
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
@@ -33,18 +26,7 @@ export function CTAFloat() {
             <span className="font-medium">Presupuesto</span>
           </button>
 
-          {/* WhatsApp */}
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white pl-4 pr-5 py-3 rounded-full shadow-lg transition group"
-          >
-            <ChatBubbleLeftIcon className="w-5 h-5" />
-            <span className="font-medium">WhatsApp</span>
-          </a>
-
-          {/* PhoneIcon */}
+          {/* Teléfono */}
           <a
             href={`tel:${empresa.telefonoInternacional}`}
             className="flex items-center gap-3 bg-primary hover:bg-primary-light text-white pl-4 pr-5 py-3 rounded-full shadow-lg transition"

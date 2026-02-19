@@ -32,7 +32,6 @@ export const empresa = {
   redesSociales: {
     instagram: "https://www.instagram.com/disstands_moquetas_sl/",
     linkedin:
-      "https://www.linkedin.com/in/disstands-moquetas-sl-martinez-b6832626/",
-    tiktok: "https://www.tiktok.com/@disstandsmoquetas",
+      "https://es.linkedin.com/in/disstands-moquetas-sl-martinez-b6832626",
   },
 };

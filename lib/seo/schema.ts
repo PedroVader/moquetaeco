@@ -43,7 +43,6 @@ export function generarLocalBusinessSchema() {
     sameAs: [
       empresa.redesSociales.instagram,
       empresa.redesSociales.linkedin,
-      empresa.redesSociales.tiktok,
     ],
   };
 }

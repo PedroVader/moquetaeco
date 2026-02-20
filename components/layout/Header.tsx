@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PhoneIcon, Bars3Icon, XMarkIcon, SparklesIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { empresa } from "@/lib/data";
+import { usePresupuesto } from "@/context/PresupuestoContext";
 
 const navegacion = [
   {
@@ -50,37 +51,58 @@ const navegacion = [
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+  const { abrirModal } = usePresupuesto();
+
+  const closeMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+    setOpenSubmenu(null);
+  }, []);
+
+  // Close mobile menu on route change / scroll
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const handleScroll = () => closeMenu();
+    window.addEventListener("scroll", handleScroll, { once: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [mobileMenuOpen, closeMenu]);
+
+  // Lock body scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileMenuOpen]);
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar con teléfono */}
-      <div className="bg-primary text-white py-2">
+      <div className="bg-primary text-white py-1.5 sm:py-2">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-2">
+          <div className="hidden sm:flex items-center gap-2">
             <SparklesIcon className="w-4 h-4" />
             <span>Rewind® marca propia Disstands - Moqueta 100% reciclable</span>
           </div>
+          <span className="sm:hidden text-xs">Moqueta 100% reciclable</span>
           <a
             href={`tel:${empresa.telefonoInternacional}`}
-            className="flex items-center gap-2 font-semibold hover:text-white/90 transition"
+            className="flex items-center gap-1.5 sm:gap-2 font-semibold hover:text-white/90 transition"
           >
             <PhoneIcon className="w-4 h-4" />
-            {empresa.telefono}
+            <span className="text-xs sm:text-sm">{empresa.telefono}</span>
           </a>
         </div>
       </div>
 
       {/* Main navigation */}
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-14 sm:h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" onClick={closeMenu}>
             <Image
               src="/logo-moqueta.png"
               alt="Moqueta Ecológica - Disstands"
               width={440}
               height={112}
-              className="h-28 w-auto"
+              className="h-16 sm:h-28 w-auto"
               priority
             />
           </Link>
@@ -140,79 +162,119 @@ export function Header() {
             </a>
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2 text-slate"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <XMarkIcon className="w-6 h-6" />
-            ) : (
-              <Bars3Icon className="w-6 h-6" />
-            )}
-          </button>
+          {/* Mobile: CTA + hamburger */}
+          <div className="flex md:hidden items-center gap-2">
+            <a
+              href={`tel:${empresa.telefonoInternacional}`}
+              className="flex items-center gap-1.5 bg-accent text-white text-sm font-semibold px-3 py-2 rounded-lg"
+              aria-label="Llamar"
+            >
+              <PhoneIcon className="w-4 h-4" />
+              <span className="hidden xs:inline">Llamar</span>
+            </a>
+            <button
+              className="p-2 text-slate hover:text-dark transition"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? "Cerrar menú" : "Abrir menú"}
+            >
+              {mobileMenuOpen ? (
+                <XMarkIcon className="w-6 h-6" />
+              ) : (
+                <Bars3Icon className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
+      </nav>
 
-        {/* Mobile navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden border-t py-4">
-            {navegacion.map((item) => (
-              <div key={item.label}>
-                {item.submenu ? (
-                  <>
-                    <button
-                      className="w-full flex items-center justify-between px-4 py-3 text-slate font-medium"
-                      onClick={() =>
-                        setOpenSubmenu(
-                          openSubmenu === item.label ? null : item.label
-                        )
-                      }
+      {/* Mobile overlay + navigation */}
+      {mobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/30 z-40 md:hidden"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
+
+          {/* Slide-down panel */}
+          <div className="fixed inset-x-0 top-[calc(3.5rem+2rem)] bottom-0 z-50 md:hidden overflow-y-auto bg-white animate-in slide-in-from-top-2 duration-200">
+            <div className="pb-6">
+              {navegacion.map((item) => (
+                <div key={item.label} className="border-b border-gray-100">
+                  {item.submenu ? (
+                    <>
+                      <button
+                        className="w-full flex items-center justify-between px-5 py-3.5 text-dark font-medium active:bg-light"
+                        onClick={() =>
+                          setOpenSubmenu(
+                            openSubmenu === item.label ? null : item.label
+                          )
+                        }
+                      >
+                        {item.label}
+                        <ChevronDownIcon
+                          className={`w-5 h-5 text-slate transition-transform duration-200 ${
+                            openSubmenu === item.label ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      <div
+                        className={`overflow-hidden transition-all duration-200 ${
+                          openSubmenu === item.label
+                            ? "max-h-96 opacity-100"
+                            : "max-h-0 opacity-0"
+                        }`}
+                      >
+                        <div className="bg-light/50 pb-2">
+                          {item.submenu.map((subitem) => (
+                            <Link
+                              key={subitem.href}
+                              href={subitem.href}
+                              className="block px-8 py-2.5 text-slate hover:text-primary active:bg-light transition text-[15px]"
+                              onClick={closeMenu}
+                            >
+                              {subitem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="block px-5 py-3.5 text-dark font-medium active:bg-light transition"
+                      onClick={closeMenu}
                     >
                       {item.label}
-                      <ChevronDownIcon
-                        className={`w-4 h-4 transition ${
-                          openSubmenu === item.label ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                    {openSubmenu === item.label && (
-                      <div className="bg-light">
-                        {item.submenu.map((subitem) => (
-                          <Link
-                            key={subitem.href}
-                            href={subitem.href}
-                            className="block px-8 py-2 text-slate hover:text-primary"
-                            onClick={() => setMobileMenuOpen(false)}
-                          >
-                            {subitem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    href={item.href}
-                    className="block px-4 py-3 text-slate font-medium hover:text-primary"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                )}
+                    </Link>
+                  )}
+                </div>
+              ))}
+
+              {/* CTAs mobile */}
+              <div className="px-5 pt-5 space-y-3">
+                <button
+                  onClick={() => {
+                    closeMenu();
+                    abrirModal();
+                  }}
+                  className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dark text-white font-semibold py-3.5 rounded-xl w-full transition cursor-pointer text-[15px]"
+                >
+                  Pedir Presupuesto Gratis
+                </button>
+                <a
+                  href={`tel:${empresa.telefonoInternacional}`}
+                  className="flex items-center justify-center gap-2 bg-primary text-white font-semibold py-3.5 rounded-xl w-full text-[15px]"
+                >
+                  <PhoneIcon className="w-4 h-4" />
+                  {empresa.telefono}
+                </a>
               </div>
-            ))}
-            <div className="px-4 pt-4">
-              <a
-                href={`tel:${empresa.telefonoInternacional}`}
-                className="flex items-center justify-center gap-2 bg-accent text-white font-semibold px-5 py-3 rounded-lg w-full"
-              >
-                <PhoneIcon className="w-4 h-4" />
-                {empresa.telefono}
-              </a>
             </div>
           </div>
-        )}
-      </nav>
+        </>
+      )}
     </header>
   );
 }

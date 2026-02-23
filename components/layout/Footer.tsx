@@ -241,6 +241,13 @@ export function Footer() {
               © {currentYear} {empresa.nombre}. Todos los derechos reservados.
             </p>
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center">
+              <Link
+                href="/mapa-del-sitio"
+                className="hover:text-white transition"
+              >
+                Mapa del sitio
+              </Link>
+              <span className="hidden md:inline">|</span>
               <a
                 href={empresa.web}
                 target="_blank"

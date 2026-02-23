@@ -14,6 +14,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    {
+      url: `${BASE_URL}/mapa-del-sitio`,
+      lastModified: LAST_UPDATE,
+      changeFrequency: "monthly",
+      priority: 0.3,
+    },
   ];
 
   // Páginas de producto

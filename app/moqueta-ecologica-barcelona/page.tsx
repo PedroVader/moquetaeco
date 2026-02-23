@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Hero,
   ProductShowcase,
@@ -9,8 +10,10 @@ import {
   FAQ,
   CTABand,
   AreasServicio,
+  EnlacesRelacionados,
 } from "@/components/sections";
-import { getProvinciaBySlug, getFaqsProvincia } from "@/lib/data";
+import type { GrupoEnlaces } from "@/components/sections/EnlacesRelacionados";
+import { getProvinciaBySlug, getFaqsProvincia, findMunicipioPageByName, tiposUso } from "@/lib/data";
 import { generarMetadataProvincia } from "@/lib/seo/metadata";
 import { generarContenidoProvincia } from "@/lib/generators/contenido";
 import {
@@ -20,7 +23,7 @@ import {
   generarProductSchema,
 } from "@/lib/seo/schema";
 import { moquetaFerialEco } from "@/lib/data/productos";
-import Link from "next/link";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { MapPinIcon, BuildingOffice2Icon, CalendarIcon } from "@heroicons/react/24/outline";
 
 const provincia = getProvinciaBySlug("barcelona")!;
@@ -33,14 +36,31 @@ export default function MoquetaEcologicaBarcelona() {
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
-  const breadcrumbSchema = generarBreadcrumbSchema([
+  const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
-    { name: "Moqueta Ecológica", url: "https://www.moquetaecologica.com/" },
     {
       name: `Moqueta Ecológica ${provincia.nombre}`,
       url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
     },
-  ]);
+  ];
+  const breadcrumbSchema = generarBreadcrumbSchema(breadcrumbItems);
+
+  const gruposEnlaces: GrupoEnlaces[] = [
+    {
+      titulo: "Por tipo de evento",
+      enlaces: tiposUso.map((uso) => ({
+        nombre: `${uso.nombre} en ${provincia.nombre}`,
+        href: `/${provincia.slug}/${uso.slug}`,
+      })),
+    },
+    {
+      titulo: `Comarcas de ${provincia.nombre}`,
+      enlaces: provincia.comarcas.map((c) => ({
+        nombre: c.nombre,
+        href: `/comarcas/${c.slug}`,
+      })),
+    },
+  ];
 
   return (
     <>
@@ -60,6 +80,14 @@ export default function MoquetaEcologicaBarcelona() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Breadcrumb visual */}
+      <Breadcrumb
+        items={breadcrumbItems.map((item) => ({
+          name: item.name,
+          url: item.url.replace("https://www.moquetaecologica.com", "") || "/",
+        }))}
       />
 
       {/* Hero */}
@@ -116,14 +144,25 @@ export default function MoquetaEcologicaBarcelona() {
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                {provincia.municipiosPrincipales.slice(0, 12).map((municipio) => (
-                  <span
-                    key={municipio}
-                    className="bg-light text-slate text-sm px-3 py-1 rounded-full"
-                  >
-                    {municipio}
-                  </span>
-                ))}
+                {provincia.municipiosPrincipales.slice(0, 12).map((municipio) => {
+                  const page = findMunicipioPageByName(municipio);
+                  return page ? (
+                    <Link
+                      key={municipio}
+                      href={`/municipios/${page.slug}`}
+                      className="bg-light hover:bg-primary hover:text-white text-slate text-sm px-3 py-1 rounded-full transition"
+                    >
+                      {municipio}
+                    </Link>
+                  ) : (
+                    <span
+                      key={municipio}
+                      className="bg-light text-slate text-sm px-3 py-1 rounded-full"
+                    >
+                      {municipio}
+                    </span>
+                  );
+                })}
                 <span className="text-primary text-sm font-medium">
                   +{provincia.municipiosPrincipales.length - 12} más
                 </span>
@@ -162,24 +201,6 @@ export default function MoquetaEcologicaBarcelona() {
               </ul>
             </div>
           </div>
-
-          {/* Comarcas */}
-          <div className="mt-8">
-            <h3 className="text-xl font-bold text-dark mb-4 text-center">
-              Comarcas de {provincia.nombre}
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2">
-              {provincia.comarcas.map((comarca) => (
-                <Link
-                  key={comarca.slug}
-                  href={`/comarcas/${comarca.slug}`}
-                  className="bg-white hover:bg-primary hover:text-white text-slate text-sm px-4 py-2 rounded-full transition"
-                >
-                  {comarca.nombre}
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
@@ -203,6 +224,9 @@ export default function MoquetaEcologicaBarcelona() {
 
       {/* Certificaciones */}
       <Certificaciones />
+
+      {/* Enlaces relacionados */}
+      <EnlacesRelacionados grupos={gruposEnlaces} />
 
       {/* Otras provincias */}
       <AreasServicio provinciaActual={provincia.slug} />

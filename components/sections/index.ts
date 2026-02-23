@@ -9,3 +9,4 @@ export { FAQ } from "./FAQ";
 export { CTABand } from "./CTABand";
 export { AreasServicio } from "./AreasServicio";
 export { ProductoDetalle } from "./ProductoDetalle";
+export { EnlacesRelacionados } from "./EnlacesRelacionados";

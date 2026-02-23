@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import {
   Hero,
   ProductShowcase,
@@ -9,7 +10,9 @@ import {
   FAQ,
   CTABand,
   AreasServicio,
+  EnlacesRelacionados,
 } from "@/components/sections";
+import type { GrupoEnlaces } from "@/components/sections/EnlacesRelacionados";
 import {
   provincias,
   tiposUso,
@@ -26,6 +29,7 @@ import {
   generarProductSchema,
 } from "@/lib/seo/schema";
 import { moquetaFerialEco } from "@/lib/data/productos";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 
 interface Props {
   params: Promise<{
@@ -76,9 +80,8 @@ export default async function ProvinciaUsoPage({ params }: Props) {
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
-  const breadcrumbSchema = generarBreadcrumbSchema([
+  const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
-    { name: "Moqueta Ecológica", url: "https://www.moquetaecologica.com/" },
     {
       name: provincia.nombre,
       url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
@@ -87,7 +90,27 @@ export default async function ProvinciaUsoPage({ params }: Props) {
       name: uso.nombre,
       url: `https://www.moquetaecologica.com/${provincia.slug}/${uso.slug}`,
     },
-  ]);
+  ];
+  const breadcrumbSchema = generarBreadcrumbSchema(breadcrumbItems);
+
+  // Build related links
+  const otrosUsos = tiposUso.filter((u) => u.slug !== uso.slug);
+  const gruposEnlaces: GrupoEnlaces[] = [
+    {
+      titulo: `Otros usos en ${provincia.nombre}`,
+      enlaces: otrosUsos.map((u) => ({
+        nombre: u.nombre,
+        href: `/${provincia.slug}/${u.slug}`,
+      })),
+    },
+    {
+      titulo: `Comarcas de ${provincia.nombre}`,
+      enlaces: provincia.comarcas.slice(0, 8).map((c) => ({
+        nombre: c.nombre,
+        href: `/comarcas/${c.slug}`,
+      })),
+    },
+  ];
 
   return (
     <>
@@ -107,6 +130,14 @@ export default async function ProvinciaUsoPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Breadcrumb visual */}
+      <Breadcrumb
+        items={breadcrumbItems.map((item) => ({
+          name: item.name,
+          url: item.url.replace("https://www.moquetaecologica.com", "") || "/",
+        }))}
       />
 
       {/* Hero */}
@@ -163,6 +194,9 @@ export default async function ProvinciaUsoPage({ params }: Props) {
 
       {/* Certificaciones */}
       <Certificaciones />
+
+      {/* Enlaces relacionados */}
+      <EnlacesRelacionados grupos={gruposEnlaces} />
 
       {/* Otras provincias */}
       <AreasServicio provinciaActual={provincia.slug} />

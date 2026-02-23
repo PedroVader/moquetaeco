@@ -9,10 +9,14 @@ import {
   Certificaciones,
   FAQ,
   CTABand,
+  EnlacesRelacionados,
 } from "@/components/sections";
+import type { GrupoEnlaces } from "@/components/sections/EnlacesRelacionados";
 import {
   getAllComarcas,
   getComarcaBySlug,
+  getMunicipiosByComarca,
+  tiposUso,
   faqsGenerales,
 } from "@/lib/data";
 import { generarMetadataComarca } from "@/lib/seo/metadata";
@@ -24,7 +28,8 @@ import {
   generarProductSchema,
 } from "@/lib/seo/schema";
 import { moquetaFerialEco } from "@/lib/data/productos";
-import { MapPinIcon } from "@heroicons/react/24/outline";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
+import { MapPinIcon, CalendarIcon, BuildingOffice2Icon } from "@heroicons/react/24/outline";
 
 interface Props {
   params: Promise<{
@@ -63,16 +68,13 @@ export default async function ComarcaPage({ params }: Props) {
   }
 
   const { comarca, provincia } = result;
-  const contenido = generarContenidoComarca(
-    comarca.nombre,
-    comarca.capital,
-    provincia
-  );
+  const contenido = generarContenidoComarca(comarca, provincia);
+  const municipiosComarca = getMunicipiosByComarca(comarca.slug);
 
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqsGenerales.slice(0, 5));
-  const breadcrumbSchema = generarBreadcrumbSchema([
+  const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
     { name: "Moqueta Ecológica", url: "https://www.moquetaecologica.com/" },
     {
@@ -83,7 +85,40 @@ export default async function ComarcaPage({ params }: Props) {
       name: comarca.nombre,
       url: `https://www.moquetaecologica.com/comarcas/${comarca.slug}`,
     },
-  ]);
+  ];
+  const breadcrumbSchema = generarBreadcrumbSchema(breadcrumbItems);
+
+  // Build related links
+  const gruposEnlaces: GrupoEnlaces[] = [];
+
+  if (municipiosComarca.length > 0) {
+    gruposEnlaces.push({
+      titulo: `Municipios en ${comarca.nombre}`,
+      enlaces: municipiosComarca.map((m) => ({
+        nombre: m.nombre,
+        href: `/municipios/${m.slug}`,
+      })),
+    });
+  }
+
+  gruposEnlaces.push({
+    titulo: `Moqueta por tipo de evento en ${provincia.nombre}`,
+    enlaces: tiposUso.map((uso) => ({
+      nombre: uso.nombre,
+      href: `/${provincia.slug}/${uso.slug}`,
+    })),
+  });
+
+  const otrasComarcas = provincia.comarcas.filter((c) => c.slug !== comarca.slug);
+  if (otrasComarcas.length > 0) {
+    gruposEnlaces.push({
+      titulo: `Otras comarcas de ${provincia.nombre}`,
+      enlaces: otrasComarcas.map((c) => ({
+        nombre: c.nombre,
+        href: `/comarcas/${c.slug}`,
+      })),
+    });
+  }
 
   return (
     <>
@@ -103,6 +138,14 @@ export default async function ComarcaPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Breadcrumb visual */}
+      <Breadcrumb
+        items={breadcrumbItems.map((item) => ({
+          name: item.name,
+          url: item.url.replace("https://www.moquetaecologica.com", "") || "/",
+        }))}
       />
 
       {/* Hero */}
@@ -140,7 +183,7 @@ export default async function ComarcaPage({ params }: Props) {
             ))}
           </div>
 
-          {/* Info comarca */}
+          {/* Info comarca enriched */}
           <div className="mt-8 bg-light rounded-xl p-6">
             <div className="flex items-center gap-3 mb-4">
               <MapPinIcon className="w-6 h-6 text-primary" />
@@ -162,8 +205,58 @@ export default async function ComarcaPage({ params }: Props) {
                   {provincia.nombre}
                 </Link>
               </div>
+              <div>
+                <span className="text-slate">Población:</span>{" "}
+                <strong className="text-dark">
+                  {comarca.poblacion.toLocaleString("es-ES")} hab.
+                </strong>
+              </div>
+              <div>
+                <span className="text-slate">Distancia Barcelona:</span>{" "}
+                <strong className="text-dark">
+                  {comarca.distanciaBarcelona === 0
+                    ? "Área metropolitana"
+                    : `${comarca.distanciaBarcelona} km`}
+                </strong>
+              </div>
             </div>
           </div>
+
+          {/* Eventos y espacios */}
+          {(comarca.eventosLocales.length > 0 || comarca.espaciosEventos.length > 0) && (
+            <div className="mt-6 grid sm:grid-cols-2 gap-6">
+              {comarca.eventosLocales.length > 0 && (
+                <div className="bg-white border border-gray-200 rounded-xl p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <CalendarIcon className="w-5 h-5 text-primary" />
+                    <h4 className="font-semibold text-dark">Eventos locales</h4>
+                  </div>
+                  <ul className="space-y-1.5">
+                    {comarca.eventosLocales.map((evento) => (
+                      <li key={evento} className="text-sm text-slate">
+                        {evento}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              {comarca.espaciosEventos.length > 0 && (
+                <div className="bg-white border border-gray-200 rounded-xl p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <BuildingOffice2Icon className="w-5 h-5 text-primary" />
+                    <h4 className="font-semibold text-dark">Espacios para eventos</h4>
+                  </div>
+                  <ul className="space-y-1.5">
+                    {comarca.espaciosEventos.map((espacio) => (
+                      <li key={espacio} className="text-sm text-slate">
+                        {espacio}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
@@ -185,27 +278,8 @@ export default async function ComarcaPage({ params }: Props) {
       {/* Certificaciones */}
       <Certificaciones />
 
-      {/* Otras comarcas de la provincia */}
-      <section className="py-16 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-dark mb-6 text-center">
-            Otras comarcas de {provincia.nombre}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-2">
-            {provincia.comarcas
-              .filter((c) => c.slug !== comarca.slug)
-              .map((c) => (
-                <Link
-                  key={c.slug}
-                  href={`/comarcas/${c.slug}`}
-                  className="bg-white hover:bg-primary hover:text-white text-slate text-sm px-4 py-2 rounded-full transition"
-                >
-                  {c.nombre}
-                </Link>
-              ))}
-          </div>
-        </div>
-      </section>
+      {/* Enlaces relacionados */}
+      <EnlacesRelacionados grupos={gruposEnlaces} />
 
       {/* FAQ */}
       <FAQ

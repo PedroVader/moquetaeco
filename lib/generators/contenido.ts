@@ -1,4 +1,4 @@
-import type { Provincia, TipoUso, Municipio } from "@/lib/data/ubicaciones";
+import type { Provincia, TipoUso, Municipio, Comarca } from "@/lib/data/ubicaciones";
 
 export interface PageContent {
   title: string;
@@ -45,8 +45,21 @@ export function generarContenidoProvincia(provincia: Provincia): PageContent {
 
 export function generarContenidoMunicipio(
   municipio: Municipio,
-  provincia: Provincia
+  provincia: Provincia,
+  comarcaNombre?: string
 ): PageContent {
+  const comarcaTexto = comarcaNombre
+    ? `, en la comarca de ${comarcaNombre}`
+    : "";
+  const poblacionTexto =
+    municipio.poblacion > 0
+      ? ` Con una población de más de ${(Math.floor(municipio.poblacion / 1000) * 1000).toLocaleString("es-ES")} habitantes, ${municipio.nombre} es un centro de actividad empresarial y cultural en ${provincia.nombre}.`
+      : "";
+  const zonasTexto =
+    municipio.zonasEventos.length > 0
+      ? ` Entre sus principales espacios para eventos destacan **${municipio.zonasEventos.slice(0, 2).join("** y **")}**.`
+      : "";
+
   return {
     title: `Moqueta Ecológica ${municipio.nombre} | Eventos y Ferias | Disstands`,
 
@@ -54,18 +67,20 @@ export function generarContenidoMunicipio(
 
     h1: `Moqueta Ecológica en ${municipio.nombre}`,
 
-    heroText: `Suministro e instalación de moqueta ecológica Rewind en ${municipio.nombre}. La solución sostenible para tus eventos, ferias y stands.`,
+    heroText: `Suministro e instalación de moqueta ecológica Rewind en ${municipio.nombre}${comarcaTexto}. La solución sostenible para tus eventos, ferias y stands.`,
 
     intro: [
-      `¿Buscas **moqueta ecológica en ${municipio.nombre}**? Disstands te ofrece la moqueta ferial más sostenible del mercado, con entrega directa desde Barcelona y servicio de instalación profesional.`,
+      `¿Buscas **moqueta ecológica en ${municipio.nombre}**? ${municipio.descripcion}`,
+
+      `${poblacionTexto}${zonasTexto} Disstands suministra moqueta ecológica Rewind con entrega directa desde Barcelona y servicio de instalación profesional.`,
 
       `Nuestra moqueta Rewind es 100% reciclable, sin látex, y cumple con la certificación ignífuga Bfl-s1 exigida en todos los recintos feriales. Disponible en 30 colores para adaptarse a cualquier identidad corporativa.`,
     ],
 
     beneficiosLocales: [
       `Entrega rápida en ${municipio.nombre}`,
-      `Instalación disponible`,
-      `30 colores en stock`,
+      `Instalación profesional disponible`,
+      `30 colores en stock permanente`,
       `Desde 2,10€/m²`,
     ],
 
@@ -137,32 +152,53 @@ export function generarContenidoUso(
 }
 
 export function generarContenidoComarca(
-  comarcaNombre: string,
-  capital: string,
+  comarca: Comarca,
   provincia: Provincia
 ): PageContent {
+  const distanciaTexto =
+    comarca.distanciaBarcelona === 0
+      ? "en el área metropolitana de Barcelona"
+      : `a ${comarca.distanciaBarcelona} km de Barcelona`;
+
+  const eventosTexto =
+    comarca.eventosLocales.length > 0
+      ? ` La comarca acoge eventos como **${comarca.eventosLocales.slice(0, 2).join("** y **")}**.`
+      : "";
+
+  const espaciosTexto =
+    comarca.espaciosEventos.length > 0
+      ? ` Espacios como ${comarca.espaciosEventos.slice(0, 2).join(" y ")} son referentes para ferias y eventos.`
+      : "";
+
+  const municipiosTexto =
+    comarca.municipiosPrincipales && comarca.municipiosPrincipales.length > 0
+      ? ` Servimos ${comarca.municipiosPrincipales.slice(0, 4).join(", ")} y todos los municipios de la comarca.`
+      : ` Servimos ${comarca.capital} y todos los municipios de la comarca.`;
+
   return {
-    title: `Moqueta Ecológica ${comarcaNombre} | ${provincia.nombre} | Disstands`,
+    title: `Moqueta Ecológica ${comarca.nombre} | ${provincia.nombre} | Disstands`,
 
-    metaDescription: `Moqueta ecológica en ${comarcaNombre} (${provincia.nombre}). Entrega en ${capital} y comarca. 100% reciclable, sin látex. Desde 2,10€/m². ☎ 934 850 085`,
+    metaDescription: `Moqueta ecológica en ${comarca.nombre} (${provincia.nombre}). Entrega en ${comarca.capital} y comarca. 100% reciclable, sin látex. Desde 2,10€/m². ☎ 934 850 085`,
 
-    h1: `Moqueta Ecológica en ${comarcaNombre}`,
+    h1: `Moqueta Ecológica en ${comarca.nombre}`,
 
-    heroText: `Distribuidor de moqueta ecológica Rewind en la comarca de ${comarcaNombre}. Entrega rápida en ${capital} y todos los municipios. Servicio de instalación profesional.`,
+    heroText: `Distribuidor de moqueta ecológica Rewind en la comarca de ${comarca.nombre}, ${distanciaTexto}. Entrega rápida en ${comarca.capital} y todos los municipios.`,
 
     intro: [
-      `Disstands suministra **moqueta ecológica** en toda la comarca de ${comarcaNombre}, con entrega en ${capital} y municipios cercanos. Más de 25 años de experiencia nos avalan.`,
+      `${comarca.descripcion}${eventosTexto}`,
 
-      `Nuestra moqueta Rewind es 100% reciclable, sin látex, y cuenta con certificación ignífuga Bfl-s1. Disponible en 30 colores y dos espesores diferentes.`,
+      `Disstands suministra **moqueta ecológica Rewind** en toda la comarca de ${comarca.nombre} con más de 25 años de experiencia.${espaciosTexto}`,
+
+      `Nuestra moqueta es 100% reciclable, sin látex, y cuenta con certificación ignífuga Bfl-s1. Disponible en 30 colores y dos espesores.${municipiosTexto}`,
     ],
 
     beneficiosLocales: [
-      `Servicio en ${comarcaNombre}`,
-      `Cobertura en ${capital} y alrededores`,
+      `Servicio en ${comarca.nombre}`,
+      `Cobertura en ${comarca.capital} y alrededores`,
+      `${comarca.poblacion.toLocaleString("es-ES")} habitantes en la comarca`,
       `Instalación profesional disponible`,
-      `Stock permanente`,
     ],
 
-    ctaText: `Presupuesto para ${comarcaNombre}`,
+    ctaText: `Presupuesto para ${comarca.nombre}`,
   };
 }

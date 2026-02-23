@@ -9,11 +9,16 @@ import {
   Certificaciones,
   FAQ,
   CTABand,
+  EnlacesRelacionados,
 } from "@/components/sections";
+import type { GrupoEnlaces } from "@/components/sections/EnlacesRelacionados";
 import {
   topMunicipios,
   getMunicipioBySlug,
   getProvinciaForMunicipio,
+  getComarcaForMunicipio,
+  getNearbyMunicipios,
+  tiposUso,
   faqsGenerales,
 } from "@/lib/data";
 import { generarMetadataMunicipio } from "@/lib/seo/metadata";
@@ -25,6 +30,7 @@ import {
   generarProductSchema,
 } from "@/lib/seo/schema";
 import { moquetaFerialEco } from "@/lib/data/productos";
+import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { MapPinIcon, TruckIcon, ClockIcon } from "@heroicons/react/24/outline";
 
 interface Props {
@@ -59,28 +65,76 @@ export default async function MunicipioPage({ params }: Props) {
   const { municipio: municipioSlug } = await params;
   const municipio = getMunicipioBySlug(municipioSlug);
   const provincia = getProvinciaForMunicipio(municipioSlug);
+  const comarcaResult = getComarcaForMunicipio(municipioSlug);
 
   if (!municipio || !provincia) {
     notFound();
   }
 
-  const contenido = generarContenidoMunicipio(municipio, provincia);
+  const contenido = generarContenidoMunicipio(
+    municipio,
+    provincia,
+    comarcaResult?.comarca.nombre
+  );
+  const nearbyMunicipios = getNearbyMunicipios(municipioSlug, 6);
 
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqsGenerales.slice(0, 5));
-  const breadcrumbSchema = generarBreadcrumbSchema([
+
+  const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
-    { name: "Moqueta Ecológica", url: "https://www.moquetaecologica.com/" },
     {
       name: provincia.nombre,
       url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
     },
+    ...(comarcaResult
+      ? [
+          {
+            name: comarcaResult.comarca.nombre,
+            url: `https://www.moquetaecologica.com/comarcas/${comarcaResult.comarca.slug}`,
+          },
+        ]
+      : []),
     {
       name: municipio.nombre,
       url: `https://www.moquetaecologica.com/municipios/${municipio.slug}`,
     },
-  ]);
+  ];
+  const breadcrumbSchema = generarBreadcrumbSchema(breadcrumbItems);
+
+  // Build related links
+  const gruposEnlaces: GrupoEnlaces[] = [];
+
+  if (comarcaResult) {
+    gruposEnlaces.push({
+      titulo: `Comarca ${comarcaResult.comarca.nombre}`,
+      enlaces: [
+        {
+          nombre: `Ver ${comarcaResult.comarca.nombre}`,
+          href: `/comarcas/${comarcaResult.comarca.slug}`,
+        },
+      ],
+    });
+  }
+
+  if (nearbyMunicipios.length > 0) {
+    gruposEnlaces.push({
+      titulo: "Municipios cercanos",
+      enlaces: nearbyMunicipios.map((m) => ({
+        nombre: m.nombre,
+        href: `/municipios/${m.slug}`,
+      })),
+    });
+  }
+
+  gruposEnlaces.push({
+    titulo: `Moqueta por tipo de evento`,
+    enlaces: tiposUso.map((uso) => ({
+      nombre: `${uso.nombre} en ${provincia.nombre}`,
+      href: `/${provincia.slug}/${uso.slug}`,
+    })),
+  });
 
   return (
     <>
@@ -100,6 +154,14 @@ export default async function MunicipioPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
+      {/* Breadcrumb visual */}
+      <Breadcrumb
+        items={breadcrumbItems.map((item) => ({
+          name: item.name,
+          url: item.url.replace("https://www.moquetaecologica.com", "") || "/",
+        }))}
       />
 
       {/* Hero */}
@@ -142,7 +204,17 @@ export default async function MunicipioPage({ params }: Props) {
               <MapPinIcon className="w-8 h-8 text-primary mx-auto mb-3" />
               <h3 className="font-bold text-dark mb-1">Ubicación</h3>
               <p className="text-sm text-slate">
-                {municipio.nombre}, {provincia.nombre}
+                {municipio.nombre},{" "}
+                {comarcaResult ? (
+                  <Link
+                    href={`/comarcas/${comarcaResult.comarca.slug}`}
+                    className="text-primary hover:underline"
+                  >
+                    {comarcaResult.comarca.nombre}
+                  </Link>
+                ) : (
+                  provincia.nombre
+                )}
               </p>
             </div>
             <div className="bg-primary/5 rounded-xl p-6 text-center">
@@ -177,37 +249,8 @@ export default async function MunicipioPage({ params }: Props) {
       {/* Certificaciones */}
       <Certificaciones />
 
-      {/* Otros municipios de la provincia */}
-      <section className="py-16 bg-light">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-dark mb-6 text-center">
-            También servimos en {provincia.nombre}
-          </h2>
-          <div className="flex flex-wrap justify-center gap-2">
-            {topMunicipios
-              .filter(
-                (m) =>
-                  m.provincia === provincia.slug && m.slug !== municipio.slug
-              )
-              .slice(0, 10)
-              .map((m) => (
-                <Link
-                  key={m.slug}
-                  href={`/municipios/${m.slug}`}
-                  className="bg-white hover:bg-primary hover:text-white text-slate text-sm px-4 py-2 rounded-full transition"
-                >
-                  {m.nombre}
-                </Link>
-              ))}
-            <Link
-              href={`/moqueta-ecologica-${provincia.slug}`}
-              className="bg-primary text-white text-sm px-4 py-2 rounded-full"
-            >
-              Ver toda {provincia.nombre}
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Enlaces relacionados */}
+      <EnlacesRelacionados grupos={gruposEnlaces} />
 
       {/* FAQ */}
       <FAQ

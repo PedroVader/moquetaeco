@@ -28,7 +28,7 @@ export function Hero({
         <div className="absolute inset-0 z-0">
           <Image
             src="/hero-img/hero-img-2.jpeg"
-            alt="Moqueta ecológica Rewind"
+            alt={`Moqueta ecológica Rewind${ubicacion ? ` en ${ubicacion}` : ""} - instalación profesional para ferias y eventos`}
             fill
             className="object-cover blur-[2px] scale-105"
             priority

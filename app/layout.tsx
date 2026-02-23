@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Header, Footer, CTAFloat } from "@/components/layout";
 import { PresupuestoProvider } from "@/context/PresupuestoContext";
+import { empresa } from "@/lib/data";
 import "./globals.css";
 
 const inter = Inter({
@@ -47,6 +48,50 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://www.moquetaecologica.com/#organization",
+              name: empresa.nombre,
+              alternateName: "Disstands",
+              url: "https://www.moquetaecologica.com",
+              logo: "https://www.moquetaecologica.com/logo-moqueta.png",
+              description:
+                "Fabricante de moqueta ecológica Rewind® para ferias y eventos. 100% reciclable, sin látex, certificada Bfl-s1.",
+              telephone: empresa.telefonoInternacional,
+              email: empresa.emailVentas,
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "C/ Joan d'Austria 90-96, Local 4 Bajos",
+                addressLocality: "Barcelona",
+                postalCode: "08018",
+                addressRegion: "Cataluña",
+                addressCountry: "ES",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: empresa.coordenadas.lat,
+                longitude: empresa.coordenadas.lng,
+              },
+              sameAs: [
+                empresa.redesSociales.instagram,
+                empresa.redesSociales.linkedin,
+                empresa.web,
+              ],
+              brand: {
+                "@type": "Brand",
+                name: "Rewind",
+                description:
+                  "Marca propia de moqueta ecológica 100% reciclable",
+              },
+            }),
+          }}
+        />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         <PresupuestoProvider>
           <Header />

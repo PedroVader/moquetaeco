@@ -139,6 +139,14 @@ export function Footer() {
                   Todos los artículos
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contacto"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  Contacto
+                </Link>
+              </li>
             </ul>
             <h4 className="text-md font-semibold mt-6 mb-3">Por tipo de evento</h4>
             <ul className="space-y-2 text-sm">

@@ -108,6 +108,63 @@ export function generarFAQSchema(faqs: FAQ[]) {
   };
 }
 
+export function generarReviewSchema() {
+  const reviews = [
+    {
+      author: "Marc R.",
+      role: "Director de Producción",
+      company: "Empresa de stands feriales, Barcelona",
+      text: "Llevamos 8 años usando Rewind en todos nuestros montajes. La calidad es idéntica a la moqueta convencional, pero podemos ofrecer a nuestros clientes una opción sostenible real. El certificado de reciclaje es un plus que cada vez más empresas nos piden.",
+      rating: 5,
+    },
+    {
+      author: "Laura M.",
+      role: "Responsable de Sostenibilidad",
+      company: "Organizadora de congresos, Girona",
+      text: "Desde que usamos moqueta Rewind, hemos reducido los residuos de nuestros eventos a prácticamente cero en lo que respecta a revestimiento de suelo. El servicio de recogida post-evento nos facilita mucho la gestión.",
+      rating: 5,
+    },
+    {
+      author: "Jordi P.",
+      role: "Gerente",
+      company: "Empresa de montaje de eventos, Tarragona",
+      text: "El stock permanente en 30 colores es lo que más valoramos. En este sector los plazos son muy cortos y saber que siempre hay material disponible en Barcelona nos da una tranquilidad enorme. Entrega en 24h cuando lo necesitamos.",
+      rating: 5,
+    },
+  ];
+
+  const avgRating =
+    reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.moquetaecologica.com/#organization",
+    name: empresa.nombre,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: avgRating.toFixed(1),
+      bestRating: "5",
+      worstRating: "1",
+      reviewCount: reviews.length.toString(),
+    },
+    review: reviews.map((r) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: r.author,
+        jobTitle: r.role,
+      },
+      reviewBody: r.text,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: r.rating.toString(),
+        bestRating: "5",
+      },
+    })),
+  };
+}
+
 export function generarBreadcrumbSchema(
   items: { name: string; url: string }[]
 ) {

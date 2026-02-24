@@ -84,6 +84,14 @@ export default function MapaDelSitio() {
                     Rewind Dilour
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    href="/contacto"
+                    className="text-primary hover:underline"
+                  >
+                    Contacto
+                  </Link>
+                </li>
               </ul>
             </div>
 

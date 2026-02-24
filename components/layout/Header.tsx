@@ -46,6 +46,10 @@ const navegacion = [
     label: "Blog",
     href: "/blog",
   },
+  {
+    label: "Contacto",
+    href: "/contacto",
+  },
 ];
 
 export function Header() {

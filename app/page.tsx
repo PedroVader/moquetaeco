@@ -20,6 +20,7 @@ import {
   generarProductSchema,
   generarFAQSchema,
   generarBreadcrumbSchema,
+  generarReviewSchema,
 } from "@/lib/seo/schema";
 
 const BASE_URL = "https://www.moquetaecologica.com";
@@ -35,6 +36,7 @@ export default function HomePage() {
   const breadcrumbSchema = generarBreadcrumbSchema([
     { name: "Inicio", url: BASE_URL },
   ]);
+  const reviewSchema = generarReviewSchema();
 
   return (
     <>
@@ -67,6 +69,12 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(reviewSchema),
         }}
       />
 

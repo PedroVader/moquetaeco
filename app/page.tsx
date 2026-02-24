@@ -10,6 +10,8 @@ import {
   FAQ,
   CTABand,
   AreasServicio,
+  SocialProof,
+  Testimonios,
 } from "@/components/sections";
 import { faqsGenerales, moquetaFerialEco, moquetaDilourEco } from "@/lib/data";
 import { generarMetadataPrincipal } from "@/lib/seo/metadata";
@@ -81,6 +83,9 @@ export default function HomePage() {
       {/* Beneficios ecológicos */}
       <BeneficiosEco />
 
+      {/* Cifras y clientes destacados */}
+      <SocialProof />
+
       {/* Comparativa */}
       <Comparativa />
 
@@ -104,6 +109,9 @@ export default function HomePage() {
 
       {/* FAQ */}
       <FAQ faqs={faqsGenerales} />
+
+      {/* Testimonios */}
+      <Testimonios />
 
       {/* CTA final */}
       <CTABand

@@ -10,3 +10,5 @@ export { CTABand } from "./CTABand";
 export { AreasServicio } from "./AreasServicio";
 export { ProductoDetalle } from "./ProductoDetalle";
 export { EnlacesRelacionados } from "./EnlacesRelacionados";
+export { SocialProof } from "./SocialProof";
+export { Testimonios } from "./Testimonios";

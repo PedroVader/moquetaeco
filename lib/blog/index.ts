@@ -161,8 +161,11 @@ const posts: BlogPost[] = [
       </ul>
       <p>Para eventos urgentes, disponemos de servicio express. Llámanos al <a href="tel:+34934850085">934 850 085</a>.</p>
 
+      <h2>¿Dónde servimos?</h2>
+      <p>Ofrecemos moqueta ecológica en toda Cataluña: <a href="/moqueta-ecologica-barcelona">Barcelona</a>, <a href="/moqueta-ecologica-girona">Girona</a>, <a href="/moqueta-ecologica-tarragona">Tarragona</a> y <a href="/moqueta-ecologica-lleida">Lleida</a>. Servicio de instalación en comarcas como <a href="/comarcas/barcelones">Barcelonès</a>, <a href="/comarcas/valles-occidental">Vallès Occidental</a> o <a href="/comarcas/baix-llobregat">Baix Llobregat</a>, y municipios como <a href="/municipios/hospitalet">L'Hospitalet</a>, <a href="/municipios/terrassa">Terrassa</a> o <a href="/municipios/sabadell">Sabadell</a>.</p>
+
       <h2>Conclusión</h2>
-      <p>Ya sea que busques la versatilidad de <strong>Rewind Flat</strong> o el confort premium de <strong>Rewind Dilour</strong>, ambas opciones son 100% reciclables, sin látex y certificadas Bfl-s1. La diferencia está en el espesor, el confort y el precio. Para orientarte mejor, usa nuestra <a href="/#calculadora">calculadora de precios</a> o solicita presupuesto personalizado.</p>
+      <p>Ya sea que busques la versatilidad de <a href="/productos/rewind-flat">Rewind Flat</a> o el confort premium de <a href="/productos/rewind-dilour">Rewind Dilour</a>, ambas opciones son 100% reciclables, sin látex y certificadas Bfl-s1. La diferencia está en el espesor, el confort y el precio. Para orientarte mejor, usa nuestra <a href="/#calculadora">calculadora de precios</a> o solicita presupuesto personalizado.</p>
     `,
   },
   {
@@ -204,6 +207,7 @@ const posts: BlogPost[] = [
         <li>Espacios públicos de concurrencia</li>
         <li>Cualquier instalación temporal en espacio público</li>
       </ul>
+      <p>Si organizas un evento en Cataluña, consulta nuestra cobertura en <a href="/moqueta-ecologica-barcelona">Barcelona</a>, <a href="/moqueta-ecologica-girona">Girona</a>, <a href="/moqueta-ecologica-tarragona">Tarragona</a> y <a href="/moqueta-ecologica-lleida">Lleida</a>. Disponemos de moqueta certificada para <a href="/barcelona/ferias">ferias</a>, <a href="/barcelona/congresos">congresos</a> y <a href="/barcelona/stands">stands</a>.</p>
 
       <h2>¿Cómo demuestro que mi moqueta cumple?</h2>
       <p>Toda nuestra moqueta Rewind (Flat y Dilour) incluye certificado Bfl-s1 que puedes presentar al recinto ferial o a la inspección municipal. Lo proporcionamos con cada pedido sin coste adicional.</p>
@@ -217,7 +221,7 @@ const posts: BlogPost[] = [
         <li>Riesgo real para la seguridad de los asistentes</li>
       </ul>
 
-      <p>Con Rewind ecológica tienes la tranquilidad de cumplir la normativa sin comprometer la sostenibilidad. <a href="tel:+34934850085">Llámanos al 934 850 085</a> para cualquier duda técnica.</p>
+      <p>Con <a href="/productos/rewind-flat">Rewind Flat</a> y <a href="/productos/rewind-dilour">Rewind Dilour</a> tienes la tranquilidad de cumplir la normativa sin comprometer la sostenibilidad. <a href="tel:+34934850085">Llámanos al 934 850 085</a> para cualquier duda técnica.</p>
     `,
   },
   {
@@ -271,6 +275,8 @@ const posts: BlogPost[] = [
 
       <h2>Para empresas con política ESG</h2>
       <p>Si tu empresa tiene compromisos de sostenibilidad, la moqueta Rewind te permite documentar la reducción de huella ambiental de tus eventos. Proporcionamos certificado de reciclaje que puedes incluir en tus informes de responsabilidad corporativa.</p>
+
+      <p>Disponemos de moqueta reciclable para <a href="/barcelona/eventos">eventos corporativos</a>, <a href="/barcelona/bodas">bodas</a> y <a href="/barcelona/ferias">ferias comerciales</a> en toda Cataluña. Servicio en comarcas como <a href="/comarcas/tarragones">Tarragonès</a>, <a href="/comarcas/girones">Gironès</a> o <a href="/comarcas/segria">Segrià</a>, y ciudades como <a href="/municipios/reus">Reus</a>, <a href="/municipios/girona-ciudad">Girona</a> o <a href="/municipios/lleida-ciudad">Lleida</a>.</p>
 
       <p>Únete al cambio. <a href="tel:+34934850085">Llámanos al 934 850 085</a> o <a href="mailto:ventas@disstands.com">escríbenos</a> para más información.</p>
     `,

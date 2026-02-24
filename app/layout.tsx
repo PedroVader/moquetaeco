@@ -49,6 +49,12 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -88,6 +94,24 @@ export default function RootLayout({
                 description:
                   "Marca propia de moqueta ecológica 100% reciclable",
               },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://www.moquetaecologica.com/#website",
+              url: "https://www.moquetaecologica.com",
+              name: "Moqueta Ecológica - Disstands",
+              description:
+                "Moqueta ecológica 100% reciclable para ferias y eventos en Cataluña",
+              publisher: {
+                "@id": "https://www.moquetaecologica.com/#organization",
+              },
+              inLanguage: "es",
             }),
           }}
         />

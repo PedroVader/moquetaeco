@@ -43,6 +43,10 @@ const navegacion = [
     ],
   },
   {
+    label: "Empresa",
+    href: "/empresa",
+  },
+  {
     label: "Blog",
     href: "/blog",
   },

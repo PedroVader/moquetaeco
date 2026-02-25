@@ -86,6 +86,14 @@ export default function MapaDelSitio() {
                 </li>
                 <li>
                   <Link
+                    href="/empresa"
+                    className="text-primary hover:underline"
+                  >
+                    Sobre Nosotros
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/contacto"
                     className="text-primary hover:underline"
                   >

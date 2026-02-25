@@ -141,6 +141,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/empresa"
+                  className="text-gray-400 hover:text-white transition"
+                >
+                  Sobre nosotros
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contacto"
                   className="text-gray-400 hover:text-white transition"
                 >

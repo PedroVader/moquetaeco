@@ -92,6 +92,351 @@ export function getAllTags(): string[] {
 
 const posts: BlogPost[] = [
   {
+    slug: "como-calcular-metros-cuadrados-moqueta-evento",
+    title: "Cómo calcular los metros cuadrados de moqueta para tu evento [2025]",
+    description:
+      "Aprende a calcular la cantidad exacta de moqueta que necesitas para tu stand, feria o evento. Fórmulas, tablas de referencia por tipo de espacio y errores comunes.",
+    date: "2025-08-05",
+    updatedAt: "2026-02-25",
+    author: "Disstands",
+    category: "guias",
+    tags: [
+      "calcular m²",
+      "metros cuadrados moqueta",
+      "moqueta ferial",
+      "presupuesto eventos",
+      "instalación moqueta",
+    ],
+    image: "/hero-img/hero-img-2.webp",
+    imageAlt: "Cálculo de metros cuadrados de moqueta para un stand ferial",
+    readingTime: 9,
+    content: `
+      <p>Uno de los errores más frecuentes al presupuestar moqueta para un evento es <strong>calcular mal la superficie necesaria</strong>. Quedarse corto obliga a compras urgentes de última hora (más caras), y pasarse supone un gasto innecesario. En esta guía te enseñamos a calcular la cantidad exacta.</p>
+
+      <blockquote>
+        <p><strong>Regla de oro:</strong> Calcula la superficie real y añade siempre un <strong>10-15% de margen</strong> para recortes, ajustes en esquinas y uniones de tiras. Usa nuestra <a href="/#calculadora">calculadora online</a> para obtener el precio al instante.</p>
+      </blockquote>
+
+      <h2>Fórmula básica: largo × ancho + margen</h2>
+      <p>El cálculo es sencillo pero hay matices según la forma del espacio:</p>
+      <ol>
+        <li><strong>Mide el largo y ancho</strong> del área en metros (siempre en metros, no centímetros)</li>
+        <li><strong>Multiplica largo × ancho</strong> para obtener m²</li>
+        <li><strong>Suma un 10-15%</strong> para mermas (recortes, esquinas, solapamientos)</li>
+        <li><strong>Ten en cuenta el ancho del rollo:</strong> los rollos de Rewind miden 2 m de ancho, así que si tu espacio tiene 5 m de ancho, necesitarás 3 tiras de 2 m (con algo de solape)</li>
+      </ol>
+
+      <h2>Tabla de referencia rápida por tipo de espacio</h2>
+      <p>Estos son los metros cuadrados habituales según el tipo de instalación:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Tipo de espacio</th>
+            <th>Superficie típica</th>
+            <th>Margen recomendado</th>
+            <th>m² a presupuestar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Stand pequeño (3×3)</td><td>9 m²</td><td>10%</td><td>10 m²</td></tr>
+          <tr><td>Stand mediano (4×5)</td><td>20 m²</td><td>10%</td><td>22 m²</td></tr>
+          <tr><td>Stand grande (6×8)</td><td>48 m²</td><td>12%</td><td>54 m²</td></tr>
+          <tr><td>Isla ferial (10×10)</td><td>100 m²</td><td>12%</td><td>112 m²</td></tr>
+          <tr><td>Pasillo de feria (50m lineales, 3m ancho)</td><td>150 m²</td><td>15%</td><td>173 m²</td></tr>
+          <tr><td>Salón de <a href="/barcelona/congresos">congreso</a></td><td>200-500 m²</td><td>10%</td><td>220-550 m²</td></tr>
+          <tr><td>Alfombra de <a href="/barcelona/bodas">boda</a> (pasillo)</td><td>15-30 m²</td><td>15%</td><td>17-35 m²</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Cómo calcular espacios irregulares</h2>
+      <p>No todos los espacios son rectangulares. Para formas en L, en U o con ángulos:</p>
+      <ol>
+        <li><strong>Divide el espacio</strong> en rectángulos más pequeños</li>
+        <li><strong>Calcula cada rectángulo</strong> por separado (largo × ancho)</li>
+        <li><strong>Suma los resultados</strong></li>
+        <li><strong>Añade un 15% de margen</strong> (más alto que en espacios regulares porque hay más cortes)</li>
+      </ol>
+
+      <blockquote>
+        <p><strong>Ejemplo práctico:</strong> Un stand en forma de L con una sección de 4×3 m y otra de 2×3 m: (4×3) + (2×3) = 12 + 6 = 18 m². Con 15% de margen: 18 × 1,15 = <strong>20,7 m²</strong>. Con <a href="/productos/rewind-flat">Rewind Flat</a> a 2,10€/m² = aproximadamente 43€.</p>
+      </blockquote>
+
+      <h2>El factor del ancho de rollo</h2>
+      <p>La moqueta Rewind viene en rollos de <strong>2 metros de ancho × 50 metros de largo</strong>. Esto afecta al cálculo:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Ancho del espacio</th>
+            <th>Tiras necesarias</th>
+            <th>Moqueta real usada</th>
+            <th>Desperdicio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2 m o menos</td><td>1 tira</td><td>2 m × largo</td><td>Mínimo</td></tr>
+          <tr><td>2,1 - 4 m</td><td>2 tiras</td><td>4 m × largo</td><td>Hasta 1,9 m de ancho</td></tr>
+          <tr><td>4,1 - 6 m</td><td>3 tiras</td><td>6 m × largo</td><td>Hasta 1,9 m de ancho</td></tr>
+          <tr><td>6,1 - 8 m</td><td>4 tiras</td><td>8 m × largo</td><td>Hasta 1,9 m de ancho</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Consejo:</strong> Si tu stand mide exactamente 4 m de ancho, 2 tiras encajan perfectamente sin desperdicio. Diseña tu espacio en múltiplos de 2 m de ancho siempre que sea posible.</p>
+
+      <h2>Errores comunes al calcular moqueta</h2>
+      <p>Estos son los 5 errores que vemos con más frecuencia:</p>
+      <ol>
+        <li><strong>No contar el margen de corte:</strong> Siempre se pierde algo en cada corte. Un 10% mínimo.</li>
+        <li><strong>Olvidar los laterales:</strong> Si la moqueta sube por los laterales del stand, cuenta esa superficie</li>
+        <li><strong>Medir en centímetros y confundir con metros:</strong> 300 cm = 3 m, no 300 m²</li>
+        <li><strong>No considerar la dirección de las tiras:</strong> El sentido del pelo (en <a href="/productos/rewind-dilour">Dilour</a>) debe ser uniforme</li>
+        <li><strong>Calcular justo, sin margen:</strong> Un rollo puede tener pequeñas variaciones. Siempre pide algo más.</li>
+      </ol>
+
+      <h2>Tabla de precios según superficie</h2>
+      <p>Orientación de costes con moqueta <a href="/productos/rewind-flat">Rewind Flat</a> (desde 2,10€/m²):</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Superficie</th>
+            <th>Precio estimado (Flat)</th>
+            <th>Precio estimado (Dilour)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>10 m²</td><td>21-27€</td><td>41-47€</td></tr>
+          <tr><td>25 m²</td><td>53-66€</td><td>101-116€</td></tr>
+          <tr><td>50 m²</td><td>105-133€</td><td>203-233€</td></tr>
+          <tr><td>100 m²</td><td>210-265€</td><td>405-465€</td></tr>
+          <tr><td>500 m²</td><td>1.050-1.325€</td><td>2.025-2.325€</td></tr>
+        </tbody>
+      </table>
+      <p>Precios IVA no incluido. <a href="/contacto">Solicita presupuesto</a> para cantidades grandes o necesidades especiales.</p>
+
+      <h2>¿Necesitas ayuda con el cálculo?</h2>
+      <p>Si tienes un plano del espacio, envíanoslo por email a <a href="mailto:ventas@disstands.com">ventas@disstands.com</a> y te calculamos la cantidad exacta sin compromiso. También puedes <a href="tel:+34934850085">llamarnos al 934 850 085</a>.</p>
+      <p>Servimos en toda Cataluña: <a href="/moqueta-ecologica-barcelona">Barcelona</a>, <a href="/moqueta-ecologica-girona">Girona</a>, <a href="/moqueta-ecologica-tarragona">Tarragona</a> y <a href="/moqueta-ecologica-lleida">Lleida</a>.</p>
+    `,
+  },
+  {
+    slug: "moqueta-stands-feriales-guia-diseno",
+    title: "Moqueta para stands feriales: guía de diseño y elección de color",
+    description:
+      "Cómo elegir la moqueta perfecta para tu stand: colores por sector, combinaciones que funcionan, errores de diseño a evitar y consejos de instalación profesional.",
+    date: "2025-08-20",
+    updatedAt: "2026-02-25",
+    author: "Disstands",
+    category: "eventos",
+    tags: [
+      "stands feriales",
+      "diseño stands",
+      "colores moqueta",
+      "ferias comerciales",
+      "identidad corporativa",
+      "montaje stands",
+    ],
+    image: "/hero-img/rewind-hero.webp",
+    imageAlt: "Stand ferial con moqueta ecológica Rewind en una feria comercial",
+    readingTime: 10,
+    content: `
+      <p>La moqueta del stand es mucho más que un simple revestimiento de suelo: es una <strong>herramienta de comunicación visual</strong> que refuerza tu marca y condiciona la primera impresión del visitante. Con más de 25 años montando stands en <a href="/moqueta-ecologica-barcelona">Barcelona</a>, en Disstands hemos visto qué funciona y qué no.</p>
+
+      <blockquote>
+        <p><strong>Dato clave:</strong> El 68% de los visitantes de una feria decide si se acerca a un stand en los primeros 3 segundos. El color y acabado del suelo es uno de los elementos que más influye en esa decisión (fuente: UFI Global Exhibition Industry).</p>
+      </blockquote>
+
+      <h2>Colores recomendados por sector profesional</h2>
+      <p>Después de miles de instalaciones en recintos como Fira Barcelona, CCIB y ferias en toda <a href="/moqueta-ecologica-girona">Girona</a>, <a href="/moqueta-ecologica-tarragona">Tarragona</a> y <a href="/moqueta-ecologica-lleida">Lleida</a>, estas son nuestras recomendaciones:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Sector</th>
+            <th>Colores principales</th>
+            <th>Por qué funcionan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Tecnología / IT</strong></td><td>Gris Medio, Negro, Blanco</td><td>Transmiten modernidad y limpieza visual</td></tr>
+          <tr><td><strong>Salud / Farmacia</strong></td><td>Azul Royal, Blanco, Verde Claro</td><td>Asociados a confianza, higiene y naturaleza</td></tr>
+          <tr><td><strong>Alimentación</strong></td><td>Rojo, Beige, Verde Césped</td><td>Colores cálidos que estimulan el apetito</td></tr>
+          <tr><td><strong>Automoción</strong></td><td>Negro, Gris Oscuro, Rojo</td><td>Elegancia y dinamismo</td></tr>
+          <tr><td><strong>Moda / Lujo</strong></td><td>Negro, Burdeos, Gris Jaspe</td><td>Sofisticación y exclusividad</td></tr>
+          <tr><td><strong>Energía / Sostenibilidad</strong></td><td>Verde Césped, Beige, Gris Claro</td><td>Vinculación con naturaleza y medio ambiente</td></tr>
+          <tr><td><strong>Finanzas / Banca</strong></td><td>Azul Marino, Gris Medio, Beige</td><td>Seriedad, estabilidad y profesionalidad</td></tr>
+          <tr><td><strong>Turismo / Hostelería</strong></td><td>Beige, Arena, Azul Cielo</td><td>Calidez y evocación vacacional</td></tr>
+        </tbody>
+      </table>
+
+      <h2>3 reglas de diseño para el suelo de tu stand</h2>
+
+      <h3>Regla 1: El suelo debe contrastar con las paredes</h3>
+      <p>Si tu stand tiene paredes blancas, evita un suelo blanco. El visitante necesita referencias visuales para percibir los límites del espacio. Un suelo gris medio o negro con paredes claras crea una base elegante.</p>
+
+      <h3>Regla 2: Un solo color de suelo, máximo dos</h3>
+      <p>Los diseños de suelo con demasiados colores distraen y dan sensación de desorden. La excepción son los <strong>pasillos direccionales</strong>: una franja de color diferente puede guiar al visitante hacia el interior del stand.</p>
+
+      <h3>Regla 3: Piensa en el mantenimiento durante el evento</h3>
+      <p>Los colores claros (Blanco, Beige claro) se ensucian más rápido con el tránsito. Si tu evento dura 3+ días, considera un tono medio que disimule las pisadas.</p>
+
+      <h2>Rewind Flat vs Dilour para stands</h2>
+      <p>La elección entre <a href="/productos/rewind-flat">Flat</a> y <a href="/productos/rewind-dilour">Dilour</a> depende del posicionamiento de tu marca:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Criterio</th>
+            <th>Rewind Flat</th>
+            <th>Rewind Dilour</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Aspecto visual</strong></td><td>Profesional, funcional</td><td>Premium, aterciopelado</td></tr>
+          <tr><td><strong>Sensación al pisar</strong></td><td>Firme, uniforme</td><td>Suave, acolchada</td></tr>
+          <tr><td><strong>Ideal para</strong></td><td><a href="/barcelona/ferias">Ferias</a> con alto tránsito</td><td>Stands VIP, showrooms, zonas lounge</td></tr>
+          <tr><td><strong>Absorción acústica</strong></td><td>Baja</td><td>~20 dB (ideal para <a href="/barcelona/congresos">congresos</a>)</td></tr>
+          <tr><td><strong>Precio</strong></td><td>Desde 2,10€/m²</td><td>Desde 4,05€/m²</td></tr>
+        </tbody>
+      </table>
+
+      <blockquote>
+        <p><strong>Combinación profesional:</strong> Muchos montadores usan Dilour en la zona de reuniones y Flat en el resto del stand. Ambas líneas comparten colores, así que se pueden combinar con acabados diferentes manteniendo el mismo tono.</p>
+      </blockquote>
+
+      <h2>Errores de diseño más comunes</h2>
+      <p>Estos son los errores que vemos repetirse en ferias:</p>
+      <ol>
+        <li><strong>Elegir el color sin ver muestra física:</strong> Los colores en pantalla no coinciden con la realidad. Pide muestras gratuitas</li>
+        <li><strong>No verificar la dirección del pelo:</strong> En Dilour, todas las tiras deben ir en la misma dirección para que el color se vea uniforme</li>
+        <li><strong>Montar la moqueta con arrugas:</strong> Una instalación profesional evita los pliegues que son antiestéticos y peligrosos</li>
+        <li><strong>Ignorar las juntas entre tiras:</strong> Las juntas visibles dan aspecto descuidado. Un instalador experto las hace prácticamente invisibles</li>
+        <li><strong>Olvidar la <a href="/blog/normativa-ignifuga-bfl-s1-moqueta-ferial">certificación Bfl-s1</a>:</strong> Sin ella, el recinto ferial puede impedir el montaje</li>
+      </ol>
+
+      <h2>Instalación profesional: por qué marca la diferencia</h2>
+      <p>Nuestro equipo de instaladores en Disstands monta stands en recintos de toda Cataluña: <a href="/comarcas/barcelones">Barcelonès</a>, <a href="/comarcas/girones">Gironès</a>, <a href="/comarcas/tarragones">Tarragonès</a> y <a href="/comarcas/segria">Segrià</a>. El servicio profesional incluye:</p>
+      <ul>
+        <li>Medición y corte a medida en obra</li>
+        <li>Fijación con cinta de doble cara removible (no daña el suelo)</li>
+        <li>Juntas invisibles entre tiras</li>
+        <li>Dirección uniforme del pelo en toda la superficie</li>
+        <li>Recogida y <a href="/blog/economia-circular-moqueta-reciclable-eventos">reciclaje post-evento</a></li>
+      </ul>
+      <p><strong>Importante:</strong> El servicio de montaje está disponible exclusivamente para profesionales del sector ferial.</p>
+
+      <h2>Solicita muestras gratuitas</h2>
+      <p>Antes de tomar una decisión, te enviamos muestras de los colores que te interesen sin coste. <a href="/contacto">Contacta con nosotros</a> indicando los colores que necesitas y te las enviamos en 24-48h. O llámanos al <a href="tel:+34934850085">934 850 085</a>.</p>
+    `,
+  },
+  {
+    slug: "ventajas-moqueta-sin-latex-eventos",
+    title: "5 ventajas de la moqueta sin látex para eventos y ferias",
+    description:
+      "Por qué elegir moqueta sin látex: salud, reciclabilidad, rendimiento y coste. Comparativa técnica con moqueta convencional con datos reales.",
+    date: "2025-09-10",
+    updatedAt: "2026-02-25",
+    author: "Disstands",
+    category: "productos",
+    tags: [
+      "sin látex",
+      "moqueta sin látex",
+      "alergias",
+      "reciclable",
+      "polipropileno",
+      "moqueta saludable",
+      "VOC",
+    ],
+    image: "/hero-img/hero-img-2.webp",
+    imageAlt: "Moqueta ecológica sin látex Rewind para eventos y ferias",
+    readingTime: 8,
+    content: `
+      <p>El <strong>látex</strong> ha sido durante décadas el componente principal del backing (reverso) de las moquetas convencionales. Pero tiene un problema grave: convierte la moqueta en un residuo no reciclable y puede afectar la calidad del aire interior. La moqueta Rewind elimina el látex por completo. Estas son las 5 ventajas principales.</p>
+
+      <blockquote>
+        <p><strong>En resumen:</strong> Sin látex = 100% reciclable + mejor calidad del aire + menos emisiones en fabricación + mismo rendimiento. No hay compromiso.</p>
+      </blockquote>
+
+      <h2>1. Reciclabilidad real al 100%</h2>
+      <p>Esta es la ventaja más importante desde el punto de vista ambiental. La moqueta convencional mezcla polipropileno con látex, creando un material compuesto que <strong>no se puede separar para reciclar</strong>.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th>Moqueta con látex</th>
+            <th>Moqueta Rewind (sin látex)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Composición</strong></td><td>Polipropileno + látex + aditivos</td><td>100% polipropileno (monomaterial)</td></tr>
+          <tr><td><strong>Reciclable</strong></td><td>No (multimaterial inseparable)</td><td>Sí, 100%</td></tr>
+          <tr><td><strong>Destino post-evento</strong></td><td>Vertedero o incineradora</td><td>Reciclaje en granza de PP</td></tr>
+          <tr><td><strong>Certificado de reciclaje</strong></td><td>No disponible</td><td>Sí, para informes ESG</td></tr>
+        </tbody>
+      </table>
+
+      <p>Al ser monomaterial, la moqueta Rewind se tritura y transforma en <strong>granza de polipropileno</strong> que se usa para fabricar nuevos productos. Más detalles en nuestro artículo sobre <a href="/blog/economia-circular-moqueta-reciclable-eventos">economía circular en eventos</a>.</p>
+
+      <h2>2. Mejor calidad del aire interior</h2>
+      <p>El látex es una fuente conocida de <strong>compuestos orgánicos volátiles (VOC)</strong>, sustancias que se liberan al aire y pueden causar:</p>
+      <ul>
+        <li>Irritación de ojos, nariz y garganta</li>
+        <li>Dolor de cabeza y fatiga</li>
+        <li>Reacciones alérgicas en personas sensibles al látex</li>
+        <li>Síndrome del edificio enfermo en exposiciones prolongadas</li>
+      </ul>
+      <p>En un <a href="/barcelona/congresos">congreso</a> o <a href="/barcelona/ferias">feria</a> con miles de visitantes, la calidad del aire es fundamental. La moqueta Rewind no contiene látex ni solventes, reduciendo drásticamente las emisiones de VOC.</p>
+
+      <blockquote>
+        <p><strong>Dato:</strong> Se estima que entre el 1% y el 6% de la población tiene sensibilidad al látex. En un evento con 10.000 visitantes, podrían ser hasta 600 personas afectadas por una moqueta convencional.</p>
+      </blockquote>
+
+      <h2>3. Fabricación más limpia: -80% energía, 0 agua</h2>
+      <p>El proceso de aplicación del látex al backing de la moqueta convencional requiere grandes cantidades de agua y energía para el secado. Al eliminar este paso:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Recurso</th>
+            <th>Reducción vs. convencional</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Consumo de agua</strong></td><td>100% (0 litros utilizados)</td></tr>
+          <tr><td><strong>Consumo energético</strong></td><td>-80%</td></tr>
+          <tr><td><strong>Consumo de gas</strong></td><td>-83%</td></tr>
+          <tr><td><strong>Emisiones de CO₂</strong></td><td>-35%</td></tr>
+        </tbody>
+      </table>
+
+      <p>Estos datos están respaldados por los análisis de ciclo de vida del producto y se reflejan en el certificado de reciclaje que proporcionamos con cada proyecto.</p>
+
+      <h2>4. Mismo rendimiento, misma certificación</h2>
+      <p>Eliminar el látex no significa perder prestaciones. La moqueta Rewind mantiene:</p>
+      <ul>
+        <li><strong>Certificación <a href="/blog/normativa-ignifuga-bfl-s1-moqueta-ferial">Bfl-s1</a></strong> de reacción al fuego, por las propiedades intrínsecas del polipropileno</li>
+        <li><strong>Resistencia al tránsito intenso</strong>, probada en ferias como el Mobile World Congress</li>
+        <li><strong>Estabilidad dimensional</strong> sin deformaciones ni encogimientos</li>
+        <li><strong>30 colores en stock permanente</strong> para cualquier necesidad de diseño</li>
+        <li><strong>Dos acabados</strong>: <a href="/productos/rewind-flat">Flat</a> (punzonada, 2mm) y <a href="/productos/rewind-dilour">Dilour</a> (aterciopelada, 4mm)</li>
+      </ul>
+
+      <h2>5. Precio competitivo</h2>
+      <p>Una preocupación habitual es que los productos ecológicos sean más caros. En el caso de Rewind, al simplificar el proceso de fabricación (menos pasos, menos materias primas), el precio es <strong>competitivo frente a la moqueta convencional</strong>:</p>
+      <ul>
+        <li><a href="/productos/rewind-flat">Rewind Flat</a>: desde <strong>2,10€/m²</strong></li>
+        <li><a href="/productos/rewind-dilour">Rewind Dilour</a>: desde <strong>4,05€/m²</strong></li>
+      </ul>
+      <p>A esto hay que sumar el ahorro potencial en gestión de residuos: con moqueta convencional pagas para enviarla a vertedero; con Rewind, el reciclaje cierra el ciclo.</p>
+
+      <h2>Conclusión: sin látex es mejor en todos los aspectos</h2>
+      <p>La moqueta sin látex no es una moda ni un compromiso. Es una mejora técnica, ambiental y económica respecto a la moqueta convencional. Rewind lo demuestra en cada instalación que hacemos en <a href="/moqueta-ecologica-barcelona">Barcelona</a>, <a href="/moqueta-ecologica-girona">Girona</a>, <a href="/moqueta-ecologica-tarragona">Tarragona</a> y <a href="/moqueta-ecologica-lleida">Lleida</a>.</p>
+      <p><a href="/contacto">Solicita presupuesto</a> o <a href="tel:+34934850085">llámanos al 934 850 085</a> para más información.</p>
+    `,
+  },
+  {
     slug: "guia-elegir-moqueta-ecologica-evento",
     title: "Guía completa para elegir moqueta ecológica para tu evento [2025]",
     description:

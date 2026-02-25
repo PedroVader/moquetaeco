@@ -112,6 +112,7 @@ URLS=$(cat <<'URLS_END'
 "https://www.moquetaecologica.com/blog/economia-circular-moqueta-reciclable-eventos",
 "https://www.moquetaecologica.com/blog/normativa-ignifuga-bfl-s1-moqueta-ferial",
 "https://www.moquetaecologica.com/blog/guia-elegir-moqueta-ecologica-evento",
+"https://www.moquetaecologica.com/contacto",
 "https://www.moquetaecologica.com/mapa-del-sitio"
 URLS_END
 )

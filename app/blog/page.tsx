@@ -61,8 +61,20 @@ export default function BlogPage() {
       />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary to-primary-light text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative text-white py-16 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-img/hero-img-2.webp"
+            alt="Blog moqueta ecológica"
+            width={1600}
+            height={900}
+            className="object-cover w-full h-full"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
             Blog y Guías
           </h1>

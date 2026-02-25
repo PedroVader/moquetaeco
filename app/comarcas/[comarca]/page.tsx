@@ -17,8 +17,9 @@ import {
   getComarcaBySlug,
   getMunicipiosByComarca,
   tiposUso,
-  faqsGenerales,
+  empresa,
 } from "@/lib/data";
+import { getFaqsComarca } from "@/lib/data/faqs";
 import { generarMetadataComarca } from "@/lib/seo/metadata";
 import { generarContenidoComarca } from "@/lib/generators/contenido";
 import {
@@ -29,7 +30,7 @@ import {
 } from "@/lib/seo/schema";
 import { moquetaFerialEco } from "@/lib/data/productos";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { MapPinIcon, CalendarIcon, BuildingOffice2Icon } from "@heroicons/react/24/outline";
+import { MapPinIcon, CalendarIcon, BuildingOffice2Icon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   params: Promise<{
@@ -70,10 +71,11 @@ export default async function ComarcaPage({ params }: Props) {
   const { comarca, provincia } = result;
   const contenido = generarContenidoComarca(comarca, provincia);
   const municipiosComarca = getMunicipiosByComarca(comarca.slug);
+  const faqs = getFaqsComarca(comarca.nombre, provincia.nombre);
 
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
-  const faqSchema = generarFAQSchema(faqsGenerales.slice(0, 5));
+  const faqSchema = generarFAQSchema(faqs);
   const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
     { name: "Moqueta Ecológica", url: "https://www.moquetaecologica.com/" },
@@ -281,9 +283,39 @@ export default async function ComarcaPage({ params }: Props) {
       {/* Enlaces relacionados */}
       <EnlacesRelacionados grupos={gruposEnlaces} />
 
+      {/* Contacto directo */}
+      <section className="py-12 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 text-center">
+            <h2 className="text-2xl font-bold text-dark mb-2">
+              ¿Necesitas moqueta ecológica en {comarca.nombre}?
+            </h2>
+            <p className="text-slate mb-6">
+              Llámanos o escríbenos para presupuesto sin compromiso. Respuesta en menos de 24h.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href={`tel:${empresa.telefonoInternacional}`}
+                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-light text-white font-bold py-3 px-6 rounded-xl transition"
+              >
+                <PhoneIcon className="w-5 h-5" />
+                {empresa.telefono}
+              </a>
+              <a
+                href={`mailto:${empresa.emailVentas}`}
+                className="inline-flex items-center justify-center gap-2 bg-white border-2 border-primary text-primary font-bold py-3 px-6 rounded-xl hover:bg-primary/5 transition"
+              >
+                <EnvelopeIcon className="w-5 h-5" />
+                {empresa.emailVentas}
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <FAQ
-        faqs={faqsGenerales.slice(0, 5)}
+        faqs={faqs}
         titulo={`Preguntas sobre moqueta ecológica en ${comarca.nombre}`}
       />
 

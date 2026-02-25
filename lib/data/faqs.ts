@@ -142,3 +142,27 @@ export function getFaqsProvincia(provincia: string): FAQ[] {
   };
   return [faqsProvincia, ...faqsGenerales.slice(0, 5)];
 }
+
+export function getFaqsComarca(comarca: string, provincia: string): FAQ[] {
+  const faqComarca: FAQ = {
+    pregunta: `¿Servís moqueta ecológica en la comarca de ${comarca}?`,
+    respuesta: `Sí, realizamos entregas de moqueta ecológica Rewind en toda la comarca de ${comarca} (${provincia}). Disponemos de stock permanente en Barcelona con entregas en 24-48h según ubicación.`,
+  };
+  const faqInstalacion: FAQ = {
+    pregunta: `¿Ofrecéis instalación profesional en ${comarca}?`,
+    respuesta: `Sí, nuestro equipo de instaladores con más de 25 años de experiencia se desplaza a cualquier punto de ${comarca}. El servicio de montaje está disponible para profesionales del sector ferial y eventos.`,
+  };
+  return [faqComarca, faqInstalacion, ...faqsGenerales.slice(0, 4)];
+}
+
+export function getFaqsMunicipio(municipio: string, provincia: string): FAQ[] {
+  const faqMunicipio: FAQ = {
+    pregunta: `¿Puedo comprar moqueta ecológica en ${municipio}?`,
+    respuesta: `Sí, enviamos moqueta ecológica Rewind a ${municipio} (${provincia}). Tanto profesionales como particulares pueden adquirir nuestros productos. Entrega desde Barcelona en 24-48h.`,
+  };
+  const faqPresupuesto: FAQ = {
+    pregunta: `¿Cómo solicito presupuesto para un evento en ${municipio}?`,
+    respuesta: `Puedes llamarnos al 934 850 085, escribirnos a ventas@disstands.com o rellenar el formulario de contacto en nuestra web. Te enviaremos presupuesto sin compromiso en menos de 24h.`,
+  };
+  return [faqMunicipio, faqPresupuesto, ...faqsGenerales.slice(0, 4)];
+}

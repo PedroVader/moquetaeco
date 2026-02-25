@@ -382,10 +382,12 @@ export function ProductoDetalle({
         {/* Imagen de fondo con blur */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-img/rewind-hero.jpg"
+            src="/hero-img/rewind-hero.webp"
             alt="Fondo moqueta ecológica"
-            fill
-            className="object-cover blur-[2px] scale-105"
+            width={1920}
+            height={1278}
+            className="object-cover blur-[2px] scale-105 w-full h-full"
+            sizes="100vw"
           />
         </div>
 

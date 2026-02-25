@@ -149,8 +149,20 @@ export default async function BlogPostPage({
 
       <article>
         {/* Header */}
-        <div className="bg-gradient-to-br from-primary to-primary-light text-white py-12">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative text-white py-12 overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src={post.image || "/hero-img/hero-img-2.webp"}
+              alt=""
+              width={1600}
+              height={900}
+              className="object-cover w-full h-full"
+              priority
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-black/60" />
+          </div>
+          <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-white/80 hover:text-white transition mb-6"
@@ -204,7 +216,7 @@ export default async function BlogPostPage({
         {/* Content */}
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div
-            className="prose prose-lg max-w-none prose-headings:text-dark prose-headings:font-bold prose-p:text-slate prose-p:leading-relaxed prose-a:text-primary prose-a:font-semibold hover:prose-a:text-primary-light prose-li:text-slate prose-strong:text-dark"
+            className="prose prose-lg max-w-none prose-headings:text-dark prose-headings:font-bold prose-p:text-slate prose-p:leading-relaxed prose-a:text-primary prose-a:font-semibold hover:prose-a:text-primary-light prose-li:text-slate prose-strong:text-dark prose-table:w-full prose-table:border-collapse prose-th:bg-primary/10 prose-th:text-dark prose-th:font-semibold prose-th:text-left prose-th:px-4 prose-th:py-3 prose-th:border prose-th:border-gray-200 prose-td:px-4 prose-td:py-2.5 prose-td:border prose-td:border-gray-200 prose-td:text-slate prose-tr:even:bg-light/50 prose-blockquote:bg-primary/5 prose-blockquote:border-l-primary prose-blockquote:rounded-r-xl prose-blockquote:px-6 prose-blockquote:py-4 prose-blockquote:not-italic"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 

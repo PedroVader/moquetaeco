@@ -27,11 +27,13 @@ export function Hero({
       {mostrarImagen && (
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero-img/hero-img-2.jpeg"
+            src="/hero-img/hero-img-2.webp"
             alt={`Moqueta ecológica Rewind${ubicacion ? ` en ${ubicacion}` : ""} - instalación profesional para ferias y eventos`}
-            fill
-            className="object-cover blur-[2px] scale-105"
+            width={1600}
+            height={900}
+            className="object-cover blur-[2px] scale-105 w-full h-full"
             priority
+            sizes="100vw"
           />
           {/* Overlay oscuro sutil para legibilidad */}
           <div className="absolute inset-0 bg-black/40" />

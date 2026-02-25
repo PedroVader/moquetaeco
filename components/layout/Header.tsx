@@ -106,7 +106,7 @@ export function Header() {
               alt="Moqueta Ecológica - Disstands"
               width={440}
               height={112}
-              className="h-16 sm:h-28 w-auto"
+              className="h-10 sm:h-28 w-auto"
               priority
             />
           </Link>

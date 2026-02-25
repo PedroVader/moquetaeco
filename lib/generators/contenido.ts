@@ -60,6 +60,12 @@ export function generarContenidoMunicipio(
       ? ` Entre sus principales espacios para eventos destacan **${municipio.zonasEventos.slice(0, 2).join("** y **")}**.`
       : "";
 
+  // Third paragraph varies by municipality characteristics
+  const tercerParrafo = generarTercerParrafoMunicipio(municipio, provincia, comarcaNombre);
+
+  // Benefits vary by municipality size and type
+  const beneficios = generarBeneficiosMunicipio(municipio, provincia);
+
   return {
     title: `Moqueta Ecológica ${municipio.nombre} | Eventos y Ferias | Disstands`,
 
@@ -74,18 +80,92 @@ export function generarContenidoMunicipio(
 
       `${poblacionTexto}${zonasTexto} Disstands suministra moqueta ecológica Rewind con entrega directa desde Barcelona y servicio de instalación profesional.`,
 
-      `Nuestra moqueta Rewind es 100% reciclable, sin látex, y cumple con la certificación ignífuga Bfl-s1 exigida en todos los recintos feriales. Disponible en 30 colores para adaptarse a cualquier identidad corporativa.`,
+      tercerParrafo,
     ],
 
-    beneficiosLocales: [
-      `Entrega rápida en ${municipio.nombre}`,
-      `Instalación profesional disponible`,
-      `30 colores en stock permanente`,
-      `Desde 2,10€/m²`,
-    ],
+    beneficiosLocales: beneficios,
 
     ctaText: `Solicita presupuesto para tu evento en ${municipio.nombre}`,
   };
+}
+
+function generarTercerParrafoMunicipio(
+  municipio: Municipio,
+  provincia: Provincia,
+  comarcaNombre?: string
+): string {
+  const pop = municipio.poblacion;
+  const zonas = municipio.zonasEventos;
+
+  // Large cities (>100k) - emphasize volume + corporate events
+  if (pop > 100000) {
+    return `Como uno de los principales núcleos urbanos de ${provincia.nombre}, ${municipio.nombre} genera una alta demanda de moqueta ferial para **eventos corporativos, ferias sectoriales y congresos**. Nuestra moqueta Rewind, certificada Bfl-s1 y disponible en 30 colores, se adapta a proyectos de cualquier escala.`;
+  }
+
+  // Medium cities (30k-100k) - emphasize versatility + growing market
+  if (pop > 30000) {
+    const zonaRef = zonas.length > 0
+      ? ` Espacios como ${zonas[0]} requieren soluciones que cumplan la normativa ignífuga sin renunciar a la estética.`
+      : "";
+    return `${municipio.nombre} cuenta con un tejido empresarial activo que impulsa ferias, congresos y eventos durante todo el año.${zonaRef} La moqueta Rewind se fabrica **sin látex**, es 100% reciclable y está disponible en dos acabados: Flat (ferial) y Dilour (premium).`;
+  }
+
+  // Coastal/tourist towns - emphasize seasonal events + weddings
+  const isCoastal = ["sitges", "blanes", "lloret", "cambrils", "salou", "palamos", "sant-feliu-guixols", "palafrugell", "roses", "vila-seca"].includes(municipio.slug);
+  if (isCoastal) {
+    return `Como municipio con fuerte actividad turística, ${municipio.nombre} acoge **bodas, eventos al aire libre y ferias estacionales** que necesitan moqueta de calidad. Rewind cumple la certificación ignífuga Bfl-s1 y su fabricación 100% reciclable la convierte en la opción más sostenible para eventos en entornos naturales.`;
+  }
+
+  // Mountain/inland towns - emphasize local fairs + cultural events
+  const comarcaRef = comarcaNombre ? ` en la comarca de ${comarcaNombre}` : "";
+  if (pop > 0 && pop <= 30000) {
+    return `${municipio.nombre}${comarcaRef} celebra **ferias locales, mercados y eventos culturales** que requieren pavimento profesional. La moqueta Rewind ofrece certificación Bfl-s1, 30 colores disponibles y un precio desde 2,10€/m² que se adapta a presupuestos de todo tipo.`;
+  }
+
+  // Fallback
+  return `Disstands suministra moqueta ecológica Rewind en ${municipio.nombre} con entrega desde Barcelona. Certificada Bfl-s1, sin látex, 100% reciclable y disponible en 30 colores para adaptarse a cualquier evento o espacio.`;
+}
+
+function generarBeneficiosMunicipio(
+  municipio: Municipio,
+  provincia: Provincia
+): string[] {
+  const pop = municipio.poblacion;
+  const isCoastal = ["sitges", "blanes", "lloret", "cambrils", "salou", "palamos", "sant-feliu-guixols", "palafrugell", "roses", "vila-seca"].includes(municipio.slug);
+
+  if (pop > 100000) {
+    return [
+      `Entrega en 24-48h en ${municipio.nombre}`,
+      `Montaje profesional para grandes superficies`,
+      `Desde 2,10€/m² en pedidos a medida`,
+      `Recogida y reciclaje post-evento incluido`,
+    ];
+  }
+
+  if (isCoastal) {
+    return [
+      `Entrega directa en ${municipio.nombre}`,
+      `Ideal para bodas y eventos al aire libre`,
+      `Certificación Bfl-s1 para espacios públicos`,
+      `30 colores adaptados a tu evento`,
+    ];
+  }
+
+  if (pop > 30000) {
+    return [
+      `Servicio rápido en ${municipio.nombre}`,
+      `Instalación profesional disponible`,
+      `30 colores en stock permanente`,
+      `Asesoramiento técnico gratuito`,
+    ];
+  }
+
+  return [
+    `Envío a ${municipio.nombre} desde Barcelona`,
+    `Sin pedido mínimo para profesionales`,
+    `Certificación ignífuga Bfl-s1`,
+    `Desde 2,10€/m² — precio directo de fábrica`,
+  ];
 }
 
 const usoTextos: Record<

@@ -32,7 +32,7 @@ import {
 } from "@/lib/seo/schema";
 import { moquetaFerialEco } from "@/lib/data/productos";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
-import { MapPinIcon, TruckIcon, ClockIcon, PhoneIcon, EnvelopeIcon } from "@heroicons/react/24/outline";
+import { MapPinIcon, TruckIcon, ClockIcon, PhoneIcon, EnvelopeIcon, BuildingOffice2Icon } from "@heroicons/react/24/outline";
 
 interface Props {
   params: Promise<{
@@ -232,6 +232,33 @@ export default async function MunicipioPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* Espacios para eventos */}
+      {municipio.zonasEventos.length > 0 && (
+        <section className="py-12 bg-light">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-dark mb-6">
+              Espacios para eventos en {municipio.nombre}
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {municipio.zonasEventos.map((zona) => (
+                <div
+                  key={zona}
+                  className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 flex items-start gap-3"
+                >
+                  <BuildingOffice2Icon className="w-6 h-6 text-primary shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-semibold text-dark text-sm">{zona}</span>
+                    <p className="text-xs text-slate mt-1">
+                      Instalación de moqueta ecológica disponible
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Productos */}
       <ProductShowcase />

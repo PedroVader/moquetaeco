@@ -1347,6 +1347,200 @@ export const topMunicipios: Municipio[] = [
       "Salou es la capital de la Costa Daurada, junto a PortAventura World. Su capacidad hotelera y el PortAventura Convention Centre la convierten en destino para convenciones y eventos de gran formato.",
     zonasEventos: ["PortAventura Convention Centre", "Hotels de Salou", "Passeig Jaume I"],
   },
+  // ---- Barcelona: nuevos municipios ----
+  {
+    slug: "martorell",
+    nombre: "Martorell",
+    provincia: "barcelona",
+    poblacion: 28975,
+    comarca: "baix-llobregat",
+    descripcion:
+      "Martorell es un nudo de comunicaciones clave del Baix Llobregat, con importante actividad industrial (SEAT/CUPRA). Los eventos corporativos e industriales generan demanda constante de moqueta ferial.",
+    zonasEventos: ["Polígon Industrial", "Centre Cultural Municipal", "Hotels de l'àrea SEAT"],
+  },
+  {
+    slug: "mollet",
+    nombre: "Mollet del Vallès",
+    provincia: "barcelona",
+    poblacion: 51912,
+    comarca: "valles-oriental",
+    descripcion:
+      "Mollet del Vallès es la capital del Baix Vallès, con excelente conexión ferroviaria y una actividad económica diversificada. Acoge eventos comarcales y corporativos a lo largo de todo el año.",
+    zonasEventos: ["Can Mulà", "Mercat Vell", "Centre Cultural La Marineta"],
+  },
+  {
+    slug: "sant-adria",
+    nombre: "Sant Adrià de Besòs",
+    provincia: "barcelona",
+    poblacion: 37741,
+    comarca: "barcelones",
+    descripcion:
+      "Sant Adrià de Besòs limita directamente con Barcelona y alberga el Fòrum, una de las zonas de eventos más grandes de la ciudad. Ideal para grandes ferias, congresos y festivales.",
+    zonasEventos: ["Recinte del Fòrum", "Parc del Fòrum", "Centre Cívic La Mina"],
+  },
+  {
+    slug: "sitges",
+    nombre: "Sitges",
+    provincia: "barcelona",
+    poblacion: 29733,
+    comarca: "garraf",
+    descripcion:
+      "Sitges es destino premium para eventos de lujo, bodas y festivales internacionales. Su oferta hotelera de alto standing y espacios singulares la convierten en referencia para eventos exclusivos en la costa barcelonesa.",
+    zonasEventos: ["Hotels del passeig marítim", "Palau de Maricel", "Melia Sitges", "Centre de Congressos"],
+  },
+  {
+    slug: "berga",
+    nombre: "Berga",
+    provincia: "barcelona",
+    poblacion: 16164,
+    comarca: "bergueda",
+    descripcion:
+      "Berga es la capital del Berguedà, famosa por la Patum (Patrimonio UNESCO). Los eventos culturales y festivos generan una demanda especial de moqueta para espacios institucionales y actos públicos.",
+    zonasEventos: ["Plaça de Sant Pere (La Patum)", "Teatre de l'Ateneu", "Espai Viu"],
+  },
+  // ---- Girona: nuevos municipios ----
+  {
+    slug: "olot",
+    nombre: "Olot",
+    provincia: "girona",
+    poblacion: 34745,
+    comarca: "garrotxa",
+    descripcion:
+      "Olot es la capital de la Garrotxa, zona volcánica con una potente actividad industrial y gastronómica. Acoge ferias comarcales, eventos de producto local y congresos de turismo rural.",
+    zonasEventos: ["Recinte Firal d'Olot", "Museu dels Volcans", "Hotels del centre"],
+  },
+  {
+    slug: "palamos",
+    nombre: "Palamós",
+    provincia: "girona",
+    poblacion: 18057,
+    comarca: "baix-emporda",
+    descripcion:
+      "Palamós es referencia en la Costa Brava por su puerto, su gamba y sus eventos gastronómicos. El Espai del Peix y los hoteles de la costa acogen eventos de turismo y gastronomía.",
+    zonasEventos: ["Espai del Peix", "Port de Palamós", "Hotels de la costa"],
+  },
+  {
+    slug: "sant-feliu-guixols",
+    nombre: "Sant Feliu de Guíxols",
+    provincia: "girona",
+    poblacion: 21968,
+    comarca: "baix-emporda",
+    descripcion:
+      "Sant Feliu de Guíxols es la capital económica del Baix Empordà costero. Su Casino de la Constància (espacio modernista) y el paseo marítimo son escenarios habituales de eventos y ferias.",
+    zonasEventos: ["Casino de la Constància", "Passeig del Mar", "Espai Port"],
+  },
+  {
+    slug: "palafrugell",
+    nombre: "Palafrugell",
+    provincia: "girona",
+    poblacion: 23162,
+    comarca: "baix-emporda",
+    descripcion:
+      "Palafrugell engloba Calella, Llafranc y Tamariu, tres de las calas más exclusivas de la Costa Brava. Los eventos de alto standing, bodas y congresos boutique son su especialidad.",
+    zonasEventos: ["Jardí Botànic de Cap Roig", "Hotels boutique de Calella", "Centre Cultural"],
+  },
+  {
+    slug: "roses",
+    nombre: "Roses",
+    provincia: "girona",
+    poblacion: 20217,
+    comarca: "alt-emporda",
+    descripcion:
+      "Roses combina turismo de costa con patrimonio histórico (Ciutadella). Su capacidad hotelera y la proximidad al Cap de Creus la hacen atractiva para convenciones y eventos corporativos.",
+    zonasEventos: ["Ciutadella de Roses", "Recinte Firal", "Hotels del passeig marítim"],
+  },
+  // ---- Tarragona: nuevos municipios ----
+  {
+    slug: "valls",
+    nombre: "Valls",
+    provincia: "tarragona",
+    poblacion: 24507,
+    comarca: "alt-camp",
+    descripcion:
+      "Valls es la capital del Alt Camp y cuna de los castellers. La Fiesta Mayor y la Calçotada son eventos de proyección internacional que requieren instalaciones feriales y revestimientos para espacios públicos.",
+    zonasEventos: ["Plaça del Blat", "Recinte Firal de Valls", "Pati de l'Antic Hospital"],
+  },
+  {
+    slug: "el-vendrell",
+    nombre: "El Vendrell",
+    provincia: "tarragona",
+    poblacion: 37236,
+    comarca: "baix-penedes",
+    descripcion:
+      "El Vendrell es la capital del Baix Penedès, con crecimiento demográfico sostenido y una actividad comercial en auge. Acoge ferias comarcales, eventos vinícolas y actividades culturales ligadas a Pau Casals.",
+    zonasEventos: ["Auditori Pau Casals", "Recinte Firal", "Platja de Coma-ruga"],
+  },
+  {
+    slug: "amposta",
+    nombre: "Amposta",
+    provincia: "tarragona",
+    poblacion: 21795,
+    comarca: "montsia",
+    descripcion:
+      "Amposta es la puerta del Delta de l'Ebre, zona de gran interés ecoturístico. Los eventos de naturaleza, agroalimentarios y de turismo sostenible son su especialidad, en sintonía con la moqueta ecológica.",
+    zonasEventos: ["Museu de les Terres de l'Ebre", "Lo Pati - Centre d'Art", "Hotels del Delta"],
+  },
+  {
+    slug: "vila-seca",
+    nombre: "Vila-seca",
+    provincia: "tarragona",
+    poblacion: 22425,
+    comarca: "tarragones",
+    descripcion:
+      "Vila-seca, junto a la Pineda Platja y PortAventura, es un polo de turismo y convenciones. Su proximidad al PortAventura Convention Centre y a la costa la posiciona como sede de eventos de gran formato.",
+    zonasEventos: ["PortAventura Convention Centre", "Hotels de la Pineda", "Centre Cultural"],
+  },
+  // ---- Lleida: nuevos municipios ----
+  {
+    slug: "balaguer",
+    nombre: "Balaguer",
+    provincia: "lleida",
+    poblacion: 17024,
+    comarca: "noguera",
+    descripcion:
+      "Balaguer es la capital de la Noguera, con un patrimonio medieval notable y una activa vida comercial. La Fira de Sant Miquel y otros eventos comarcales generan demanda de instalaciones feriales.",
+    zonasEventos: ["Recinte Firal", "Claustro de Sant Domènec", "Plaça del Mercadal"],
+  },
+  {
+    slug: "tarrega",
+    nombre: "Tàrrega",
+    provincia: "lleida",
+    poblacion: 16930,
+    comarca: "urgell",
+    descripcion:
+      "Tàrrega es la capital del Urgell y sede de FiraTàrrega, el mercado de artes escénicas de calle más importante de Europa. Este evento internacional posiciona la ciudad como referente en ferias culturales.",
+    zonasEventos: ["Recinte FiraTàrrega", "Teatre Ateneu", "Plaça Major"],
+  },
+  {
+    slug: "mollerussa",
+    nombre: "Mollerussa",
+    provincia: "lleida",
+    poblacion: 12330,
+    comarca: "pla-urgell",
+    descripcion:
+      "Mollerussa es la capital del Pla d'Urgell y sede de la Fira de Mollerussa, una de las ferias agrícolas y ganaderas más importantes de Cataluña. Genera gran demanda estacional de moqueta ferial.",
+    zonasEventos: ["Recinte Firal de Mollerussa", "Pavelló Firal", "Centre Cívic"],
+  },
+  {
+    slug: "la-seu-urgell",
+    nombre: "La Seu d'Urgell",
+    provincia: "lleida",
+    poblacion: 12500,
+    comarca: "alt-urgell",
+    descripcion:
+      "La Seu d'Urgell es la capital del Alt Urgell y sede episcopal con catedral románica. Los eventos culturales, deportivos (Parc Olímpic del Segre) y turísticos del Pirineo generan demanda de moqueta ferial.",
+    zonasEventos: ["Parc Olímpic del Segre", "Claustro de la Catedral", "Palau d'Esports"],
+  },
+  {
+    slug: "vielha",
+    nombre: "Vielha",
+    provincia: "lleida",
+    poblacion: 5619,
+    comarca: "val-aran",
+    descripcion:
+      "Vielha es la capital de la Val d'Aran, destino de turismo de montaña premium. Los eventos de esquí, congresos de turismo y bodas de alta gama en el Pirineo requieren acabados de calidad.",
+    zonasEventos: ["Palai de Gèu", "Hotels de Vielha", "Musèu dera Val d'Aran"],
+  },
 ];
 
 export const tiposUso: TipoUso[] = [

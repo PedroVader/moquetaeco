@@ -18,6 +18,7 @@ const navegacion = [
     submenu: [
       { label: "Rewind Flat - Moqueta Ferial", href: "/productos/rewind-flat" },
       { label: "Rewind Dilour - Moqueta Premium", href: "/productos/rewind-dilour" },
+      { label: "Comparativa Flat vs Dilour", href: "/productos/comparativa" },
     ],
   },
   {

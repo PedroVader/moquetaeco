@@ -54,6 +54,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${BASE_URL}/productos/comparativa`,
+      lastModified: LAST_UPDATE,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 
   // Páginas de provincia

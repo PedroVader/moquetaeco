@@ -12,6 +12,7 @@ URLS=$(cat <<'URLS_END'
 "https://www.moquetaecologica.com/productos",
 "https://www.moquetaecologica.com/productos/rewind-flat",
 "https://www.moquetaecologica.com/productos/rewind-dilour",
+"https://www.moquetaecologica.com/productos/comparativa",
 "https://www.moquetaecologica.com/moqueta-ecologica-barcelona",
 "https://www.moquetaecologica.com/moqueta-ecologica-girona",
 "https://www.moquetaecologica.com/moqueta-ecologica-tarragona",

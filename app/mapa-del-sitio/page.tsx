@@ -86,6 +86,14 @@ export default function MapaDelSitio() {
                 </li>
                 <li>
                   <Link
+                    href="/productos/comparativa"
+                    className="text-primary hover:underline"
+                  >
+                    Comparativa Flat vs Dilour
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/empresa"
                     className="text-primary hover:underline"
                   >

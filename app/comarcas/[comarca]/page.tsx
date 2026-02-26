@@ -10,6 +10,7 @@ import {
   FAQ,
   CTABand,
   EnlacesRelacionados,
+  Testimonios,
 } from "@/components/sections";
 import type { GrupoEnlaces } from "@/components/sections/EnlacesRelacionados";
 import {
@@ -279,6 +280,9 @@ export default async function ComarcaPage({ params }: Props) {
 
       {/* Certificaciones */}
       <Certificaciones />
+
+      {/* Testimonios */}
+      <Testimonios />
 
       {/* Enlaces relacionados */}
       <EnlacesRelacionados grupos={gruposEnlaces} />

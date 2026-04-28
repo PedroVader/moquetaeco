@@ -233,7 +233,7 @@ export default function EmpresaPage() {
                 solución más económica y versátil para ferias y eventos con
                 presupuesto ajustado.
               </p>
-              <p className="text-primary font-bold">Desde 2,10€/m²</p>
+              <p className="text-primary font-bold">Desde 2,20€/m²</p>
             </div>
             <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
               <h3 className="text-xl font-bold text-dark mb-3">

@@ -185,7 +185,7 @@ export function Footer() {
                   <strong className="text-white block">Rewind Flat</strong>
                   Moqueta ferial ecológica
                   <br />
-                  Desde 2,10€/m²
+                  Desde 2,20€/m²
                 </a>
               </li>
               <li>
@@ -258,6 +258,27 @@ export function Footer() {
             </p>
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center">
               <Link
+                href="/aviso-legal"
+                className="hover:text-white transition"
+              >
+                Aviso Legal
+              </Link>
+              <span className="hidden md:inline">|</span>
+              <Link
+                href="/politica-privacidad"
+                className="hover:text-white transition"
+              >
+                Privacidad
+              </Link>
+              <span className="hidden md:inline">|</span>
+              <Link
+                href="/politica-cookies"
+                className="hover:text-white transition"
+              >
+                Cookies
+              </Link>
+              <span className="hidden md:inline">|</span>
+              <Link
                 href="/mapa-del-sitio"
                 className="hover:text-white transition"
               >
@@ -272,8 +293,6 @@ export function Footer() {
               >
                 disstands.com
               </a>
-              <span className="hidden md:inline">|</span>
-              <span>Rewind® es marca propiedad de Disstands S.L.U.</span>
             </div>
           </div>
         </div>

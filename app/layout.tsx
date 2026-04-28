@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Moqueta Ecológica Cataluña | Disstands - Desde 2,10€/m²",
+    default: "Moqueta Ecológica Cataluña | Disstands - Desde 2,20€/m²",
     template: "%s | Disstands",
   },
   description:

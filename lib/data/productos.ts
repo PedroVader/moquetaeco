@@ -57,7 +57,7 @@ export const moquetaFerialEco: Producto = {
   urlProducto: "https://www.disstands.com/producto/moqueta-ferial-ecologica/",
 
   precio: {
-    min: 2.1,
+    min: 2.2,
     max: 2.65,
     moneda: "EUR",
     unidad: "m²",

@@ -49,7 +49,7 @@ const comparativa = [
   { feature: "Colores en stock", flat: "30", dilour: "29" },
   { feature: "Ancho del rollo", flat: "2 m", dilour: "2 m" },
   { feature: "Largo del rollo", flat: "50 m (100 m²)", dilour: "50 m (100 m²)" },
-  { feature: "Precio desde", flat: "2,10€/m²", dilour: "4,05€/m²", highlight: true },
+  { feature: "Precio desde", flat: "2,20€/m²", dilour: "4,05€/m²", highlight: true },
   { feature: "Precio hasta", flat: "2,65€/m²", dilour: "4,65€/m²", highlight: true },
   { feature: "Composición", flat: "100% polipropileno", dilour: "100% polipropileno" },
   { feature: "Látex", flat: "Sin látex", dilour: "Sin látex" },
@@ -90,7 +90,7 @@ export default function ComparativaPage() {
     {
       pregunta: "¿Cuál es la diferencia principal entre Rewind Flat y Dilour?",
       respuesta:
-        "La diferencia principal es el espesor y la textura. Flat tiene 2 mm y acabado liso punzonado (desde 2,10€/m²), ideal para ferias. Dilour tiene 4 mm con acabado aterciopelado (desde 4,05€/m²), ideal para stands premium y congresos. Ambas son 100% reciclables, sin látex y certificadas Bfl-s1.",
+        "La diferencia principal es el espesor y la textura. Flat tiene 2 mm y acabado liso punzonado (desde 2,20€/m²), ideal para ferias. Dilour tiene 4 mm con acabado aterciopelado (desde 4,05€/m²), ideal para stands premium y congresos. Ambas son 100% reciclables, sin látex y certificadas Bfl-s1.",
     },
     {
       pregunta: "¿Puedo combinar Flat y Dilour en el mismo stand?",
@@ -166,7 +166,7 @@ export default function ComparativaPage() {
                   <li>Prioridad: precio y funcionalidad</li>
                 </ul>
                 <p className="mt-3 text-primary font-bold text-lg">
-                  Desde 2,10€/m²
+                  Desde 2,20€/m²
                 </p>
               </div>
               <div>

@@ -10,13 +10,13 @@ import {
 const BASE_URL = "https://www.moquetaecologica.com";
 
 export const metadata: Metadata = {
-  title: "Productos Moqueta Ecológica Rewind | Desde 2,10€/m²",
+  title: "Productos Moqueta Ecológica Rewind | Desde 2,20€/m²",
   description:
-    "Catálogo de moqueta ecológica Rewind: Flat (desde 2,10€/m²) y Dilour premium (desde 4,05€/m²). 100% reciclable, sin látex, certificada Bfl-s1. ☎ 934 850 085",
+    "Catálogo de moqueta ecológica Rewind: Flat (desde 2,20€/m²) y Dilour premium (desde 4,05€/m²). 100% reciclable, sin látex, certificada Bfl-s1. ☎ 934 850 085",
   openGraph: {
     title: "Productos Moqueta Ecológica Rewind | Disstands",
     description:
-      "Moqueta ecológica 100% reciclable. Rewind Flat desde 2,10€/m² y Dilour desde 4,05€/m².",
+      "Moqueta ecológica 100% reciclable. Rewind Flat desde 2,20€/m² y Dilour desde 4,05€/m².",
     url: `${BASE_URL}/productos`,
     type: "website",
     locale: "es_ES",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Productos Moqueta Ecológica Rewind | Disstands",
     description:
-      "Moqueta ecológica 100% reciclable. Rewind Flat desde 2,10€/m² y Dilour desde 4,05€/m².",
+      "Moqueta ecológica 100% reciclable. Rewind Flat desde 2,20€/m² y Dilour desde 4,05€/m².",
     images: [`${BASE_URL}/og-image.jpg`],
   },
   alternates: {

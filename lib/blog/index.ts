@@ -159,7 +159,7 @@ const posts: BlogPost[] = [
       </ol>
 
       <blockquote>
-        <p><strong>Ejemplo práctico:</strong> Un stand en forma de L con una sección de 4×3 m y otra de 2×3 m: (4×3) + (2×3) = 12 + 6 = 18 m². Con 15% de margen: 18 × 1,15 = <strong>20,7 m²</strong>. Con <a href="/productos/rewind-flat">Rewind Flat</a> a 2,10€/m² = aproximadamente 43€.</p>
+        <p><strong>Ejemplo práctico:</strong> Un stand en forma de L con una sección de 4×3 m y otra de 2×3 m: (4×3) + (2×3) = 12 + 6 = 18 m². Con 15% de margen: 18 × 1,15 = <strong>20,7 m²</strong>. Con <a href="/productos/rewind-flat">Rewind Flat</a> a 2,20€/m² = aproximadamente 45€.</p>
       </blockquote>
 
       <h2>El factor del ancho de rollo</h2>
@@ -195,7 +195,7 @@ const posts: BlogPost[] = [
       </ol>
 
       <h2>Tabla de precios según superficie</h2>
-      <p>Orientación de costes con moqueta <a href="/productos/rewind-flat">Rewind Flat</a> (desde 2,10€/m²):</p>
+      <p>Orientación de costes con moqueta <a href="/productos/rewind-flat">Rewind Flat</a> (desde 2,20€/m²):</p>
 
       <table>
         <thead>
@@ -297,7 +297,7 @@ const posts: BlogPost[] = [
           <tr><td><strong>Sensación al pisar</strong></td><td>Firme, uniforme</td><td>Suave, acolchada</td></tr>
           <tr><td><strong>Ideal para</strong></td><td><a href="/barcelona/ferias">Ferias</a> con alto tránsito</td><td>Stands VIP, showrooms, zonas lounge</td></tr>
           <tr><td><strong>Absorción acústica</strong></td><td>Baja</td><td>~20 dB (ideal para <a href="/barcelona/congresos">congresos</a>)</td></tr>
-          <tr><td><strong>Precio</strong></td><td>Desde 2,10€/m²</td><td>Desde 4,05€/m²</td></tr>
+          <tr><td><strong>Precio</strong></td><td>Desde 2,20€/m²</td><td>Desde 4,05€/m²</td></tr>
         </tbody>
       </table>
 
@@ -426,7 +426,7 @@ const posts: BlogPost[] = [
       <h2>5. Precio competitivo</h2>
       <p>Una preocupación habitual es que los productos ecológicos sean más caros. En el caso de Rewind, al simplificar el proceso de fabricación (menos pasos, menos materias primas), el precio es <strong>competitivo frente a la moqueta convencional</strong>:</p>
       <ul>
-        <li><a href="/productos/rewind-flat">Rewind Flat</a>: desde <strong>2,10€/m²</strong></li>
+        <li><a href="/productos/rewind-flat">Rewind Flat</a>: desde <strong>2,20€/m²</strong></li>
         <li><a href="/productos/rewind-dilour">Rewind Dilour</a>: desde <strong>4,05€/m²</strong></li>
       </ul>
       <p>A esto hay que sumar el ahorro potencial en gestión de residuos: con moqueta convencional pagas para enviarla a vertedero; con Rewind, el reciclaje cierra el ciclo.</p>
@@ -460,7 +460,7 @@ const posts: BlogPost[] = [
       <p>Elegir la <strong>moqueta ecológica</strong> adecuada para tu evento es una decisión que afecta al aspecto visual, al presupuesto y a la sostenibilidad de tu proyecto. En esta guía te ayudamos paso a paso a tomar la mejor decisión, con datos reales y tablas comparativas.</p>
 
       <blockquote>
-        <p><strong>Resumen rápido:</strong> Si buscas la opción más económica y versátil, elige <a href="/productos/rewind-flat">Rewind Flat</a> (desde 2,10€/m²). Si necesitas un acabado premium con mayor confort, elige <a href="/productos/rewind-dilour">Rewind Dilour</a> (desde 4,05€/m²). Ambas son 100% reciclables y certificadas Bfl-s1.</p>
+        <p><strong>Resumen rápido:</strong> Si buscas la opción más económica y versátil, elige <a href="/productos/rewind-flat">Rewind Flat</a> (desde 2,20€/m²). Si necesitas un acabado premium con mayor confort, elige <a href="/productos/rewind-dilour">Rewind Dilour</a> (desde 4,05€/m²). Ambas son 100% reciclables y certificadas Bfl-s1.</p>
       </blockquote>
 
       <h2>Rewind Flat vs Rewind Dilour: tabla comparativa</h2>
@@ -477,7 +477,7 @@ const posts: BlogPost[] = [
         <tbody>
           <tr><td><strong>Espesor</strong></td><td>2 mm</td><td>4 mm</td></tr>
           <tr><td><strong>Peso</strong></td><td>230 g/m²</td><td>650 g/m²</td></tr>
-          <tr><td><strong>Precio desde</strong></td><td>2,10€/m²</td><td>4,05€/m²</td></tr>
+          <tr><td><strong>Precio desde</strong></td><td>2,20€/m²</td><td>4,05€/m²</td></tr>
           <tr><td><strong>Precio hasta</strong></td><td>2,65€/m²</td><td>4,65€/m²</td></tr>
           <tr><td><strong>Colores en stock</strong></td><td>30</td><td>29</td></tr>
           <tr><td><strong>Ancho del rollo</strong></td><td>2 m</td><td>2 m</td></tr>
@@ -519,7 +519,7 @@ const posts: BlogPost[] = [
       </ol>
 
       <blockquote>
-        <p><strong>Ejemplo práctico:</strong> Un stand de 6×4 metros = 24 m². Con un 10% de margen necesitarás 26,4 m². Con Rewind Flat a 2,10€/m² el coste sería de aproximadamente 55€. Usa nuestra <a href="/#calculadora">calculadora de precios online</a> para obtener un presupuesto detallado al instante.</p>
+        <p><strong>Ejemplo práctico:</strong> Un stand de 6×4 metros = 24 m². Con un 10% de margen necesitarás 26,4 m². Con Rewind Flat a 2,20€/m² el coste sería de aproximadamente 58€. Usa nuestra <a href="/#calculadora">calculadora de precios online</a> para obtener un presupuesto detallado al instante.</p>
       </blockquote>
 
       <h2>Los 10 colores más solicitados para eventos corporativos</h2>
@@ -844,7 +844,7 @@ const posts: BlogPost[] = [
         <li><strong>Solicita presupuesto:</strong> <a href="/contacto">Contacta con nosotros</a> o llama al <a href="tel:+34934850085">934 850 085</a> para un presupuesto personalizado</li>
         <li><strong>Recibe tu certificado:</strong> Tras el evento, recogemos la moqueta y te enviamos el certificado de reciclaje para tus informes ESG</li>
       </ol>
-      <p>Elige entre <a href="/productos/rewind-flat">Rewind Flat</a> (desde 2,10€/m²) o <a href="/productos/rewind-dilour">Rewind Dilour</a> (desde 4,05€/m²). Ambas opciones son 100% reciclables y certificadas <a href="/blog/normativa-ignifuga-bfl-s1-moqueta-ferial">Bfl-s1</a>.</p>
+      <p>Elige entre <a href="/productos/rewind-flat">Rewind Flat</a> (desde 2,20€/m²) o <a href="/productos/rewind-dilour">Rewind Dilour</a> (desde 4,05€/m²). Ambas opciones son 100% reciclables y certificadas <a href="/blog/normativa-ignifuga-bfl-s1-moqueta-ferial">Bfl-s1</a>.</p>
     `,
   },
 ];

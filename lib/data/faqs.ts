@@ -5,19 +5,19 @@ export interface FAQ {
 
 export const faqsGenerales: FAQ[] = [
   {
-    pregunta: "¿Qué hace única a la moqueta ecológica Rewind?",
+    pregunta: "¿Qué hace única a la moqueta ferial ecológica Rewind?",
     respuesta:
-      "La moqueta Rewind es la única en el mundo fabricada 100% sin látex y con monomaterial completamente reciclable. Su producción no utiliza agua y reduce el consumo energético en más del 80%, disminuyendo drásticamente las emisiones de CO₂. Es la moqueta elegida por ferias internacionales como el Mobile World Congress.",
+      "La moqueta ferial Rewind es la única en el mundo fabricada 100% sin látex y con monomaterial completamente reciclable. Su producción no utiliza agua y reduce el consumo energético en más del 80%, disminuyendo drásticamente las emisiones de CO₂. Es la moqueta elegida por ferias internacionales como el Mobile World Congress.",
   },
   {
-    pregunta: "¿Cuál es el precio de la moqueta ecológica?",
+    pregunta: "¿Cuál es el precio de la moqueta ferial?",
     respuesta:
-      "La Moqueta Ferial Ecológica Rewind Flat tiene un precio desde 2,10€/m² hasta 2,65€/m² (IVA no incluido). La versión Dilour, más gruesa y premium, va desde 4,05€/m² hasta 4,65€/m². Los precios varían según cantidad y tipo de venta (rollo completo o corte).",
+      "La Moqueta Ferial Ecológica Rewind Flat tiene un precio desde 2,20€/m² hasta 2,65€/m² (IVA no incluido). La versión Dilour, más gruesa y premium, va desde 4,05€/m² hasta 4,65€/m². Los precios varían según cantidad y tipo de venta (rollo completo o corte).",
   },
   {
-    pregunta: "¿La moqueta ecológica cumple con la normativa de incendios?",
+    pregunta: "¿La moqueta ferial cumple con la normativa de incendios?",
     respuesta:
-      "Sí, toda nuestra moqueta ecológica cuenta con certificación ignífuga Bfl-s1, obligatoria en todos los recintos feriales, pabellones de congresos y espacios públicos de España y Europa.",
+      "Sí, toda nuestra moqueta ferial cuenta con certificación ignífuga Bfl-s1, obligatoria en todos los recintos feriales, pabellones de congresos y espacios públicos de España y Europa.",
   },
   {
     pregunta: "¿Qué colores están disponibles?",
@@ -37,7 +37,7 @@ export const faqsGenerales: FAQ[] = [
   {
     pregunta: "¿Qué diferencia hay entre Rewind Flat y Rewind Dilour?",
     respuesta:
-      "Rewind Flat tiene 2mm de espesor y 230g/m² (desde 2,10€/m²), ideal para eventos con presupuesto ajustado. Rewind Dilour tiene 4mm de espesor y 650g/m² (desde 4,05€/m²), ofreciendo mayor confort en la pisada y aspecto más premium para eventos de alto standing.",
+      "Rewind Flat tiene 2mm de espesor y 230g/m² (desde 2,20€/m²), ideal para eventos con presupuesto ajustado. Rewind Dilour tiene 4mm de espesor y 650g/m² (desde 4,05€/m²), ofreciendo mayor confort en la pisada y aspecto más premium para eventos de alto standing.",
   },
   {
     pregunta: "¿Cuánto tarda la entrega?",
@@ -121,6 +121,98 @@ export const faqsCongresos: FAQ[] = [
   },
 ];
 
+// FAQs para pillar page /moqueta-ferial
+export const faqsMoquetaFerial: FAQ[] = [
+  {
+    pregunta: "¿Qué es la moqueta ferial ecológica Rewind?",
+    respuesta:
+      "La moqueta ferial Rewind es una moqueta 100% ecológica fabricada sin látex y completamente reciclable. Está diseñada específicamente para ferias, eventos y congresos. Es la única moqueta ferial del mundo fabricada como monomaterial de polipropileno, lo que permite su reciclaje completo.",
+  },
+  {
+    pregunta: "¿Cuánto cuesta la moqueta ferial Rewind?",
+    respuesta:
+      "La moqueta ferial Rewind Flat cuesta desde 2,20€/m² (IVA no incluido). La versión premium Dilour desde 4,05€/m². Los precios varían según cantidad y formato de venta (rollo completo o corte a medida).",
+  },
+  {
+    pregunta: "¿La moqueta ferial Rewind es ignífuga?",
+    respuesta:
+      "Sí, toda la moqueta ferial Rewind cuenta con certificación Bfl-s1, la clasificación más exigente para revestimientos de suelo textiles. Es obligatoria en todos los recintos feriales de España y Europa.",
+  },
+  {
+    pregunta: "¿En qué ferias se ha utilizado la moqueta Rewind?",
+    respuesta:
+      "La moqueta ferial Rewind se ha utilizado en el Mobile World Congress, Alimentaria, Smart City Expo, Automobile Barcelona y cientos de ferias y eventos en toda Cataluña y España.",
+  },
+  {
+    pregunta: "¿Cuántos colores de moqueta ferial tenéis disponibles?",
+    respuesta:
+      "Disponemos de 30 colores en stock permanente en ambas líneas (Flat y Dilour). Desde blancos y beiges hasta rojos, azules, verdes y negros, para adaptarse a cualquier identidad corporativa.",
+  },
+  {
+    pregunta: "¿Se puede comprar moqueta ferial online?",
+    respuesta:
+      "Sí, puedes solicitar presupuesto o comprar moqueta ferial online a través de nuestra web o contactando directamente por teléfono (934 850 085) o email (ventas@disstands.com). Envío a toda España.",
+  },
+];
+
+// FAQs para pillar page /moqueta-barata
+export const faqsMoquetaBarata: FAQ[] = [
+  {
+    pregunta: "¿Cuál es la moqueta más barata del mercado?",
+    respuesta:
+      "La moqueta ferial Rewind Flat tiene un precio desde 2,20€/m² (IVA no incluido), uno de los precios más competitivos del mercado. Y además es ecológica: 100% reciclable y sin látex.",
+  },
+  {
+    pregunta: "¿La moqueta barata es de menor calidad?",
+    respuesta:
+      "No. La moqueta Rewind Flat es barata porque su proceso de fabricación sin látex es más eficiente (menos pasos, menos materias primas), no porque sea de menor calidad. Cumple la certificación ignífuga Bfl-s1 y ha sido probada en ferias internacionales como el Mobile World Congress.",
+  },
+  {
+    pregunta: "¿Cuánto cuesta cubrir un stand de 20 m² con moqueta barata?",
+    respuesta:
+      "Con Rewind Flat a 2,20€/m², cubrir 20 m² cuesta aproximadamente 44€ (IVA no incluido). Añadiendo un 10% de margen para recortes (22 m²), el coste sería de unos 48€. Usa nuestra calculadora online para obtener un presupuesto preciso.",
+  },
+  {
+    pregunta: "¿Hay descuentos por cantidad en moqueta barata?",
+    respuesta:
+      "Sí, los precios varían según la cantidad. Un rollo completo de 2x50m (100 m²) tiene mejor precio por metro cuadrado que el corte a medida. Contacta con nosotros para presupuesto según tu necesidad.",
+  },
+  {
+    pregunta: "¿La moqueta barata tiene certificación ignífuga?",
+    respuesta:
+      "Sí, toda nuestra moqueta, incluyendo la opción más económica (Rewind Flat), cuenta con certificación Bfl-s1. No es necesario pagar más por la certificación ignífuga: viene incluida de serie.",
+  },
+];
+
+// FAQs para pillar page /moqueta-online
+export const faqsMoquetaOnline: FAQ[] = [
+  {
+    pregunta: "¿Puedo comprar moqueta online y recibirla en casa?",
+    respuesta:
+      "Sí, puedes comprar moqueta online a través de nuestra web o contactando directamente. Realizamos envíos a toda España peninsular. Solicita presupuesto indicando la cantidad y color que necesitas.",
+  },
+  {
+    pregunta: "¿Cuáles son los plazos de envío al comprar moqueta online?",
+    respuesta:
+      "Barcelona y área metropolitana: 24h. Resto de Cataluña (Girona, Tarragona, Lleida): 24-48h. España peninsular: 48-72h. Disponemos de servicio urgente con entrega en el mismo día dentro de Barcelona.",
+  },
+  {
+    pregunta: "¿Cuánto cuesta el envío de moqueta online?",
+    respuesta:
+      "Los gastos de envío dependen de la cantidad y el destino. Para pedidos grandes, el transporte puede incluirse en el presupuesto. Contacta con nosotros para un presupuesto con envío incluido.",
+  },
+  {
+    pregunta: "¿Qué métodos de pago aceptáis para compras online?",
+    respuesta:
+      "Aceptamos transferencia bancaria y pago contra reembolso. Para empresas y profesionales, ofrecemos condiciones de pago adaptadas. Contacta con nuestro equipo comercial para más información.",
+  },
+  {
+    pregunta: "¿Puedo devolver la moqueta si no la necesito?",
+    respuesta:
+      "La moqueta cortada a medida no admite devolución. Los rollos completos sin abrir pueden devolverse en un plazo de 14 días desde la recepción. Contacta con nosotros antes de realizar la devolución.",
+  },
+];
+
 // Helper function para obtener FAQs por tipo
 export function getFaqsByTipo(tipo: string): FAQ[] {
   const faqsMap: Record<string, FAQ[]> = {
@@ -137,16 +229,16 @@ export function getFaqsByTipo(tipo: string): FAQ[] {
 // FAQs para páginas de provincia (mezclando generales)
 export function getFaqsProvincia(provincia: string): FAQ[] {
   const faqsProvincia: FAQ = {
-    pregunta: `¿Hacéis envíos a toda la provincia de ${provincia}?`,
-    respuesta: `Sí, realizamos entregas en toda la provincia de ${provincia}. Consultar plazos según disponibilidad. También ofrecemos servicio de instalación profesional con nuestro equipo propio en cualquier municipio de la provincia.`,
+    pregunta: `¿Hacéis envíos de moqueta ferial a toda la provincia de ${provincia}?`,
+    respuesta: `Sí, realizamos entregas de moqueta ferial en toda la provincia de ${provincia}. Consultar plazos según disponibilidad. También ofrecemos servicio de instalación profesional con nuestro equipo propio en cualquier municipio de la provincia. Puedes comprar online o solicitar presupuesto.`,
   };
   return [faqsProvincia, ...faqsGenerales.slice(0, 5)];
 }
 
 export function getFaqsComarca(comarca: string, provincia: string): FAQ[] {
   const faqComarca: FAQ = {
-    pregunta: `¿Servís moqueta ecológica en la comarca de ${comarca}?`,
-    respuesta: `Sí, realizamos entregas de moqueta ecológica Rewind en toda la comarca de ${comarca} (${provincia}). Disponemos de stock permanente en Barcelona con entregas en 24-48h según ubicación.`,
+    pregunta: `¿Servís moqueta ferial en la comarca de ${comarca}?`,
+    respuesta: `Sí, realizamos entregas de moqueta ferial ecológica Rewind en toda la comarca de ${comarca} (${provincia}). Disponemos de stock permanente en Barcelona con entregas en 24-48h según ubicación. Compra online o solicita presupuesto.`,
   };
   const faqInstalacion: FAQ = {
     pregunta: `¿Ofrecéis instalación profesional en ${comarca}?`,
@@ -157,8 +249,8 @@ export function getFaqsComarca(comarca: string, provincia: string): FAQ[] {
 
 export function getFaqsMunicipio(municipio: string, provincia: string): FAQ[] {
   const faqMunicipio: FAQ = {
-    pregunta: `¿Puedo comprar moqueta ecológica en ${municipio}?`,
-    respuesta: `Sí, enviamos moqueta ecológica Rewind a ${municipio} (${provincia}). Tanto profesionales como particulares pueden adquirir nuestros productos. Entrega desde Barcelona en 24-48h.`,
+    pregunta: `¿Puedo comprar moqueta ferial en ${municipio}?`,
+    respuesta: `Sí, enviamos moqueta ferial ecológica Rewind a ${municipio} (${provincia}). Tanto profesionales como particulares pueden adquirir nuestros productos. Compra online o solicita presupuesto. Entrega desde Barcelona en 24-48h.`,
   };
   const faqPresupuesto: FAQ = {
     pregunta: `¿Cómo solicito presupuesto para un evento en ${municipio}?`,

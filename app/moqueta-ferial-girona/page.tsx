@@ -39,8 +39,8 @@ export default function MoquetaEcologicaGirona() {
   const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
     {
-      name: `Moqueta Ecológica ${provincia.nombre}`,
-      url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
+      name: `Moqueta Ferial ${provincia.nombre}`,
+      url: `https://www.moquetaecologica.com/moqueta-ferial-${provincia.slug}`,
     },
   ];
   const breadcrumbSchema = generarBreadcrumbSchema(breadcrumbItems);
@@ -229,7 +229,7 @@ export default function MoquetaEcologicaGirona() {
       <AreasServicio provinciaActual={provincia.slug} />
 
       {/* FAQ */}
-      <FAQ faqs={faqs} titulo={`Preguntas sobre moqueta ecológica en ${provincia.nombre}`} />
+      <FAQ faqs={faqs} titulo={`Preguntas sobre moqueta ferial en ${provincia.nombre}`} />
 
       {/* CTA final */}
       <CTABand />

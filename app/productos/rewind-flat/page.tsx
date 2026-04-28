@@ -14,9 +14,9 @@ import {
 const BASE_URL = "https://www.moquetaecologica.com";
 
 export const metadata: Metadata = {
-  title: "Rewind Flat - Moqueta Ferial Ecológica | Desde 2,10€/m²",
+  title: "Rewind Flat - Moqueta Ferial Ecológica | Desde 2,20€/m²",
   description:
-    "Moqueta ferial ecológica Rewind Flat. 100% reciclable, sin látex, certificada Bfl-s1. 30 colores disponibles. Desde 2,10€/m². ☎ 934 850 085",
+    "Moqueta ferial ecológica Rewind Flat. 100% reciclable, sin látex, certificada Bfl-s1. 30 colores disponibles. Desde 2,20€/m². ☎ 934 850 085",
   keywords: [
     "moqueta ferial ecológica",
     "rewind flat",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Rewind Flat - Moqueta Ferial Ecológica | Disstands",
     description:
-      "Moqueta 100% reciclable, sin látex, certificada Bfl-s1. 30 colores. Desde 2,10€/m².",
+      "Moqueta 100% reciclable, sin látex, certificada Bfl-s1. 30 colores. Desde 2,20€/m².",
     url: `${BASE_URL}/productos/rewind-flat`,
     type: "website",
     locale: "es_ES",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Rewind Flat - Moqueta Ferial Ecológica | Disstands",
     description:
-      "Moqueta 100% reciclable, sin látex, certificada Bfl-s1. 30 colores. Desde 2,10€/m².",
+      "Moqueta 100% reciclable, sin látex, certificada Bfl-s1. 30 colores. Desde 2,20€/m².",
     images: [`${BASE_URL}/og-image.jpg`],
   },
   alternates: {

@@ -16,7 +16,7 @@ export const preciosProductos: Record<TipoProducto, PrecioProducto> = {
   flat: {
     tipo: "flat",
     nombre: "Rewind Flat",
-    precioMin: 2.1,
+    precioMin: 2.2,
     precioMax: 2.65,
     espesor: "2 mm",
     peso: "230 g/m²",

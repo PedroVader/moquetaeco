@@ -26,21 +26,21 @@ import { moquetaFerialEco } from "@/lib/data/productos";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { MapPinIcon, BuildingOffice2Icon, CalendarIcon } from "@heroicons/react/24/outline";
 
-const provincia = getProvinciaBySlug("tarragona")!;
+const provincia = getProvinciaBySlug("lleida")!;
 const contenido = generarContenidoProvincia(provincia);
 const faqs = getFaqsProvincia(provincia.nombre);
 
 export const metadata: Metadata = generarMetadataProvincia(provincia);
 
-export default function MoquetaEcologicaTarragona() {
+export default function MoquetaEcologicaLleida() {
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
   const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
     {
-      name: `Moqueta Ecológica ${provincia.nombre}`,
-      url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
+      name: `Moqueta Ferial ${provincia.nombre}`,
+      url: `https://www.moquetaecologica.com/moqueta-ferial-${provincia.slug}`,
     },
   ];
   const breadcrumbSchema = generarBreadcrumbSchema(breadcrumbItems);
@@ -229,7 +229,7 @@ export default function MoquetaEcologicaTarragona() {
       <AreasServicio provinciaActual={provincia.slug} />
 
       {/* FAQ */}
-      <FAQ faqs={faqs} titulo={`Preguntas sobre moqueta ecológica en ${provincia.nombre}`} />
+      <FAQ faqs={faqs} titulo={`Preguntas sobre moqueta ferial en ${provincia.nombre}`} />
 
       {/* CTA final */}
       <CTABand />

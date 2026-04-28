@@ -50,7 +50,7 @@ export function PriceCalculator() {
                     }`}
                   >
                     <p className="font-bold text-dark">Rewind Flat</p>
-                    <p className="text-sm text-slate">2mm · Desde 2,10€/m²</p>
+                    <p className="text-sm text-slate">2mm · Desde 2,20€/m²</p>
                   </button>
                   <button
                     onClick={() => setProducto("dilour")}

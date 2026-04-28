@@ -15,18 +15,18 @@ export function generarContenidoProvincia(provincia: Provincia): PageContent {
   const recintos = provincia.recintosFeriales?.[0] || "recintos feriales";
 
   return {
-    title: `Moqueta Ecológica ${provincia.nombre} | Ferias y Eventos | Desde 2,10€/m²`,
+    title: `Moqueta Ferial ${provincia.nombre} | Ecológica y Barata | Desde 2,20€/m²`,
 
-    metaDescription: `Moqueta ecológica 100% reciclable en ${provincia.nombre}. Sin látex, certificada Bfl-s1. Instalación en ${ciudades}. Rewind® marca propia Disstands. ☎ 934 850 085`,
+    metaDescription: `Moqueta ferial ecológica en ${provincia.nombre}. Barata desde 2,20€/m², 100% reciclable, sin látex, certificada Bfl-s1. Comprar moqueta online. Instalación en ${ciudades}. Rewind® Disstands. ☎ 934 850 085`,
 
-    h1: `Moqueta Ecológica en ${provincia.nombre}`,
+    h1: `Moqueta Ferial en ${provincia.nombre}`,
 
-    heroText: `Rewind® es nuestra marca propia de moqueta ecológica en ${provincia.nombre}. 100% reciclable, sin látex, certificación Bfl-s1. Montaje profesional solo para empresas del sector.`,
+    heroText: `Rewind® es nuestra marca propia de moqueta ferial ecológica en ${provincia.nombre}. Compra online desde 2,20€/m². 100% reciclable, sin látex, certificación Bfl-s1. Montaje profesional solo para empresas del sector.`,
 
     intro: [
-      `Disstands es fabricante y propietario de la marca **Rewind®**, moqueta ecológica de referencia en ${provincia.nombre}. Con más de 25 años de experiencia, suministramos moqueta ferial sostenible en ${recintos} y eventos en toda la provincia.`,
+      `¿Buscas **moqueta ferial barata en ${provincia.nombre}**? Disstands es fabricante y propietario de la marca **Rewind®**, la moqueta ferial ecológica de referencia. Con más de 25 años de experiencia, suministramos moqueta para ${recintos} y eventos en toda la provincia. Puedes comprar online o solicitar presupuesto personalizado.`,
 
-      `Nuestra moqueta Rewind es **única en el mundo**: fabricada 100% sin látex, completamente reciclable, y producida con una reducción del 80% en consumo energético. Es la elección de ferias internacionales como el Mobile World Congress.`,
+      `Nuestra moqueta Rewind es **única en el mundo**: fabricada 100% sin látex, completamente reciclable, y producida con una reducción del 80% en consumo energético. Es la elección de ferias internacionales como el Mobile World Congress. Desde 2,20€/m², la opción más barata y sostenible del mercado.`,
 
       `Servimos ${ciudades} y todas las comarcas de ${provincia.nombre} con entrega rápida desde nuestro almacén en Barcelona. Servicio de montaje disponible solo para profesionales del sector.`,
     ],
@@ -39,7 +39,7 @@ export function generarContenidoProvincia(provincia: Provincia): PageContent {
       `Asesoramiento técnico gratuito`,
     ],
 
-    ctaText: `¿Necesitas moqueta ecológica en ${provincia.nombre}? Solicita presupuesto sin compromiso.`,
+    ctaText: `¿Necesitas moqueta ferial en ${provincia.nombre}? Solicita presupuesto sin compromiso.`,
   };
 }
 
@@ -67,18 +67,18 @@ export function generarContenidoMunicipio(
   const beneficios = generarBeneficiosMunicipio(municipio, provincia);
 
   return {
-    title: `Moqueta Ecológica ${municipio.nombre} | Eventos y Ferias | Disstands`,
+    title: `Moqueta Ferial ${municipio.nombre} | Desde 2,20€/m² | Disstands`,
 
-    metaDescription: `Moqueta ecológica en ${municipio.nombre}, ${provincia.nombre}. 100% reciclable, sin látex. Desde 2,10€/m². Instalación profesional. ☎ 934 850 085`,
+    metaDescription: `Moqueta ferial en ${municipio.nombre}, ${provincia.nombre}. Barata desde 2,20€/m², ecológica, 100% reciclable, sin látex. Comprar online. Instalación profesional. ☎ 934 850 085`,
 
-    h1: `Moqueta Ecológica en ${municipio.nombre}`,
+    h1: `Moqueta Ferial en ${municipio.nombre}`,
 
-    heroText: `Suministro e instalación de moqueta ecológica Rewind en ${municipio.nombre}${comarcaTexto}. La solución sostenible para tus eventos, ferias y stands.`,
+    heroText: `Suministro e instalación de moqueta ferial Rewind en ${municipio.nombre}${comarcaTexto}. Ecológica y barata desde 2,20€/m². La solución sostenible para tus eventos, ferias y stands.`,
 
     intro: [
-      `¿Buscas **moqueta ecológica en ${municipio.nombre}**? ${municipio.descripcion}`,
+      `¿Buscas **moqueta ferial en ${municipio.nombre}**? ${municipio.descripcion}`,
 
-      `${poblacionTexto}${zonasTexto} Disstands suministra moqueta ecológica Rewind con entrega directa desde Barcelona y servicio de instalación profesional.`,
+      `${poblacionTexto}${zonasTexto} Disstands suministra moqueta ferial ecológica Rewind con entrega directa desde Barcelona y servicio de instalación profesional. Compra online o solicita presupuesto.`,
 
       tercerParrafo,
     ],
@@ -99,7 +99,7 @@ function generarTercerParrafoMunicipio(
 
   // Large cities (>100k) - emphasize volume + corporate events
   if (pop > 100000) {
-    return `Como uno de los principales núcleos urbanos de ${provincia.nombre}, ${municipio.nombre} genera una alta demanda de moqueta ferial para **eventos corporativos, ferias sectoriales y congresos**. Nuestra moqueta Rewind, certificada Bfl-s1 y disponible en 30 colores, se adapta a proyectos de cualquier escala.`;
+    return `Como uno de los principales núcleos urbanos de ${provincia.nombre}, ${municipio.nombre} genera una alta demanda de moqueta ferial para **eventos corporativos, ferias sectoriales y congresos**. Nuestra moqueta ferial Rewind, certificada Bfl-s1 y disponible en 30 colores, se adapta a proyectos de cualquier escala. Desde 2,20€/m², es la opción más barata sin renunciar a la calidad.`;
   }
 
   // Medium cities (30k-100k) - emphasize versatility + growing market
@@ -107,23 +107,23 @@ function generarTercerParrafoMunicipio(
     const zonaRef = zonas.length > 0
       ? ` Espacios como ${zonas[0]} requieren soluciones que cumplan la normativa ignífuga sin renunciar a la estética.`
       : "";
-    return `${municipio.nombre} cuenta con un tejido empresarial activo que impulsa ferias, congresos y eventos durante todo el año.${zonaRef} La moqueta Rewind se fabrica **sin látex**, es 100% reciclable y está disponible en dos acabados: Flat (ferial) y Dilour (premium).`;
+    return `${municipio.nombre} cuenta con un tejido empresarial activo que impulsa ferias, congresos y eventos durante todo el año.${zonaRef} La moqueta ferial Rewind se fabrica **sin látex**, es 100% reciclable y está disponible en dos acabados: Flat (ferial, desde 2,20€/m²) y Dilour (premium). Puedes comprar moqueta online y recibirla directamente.`;
   }
 
   // Coastal/tourist towns - emphasize seasonal events + weddings
   const isCoastal = ["sitges", "blanes", "lloret", "cambrils", "salou", "palamos", "sant-feliu-guixols", "palafrugell", "roses", "vila-seca"].includes(municipio.slug);
   if (isCoastal) {
-    return `Como municipio con fuerte actividad turística, ${municipio.nombre} acoge **bodas, eventos al aire libre y ferias estacionales** que necesitan moqueta de calidad. Rewind cumple la certificación ignífuga Bfl-s1 y su fabricación 100% reciclable la convierte en la opción más sostenible para eventos en entornos naturales.`;
+    return `Como municipio con fuerte actividad turística, ${municipio.nombre} acoge **bodas, eventos al aire libre y ferias estacionales** que necesitan moqueta ferial de calidad. Rewind cumple la certificación ignífuga Bfl-s1 y su fabricación 100% reciclable la convierte en la opción más sostenible y barata para eventos en entornos naturales.`;
   }
 
   // Mountain/inland towns - emphasize local fairs + cultural events
   const comarcaRef = comarcaNombre ? ` en la comarca de ${comarcaNombre}` : "";
   if (pop > 0 && pop <= 30000) {
-    return `${municipio.nombre}${comarcaRef} celebra **ferias locales, mercados y eventos culturales** que requieren pavimento profesional. La moqueta Rewind ofrece certificación Bfl-s1, 30 colores disponibles y un precio desde 2,10€/m² que se adapta a presupuestos de todo tipo.`;
+    return `${municipio.nombre}${comarcaRef} celebra **ferias locales, mercados y eventos culturales** que requieren pavimento profesional. La moqueta ferial Rewind ofrece certificación Bfl-s1, 30 colores disponibles y un precio desde 2,20€/m² que se adapta a presupuestos de todo tipo. Compra online o solicita presupuesto.`;
   }
 
   // Fallback
-  return `Disstands suministra moqueta ecológica Rewind en ${municipio.nombre} con entrega desde Barcelona. Certificada Bfl-s1, sin látex, 100% reciclable y disponible en 30 colores para adaptarse a cualquier evento o espacio.`;
+  return `Disstands suministra moqueta ferial ecológica Rewind en ${municipio.nombre} con entrega desde Barcelona. Certificada Bfl-s1, sin látex, 100% reciclable y disponible en 30 colores para adaptarse a cualquier evento o espacio. Desde 2,20€/m².`;
 }
 
 function generarBeneficiosMunicipio(
@@ -137,7 +137,7 @@ function generarBeneficiosMunicipio(
     return [
       `Entrega en 24-48h en ${municipio.nombre}`,
       `Montaje profesional para grandes superficies`,
-      `Desde 2,10€/m² en pedidos a medida`,
+      `Moqueta ferial barata desde 2,20€/m²`,
       `Recogida y reciclaje post-evento incluido`,
     ];
   }
@@ -147,7 +147,7 @@ function generarBeneficiosMunicipio(
       `Entrega directa en ${municipio.nombre}`,
       `Ideal para bodas y eventos al aire libre`,
       `Certificación Bfl-s1 para espacios públicos`,
-      `30 colores adaptados a tu evento`,
+      `Compra online — 30 colores disponibles`,
     ];
   }
 
@@ -156,7 +156,7 @@ function generarBeneficiosMunicipio(
       `Servicio rápido en ${municipio.nombre}`,
       `Instalación profesional disponible`,
       `30 colores en stock permanente`,
-      `Asesoramiento técnico gratuito`,
+      `Compra online desde 2,20€/m²`,
     ];
   }
 
@@ -164,7 +164,7 @@ function generarBeneficiosMunicipio(
     `Envío a ${municipio.nombre} desde Barcelona`,
     `Sin pedido mínimo para profesionales`,
     `Certificación ignífuga Bfl-s1`,
-    `Desde 2,10€/m² — precio directo de fábrica`,
+    `Moqueta ferial barata desde 2,20€/m²`,
   ];
 }
 
@@ -206,16 +206,16 @@ export function generarContenidoUso(
   };
 
   return {
-    title: `Moqueta Ecológica ${info.titulo} ${provincia.nombre} | Disstands`,
+    title: `Moqueta ${info.titulo} ${provincia.nombre} | Ecológica y Barata | Disstands`,
 
-    metaDescription: `Moqueta ecológica para ${info.descripcion} en ${provincia.nombre}. 100% reciclable, sin látex, certificada Bfl-s1. Instalación profesional. ☎ 934 850 085`,
+    metaDescription: `Moqueta ferial para ${info.descripcion} en ${provincia.nombre}. Ecológica, barata desde 2,20€/m², 100% reciclable, sin látex, certificada Bfl-s1. Comprar online. ☎ 934 850 085`,
 
-    h1: `Moqueta Ecológica para ${info.titulo} en ${provincia.nombre}`,
+    h1: `Moqueta para ${info.titulo} en ${provincia.nombre}`,
 
-    heroText: `La moqueta sostenible perfecta para ${info.descripcion}. 100% reciclable, sin látex, disponible en 30 colores. Instalación profesional en toda la provincia de ${provincia.nombre}.`,
+    heroText: `La moqueta ferial perfecta para ${info.descripcion}. Ecológica y barata desde 2,20€/m². 100% reciclable, sin látex, disponible en 30 colores. Instalación profesional en toda la provincia de ${provincia.nombre}.`,
 
     intro: [
-      `Para ${info.descripcion} en ${provincia.nombre}, la **moqueta ecológica Rewind** es la elección de los profesionales más exigentes. Su composición 100% reciclable y sin látex la convierte en la opción más sostenible del mercado.`,
+      `Para ${info.descripcion} en ${provincia.nombre}, la **moqueta ferial ecológica Rewind** es la elección de los profesionales más exigentes. Barata desde 2,20€/m², su composición 100% reciclable y sin látex la convierte en la opción más sostenible del mercado. Puedes comprar moqueta online o solicitar presupuesto.`,
 
       `Cumple con la certificación ignífuga Bfl-s1 obligatoria en todos los recintos y espacios públicos. Disponible en formato rollo de 2x50m para instalaciones rápidas.`,
     ],
@@ -256,20 +256,20 @@ export function generarContenidoComarca(
       : ` Servimos ${comarca.capital} y todos los municipios de la comarca.`;
 
   return {
-    title: `Moqueta Ecológica ${comarca.nombre} | ${provincia.nombre} | Disstands`,
+    title: `Moqueta Ferial ${comarca.nombre} | ${provincia.nombre} | Disstands`,
 
-    metaDescription: `Moqueta ecológica en ${comarca.nombre} (${provincia.nombre}). Entrega en ${comarca.capital} y comarca. 100% reciclable, sin látex. Desde 2,10€/m². ☎ 934 850 085`,
+    metaDescription: `Moqueta ferial en ${comarca.nombre} (${provincia.nombre}). Ecológica y barata desde 2,20€/m². Entrega en ${comarca.capital} y comarca. 100% reciclable, sin látex. Comprar online. ☎ 934 850 085`,
 
-    h1: `Moqueta Ecológica en ${comarca.nombre}`,
+    h1: `Moqueta Ferial en ${comarca.nombre}`,
 
-    heroText: `Distribuidor de moqueta ecológica Rewind en la comarca de ${comarca.nombre}, ${distanciaTexto}. Entrega rápida en ${comarca.capital} y todos los municipios.`,
+    heroText: `Distribuidor de moqueta ferial ecológica Rewind en la comarca de ${comarca.nombre}, ${distanciaTexto}. Barata desde 2,20€/m². Entrega rápida en ${comarca.capital} y todos los municipios.`,
 
     intro: [
       `${comarca.descripcion}${eventosTexto}`,
 
-      `Disstands suministra **moqueta ecológica Rewind** en toda la comarca de ${comarca.nombre} con más de 25 años de experiencia.${espaciosTexto}`,
+      `Disstands suministra **moqueta ferial ecológica Rewind** en toda la comarca de ${comarca.nombre} con más de 25 años de experiencia.${espaciosTexto} Compra online o solicita presupuesto sin compromiso.`,
 
-      `Nuestra moqueta es 100% reciclable, sin látex, y cuenta con certificación ignífuga Bfl-s1. Disponible en 30 colores y dos espesores.${municipiosTexto}`,
+      `Nuestra moqueta ferial es 100% reciclable, sin látex, y cuenta con certificación ignífuga Bfl-s1. Disponible en 30 colores y dos espesores, desde solo 2,20€/m².${municipiosTexto}`,
     ],
 
     beneficiosLocales: [

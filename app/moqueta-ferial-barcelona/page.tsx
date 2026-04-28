@@ -26,21 +26,21 @@ import { moquetaFerialEco } from "@/lib/data/productos";
 import { Breadcrumb } from "@/components/ui/Breadcrumb";
 import { MapPinIcon, BuildingOffice2Icon, CalendarIcon } from "@heroicons/react/24/outline";
 
-const provincia = getProvinciaBySlug("lleida")!;
+const provincia = getProvinciaBySlug("barcelona")!;
 const contenido = generarContenidoProvincia(provincia);
 const faqs = getFaqsProvincia(provincia.nombre);
 
 export const metadata: Metadata = generarMetadataProvincia(provincia);
 
-export default function MoquetaEcologicaLleida() {
+export default function MoquetaEcologicaBarcelona() {
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
   const faqSchema = generarFAQSchema(faqs);
   const breadcrumbItems = [
     { name: "Inicio", url: "https://www.moquetaecologica.com" },
     {
-      name: `Moqueta Ecológica ${provincia.nombre}`,
-      url: `https://www.moquetaecologica.com/moqueta-ecologica-${provincia.slug}`,
+      name: `Moqueta Ferial ${provincia.nombre}`,
+      url: `https://www.moquetaecologica.com/moqueta-ferial-${provincia.slug}`,
     },
   ];
   const breadcrumbSchema = generarBreadcrumbSchema(breadcrumbItems);
@@ -144,7 +144,7 @@ export default function MoquetaEcologicaLleida() {
                 </h3>
               </div>
               <div className="flex flex-wrap gap-2">
-                {provincia.municipiosPrincipales.map((municipio) => {
+                {provincia.municipiosPrincipales.slice(0, 12).map((municipio) => {
                   const page = findMunicipioPageByName(municipio);
                   return page ? (
                     <Link
@@ -163,6 +163,9 @@ export default function MoquetaEcologicaLleida() {
                     </span>
                   );
                 })}
+                <span className="text-primary text-sm font-medium">
+                  +{provincia.municipiosPrincipales.length - 12} más
+                </span>
               </div>
             </div>
 
@@ -229,7 +232,7 @@ export default function MoquetaEcologicaLleida() {
       <AreasServicio provinciaActual={provincia.slug} />
 
       {/* FAQ */}
-      <FAQ faqs={faqs} titulo={`Preguntas sobre moqueta ecológica en ${provincia.nombre}`} />
+      <FAQ faqs={faqs} titulo={`Preguntas sobre moqueta ferial en ${provincia.nombre}`} />
 
       {/* CTA final */}
       <CTABand />

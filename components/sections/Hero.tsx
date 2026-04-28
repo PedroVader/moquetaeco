@@ -77,7 +77,7 @@ export function Hero({
           <div className="bg-black/30 backdrop-blur-sm rounded-2xl p-6 inline-block mb-8">
             <p className="text-sm text-white/70 mb-1">Desde</p>
             <p className="text-4xl font-bold">
-              2,10€<span className="text-lg font-normal">/m²</span>
+              2,20€<span className="text-lg font-normal">/m²</span>
             </p>
             <p className="text-sm text-white/70">IVA no incluido</p>
           </div>

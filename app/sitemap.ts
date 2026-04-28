@@ -32,6 +32,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.3,
     },
+    {
+      url: `${BASE_URL}/aviso-legal`,
+      lastModified: LAST_UPDATE,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/politica-privacidad`,
+      lastModified: LAST_UPDATE,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/politica-cookies`,
+      lastModified: LAST_UPDATE,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   // Páginas de producto

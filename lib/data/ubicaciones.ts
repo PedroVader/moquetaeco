@@ -8,6 +8,11 @@ export interface Comarca {
   espaciosEventos: string[];
   distanciaBarcelona: number;
   municipiosPrincipales?: string[];
+  tipoTerritorio: 'urbano' | 'periurbano' | 'rural' | 'turistico_costa' | 'turistico_montaña';
+  sectorEconomicoPrincipal: string;
+  infraestructuraTransporte: string;
+  temporadaEventos: string;
+  contextoLogistico: string;
 }
 
 export interface Provincia {
@@ -29,6 +34,14 @@ export interface Municipio {
   comarca: string;
   descripcion: string;
   zonasEventos: string[];
+  tipoEconomia: 'industrial' | 'servicios' | 'turismo' | 'tecnologia' | 'agrario' | 'mixto';
+  tipoGeografia: 'costa' | 'montaña' | 'llanura' | 'metropolitano' | 'interior';
+  temporadaAlta: 'verano' | 'todo_el_año' | 'otoño_primavera' | 'invierno';
+  distanciaBarcelona: number;
+  accesibilidad: string;
+  eventoDestacado?: string;
+  sectorPrincipal?: string;
+  tiposEventoFrecuente: string[];
 }
 
 export interface TipoUso {
@@ -99,6 +112,11 @@ export const provincias: Provincia[] = [
           "Santa Coloma de Gramenet",
           "Sant Adrià de Besòs",
         ],
+        tipoTerritorio: 'urbano',
+        sectorEconomicoPrincipal: 'Ferias internacionales y turismo',
+        infraestructuraTransporte: 'Metro, bus, AVE, aeropuerto, puerto',
+        temporadaEventos: 'Todo el año, picos en febrero (MWC) y noviembre (Smart City)',
+        contextoLogistico: 'Almacén propio en Barcelona, entrega inmediata o mismo día',
       },
       {
         slug: "valles-occidental",
@@ -128,6 +146,11 @@ export const provincias: Provincia[] = [
           "Cerdanyola del Vallès",
           "Montcada i Reixac",
         ],
+        tipoTerritorio: 'periurbano',
+        sectorEconomicoPrincipal: 'Industria y servicios empresariales',
+        infraestructuraTransporte: 'FGC S1/S2, C-58, AP-7, B-30',
+        temporadaEventos: 'Septiembre a junio, ferias sectoriales continuadas',
+        contextoLogistico: 'A 25-30 min del almacén por C-58, entrega en 2-3 horas',
       },
       {
         slug: "valles-oriental",
@@ -154,6 +177,11 @@ export const provincias: Provincia[] = [
           "La Garriga",
           "Cardedeu",
         ],
+        tipoTerritorio: 'periurbano',
+        sectorEconomicoPrincipal: 'PYMES e industria diversificada',
+        infraestructuraTransporte: 'AP-7, C-33, RENFE R2/R8',
+        temporadaEventos: 'Primavera y otoño, ferias comarcales',
+        contextoLogistico: 'A 30 min por AP-7, logística ágil para el Palau Firal de Granollers',
       },
       {
         slug: "baix-llobregat",
@@ -184,6 +212,11 @@ export const provincias: Provincia[] = [
           "Esplugues de Llobregat",
           "Sant Feliu de Llobregat",
         ],
+        tipoTerritorio: 'periurbano',
+        sectorEconomicoPrincipal: 'Logística, aeronáutico y comercio',
+        infraestructuraTransporte: 'Metro L9, RENFE, C-31, C-32, aeropuerto',
+        temporadaEventos: 'Todo el año gracias a la proximidad ferial',
+        contextoLogistico: 'A 10-15 min del almacén, zona de entrega prioritaria',
       },
       {
         slug: "maresme",
@@ -210,6 +243,11 @@ export const provincias: Provincia[] = [
           "Vilassar de Mar",
           "Calella",
         ],
+        tipoTerritorio: 'turistico_costa',
+        sectorEconomicoPrincipal: 'Tecnología (Tecnocampus) y turismo',
+        infraestructuraTransporte: 'C-32, RENFE R1, N-II',
+        temporadaEventos: 'Primavera-verano para eventos outdoor, todo el año para Tecnocampus',
+        contextoLogistico: 'A 30-40 min por C-32, entrega en medio día',
       },
       {
         slug: "garraf",
@@ -234,6 +272,11 @@ export const provincias: Provincia[] = [
           "Sitges",
           "Sant Pere de Ribes",
         ],
+        tipoTerritorio: 'turistico_costa',
+        sectorEconomicoPrincipal: 'Turismo premium, cine y bodas',
+        infraestructuraTransporte: 'C-32, RENFE R2 Sud',
+        temporadaEventos: 'Primavera-otoño para bodas, octubre para Festival de Cine',
+        contextoLogistico: 'A 35-45 min por C-32, servicio habitual de entregas',
       },
       {
         slug: "alt-penedes",
@@ -259,6 +302,11 @@ export const provincias: Provincia[] = [
           "Sant Sadurní d'Anoia",
           "Gelida",
         ],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Vitivinicultura y enoturismo',
+        infraestructuraTransporte: 'AP-7, RENFE R4, N-340',
+        temporadaEventos: 'Vendimia (sept-oct), Navidad (Fira del Gall), primavera',
+        contextoLogistico: 'A 50 min por AP-7, entregas programadas 24-48h',
       },
       {
         slug: "anoia",
@@ -279,6 +327,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 65,
         municipiosPrincipales: ["Igualada", "Vilanova del Camí", "Santa Margarida de Montbui"],
+        tipoTerritorio: 'periurbano',
+        sectorEconomicoPrincipal: 'Industria del cuero y piel',
+        infraestructuraTransporte: 'A-2, FGC, N-II',
+        temporadaEventos: 'Primavera (Fira de la Pell), julio (European Balloon Festival)',
+        contextoLogistico: 'A 60-70 min por A-2, entregas en 24h',
       },
       {
         slug: "bages",
@@ -299,6 +352,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 65,
         municipiosPrincipales: ["Manresa", "Sant Vicenç de Castellet", "Santpedor", "Navarcles"],
+        tipoTerritorio: 'periurbano',
+        sectorEconomicoPrincipal: 'Industria y comercio comarcal',
+        infraestructuraTransporte: 'C-16, Eix Transversal, RENFE R4',
+        temporadaEventos: "Todo el año, Mediterrània en otoño, Fira de l'Aixada en primavera",
+        contextoLogistico: 'A 65 min por C-16, entregas en 24h',
       },
       {
         slug: "osona",
@@ -319,6 +377,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 70,
         municipiosPrincipales: ["Vic", "Manlleu", "Centelles", "Torelló"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Agroalimentario (cárnico) y universidad',
+        infraestructuraTransporte: 'C-17, RENFE R3, Eix Transversal',
+        temporadaEventos: 'Mercat del Ram (primavera), Mercat de Música Viva (sept)',
+        contextoLogistico: 'A 70 min por C-17, entregas en 24-48h',
       },
       {
         slug: "bergueda",
@@ -339,6 +402,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 110,
         municipiosPrincipales: ["Berga", "Gironella", "Puig-reig"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo rural y patrimonio cultural',
+        infraestructuraTransporte: 'C-16, túnel del Cadí',
+        temporadaEventos: 'Junio (La Patum), verano-otoño',
+        contextoLogistico: 'A 110 min por C-16, entregas programadas 48h',
       },
       {
         slug: "moianes",
@@ -357,6 +425,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 55,
         municipiosPrincipales: ["Moià", "Calders", "Castellterçol"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Agricultura y pequeña industria',
+        infraestructuraTransporte: 'C-59, BP-1101',
+        temporadaEventos: 'Primavera-verano, ferias agrícolas',
+        contextoLogistico: 'A 55 min por carreteras comarcales, entregas programadas 48h',
       },
     ],
     recintosFeriales: [
@@ -414,6 +487,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 100,
         municipiosPrincipales: ["Girona", "Salt", "Sarrià de Ter", "Cassà de la Selva"],
+        tipoTerritorio: 'urbano',
+        sectorEconomicoPrincipal: 'Servicios, turismo cultural y gastronomía',
+        infraestructuraTransporte: 'AP-7, AVE, aeropuerto Girona-Costa Brava',
+        temporadaEventos: 'Mayo (Temps de Flors), octubre (Sant Narcís), todo el año',
+        contextoLogistico: 'A 100 min por AP-7, entregas en 24h, punto de distribución para norte de Cataluña',
       },
       {
         slug: "alt-emporda",
@@ -434,6 +512,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 140,
         municipiosPrincipales: ["Figueres", "Roses", "Castelló d'Empúries", "Llançà"],
+        tipoTerritorio: 'turistico_costa',
+        sectorEconomicoPrincipal: 'Turismo cultural (Dalí) y gastronómico',
+        infraestructuraTransporte: 'AP-7, AVE Figueres-Vilafant, N-II',
+        temporadaEventos: 'Verano para turismo, otoño para ferias',
+        contextoLogistico: 'A 140 min por AP-7, entregas en 24-48h',
       },
       {
         slug: "baix-emporda",
@@ -460,6 +543,11 @@ export const provincias: Provincia[] = [
           "Sant Feliu de Guíxols",
           "Torroella de Montgrí",
         ],
+        tipoTerritorio: 'turistico_costa',
+        sectorEconomicoPrincipal: 'Turismo premium y gastronomía',
+        infraestructuraTransporte: 'C-31, AP-7 (salida Palamós/La Bisbal)',
+        temporadaEventos: 'Junio-sept (Cap Roig), primavera-otoño para bodas',
+        contextoLogistico: 'A 120 min por AP-7/C-31, entregas en 24-48h',
       },
       {
         slug: "selva",
@@ -485,6 +573,11 @@ export const provincias: Provincia[] = [
           "Santa Coloma de Farners",
           "Caldes de Malavella",
         ],
+        tipoTerritorio: 'turistico_costa',
+        sectorEconomicoPrincipal: 'Turismo resort y MICE',
+        infraestructuraTransporte: 'AP-7, RENFE R1, GI-682',
+        temporadaEventos: 'Verano para turismo, todo el año para convenciones',
+        contextoLogistico: 'A 70 min por AP-7, entregas rápidas para hoteles resort',
       },
       {
         slug: "garrotxa",
@@ -505,6 +598,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 130,
         municipiosPrincipales: ["Olot", "Besalú", "Santa Pau"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Industria cárnica y turismo volcánico',
+        infraestructuraTransporte: 'A-26, C-152, sin tren',
+        temporadaEventos: 'Otoño (Festes del Tura), primavera (Sismògraf)',
+        contextoLogistico: 'A 130 min por A-26, entregas programadas 48h',
       },
       {
         slug: "ripolles",
@@ -523,6 +621,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 110,
         municipiosPrincipales: ["Ripoll", "Campdevànol", "Sant Joan de les Abadesses"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo de montaña y patrimonio',
+        infraestructuraTransporte: 'C-17, RENFE R3',
+        temporadaEventos: 'Verano-otoño, fiestas patronales',
+        contextoLogistico: 'A 110 min por C-17, entregas en 48h',
       },
       {
         slug: "pla-estany",
@@ -543,6 +646,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 120,
         municipiosPrincipales: ["Banyoles", "Porqueres", "Cornellà del Terri"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Deportes acuáticos y turismo',
+        infraestructuraTransporte: 'C-66, cerca AP-7',
+        temporadaEventos: 'Primavera-verano para deportes, otoño para cultura',
+        contextoLogistico: 'A 120 min por AP-7/C-66, entregas en 48h',
       },
       {
         slug: "cerdanya",
@@ -562,6 +670,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 170,
         municipiosPrincipales: ["Puigcerdà", "Bellver de Cerdanya", "Alp"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo de esquí y montaña',
+        infraestructuraTransporte: 'C-16, Túnel del Cadí, N-260',
+        temporadaEventos: 'Invierno (esquí), verano (montaña), mercados dominicales',
+        contextoLogistico: 'A 170 min por C-16/Cadí, entregas programadas 48-72h',
       },
     ],
     recintosFeriales: ["Palau Firal de Girona", "Fira de Girona"],
@@ -609,6 +722,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 100,
         municipiosPrincipales: ["Tarragona", "Salou", "Vila-seca", "Cambrils", "Torredembarra"],
+        tipoTerritorio: 'urbano',
+        sectorEconomicoPrincipal: 'Petroquímica, turismo patrimonial y PortAventura',
+        infraestructuraTransporte: 'AP-7, AVE Camp de Tarragona, puerto, RENFE',
+        temporadaEventos: 'Todo el año: Tarraco Viva (mayo), Santa Tecla (sept), congresos',
+        contextoLogistico: 'A 100 min por AP-7, entregas en 24h',
       },
       {
         slug: "baix-camp",
@@ -629,6 +747,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 110,
         municipiosPrincipales: ["Reus", "Cambrils", "Mont-roig del Camp"],
+        tipoTerritorio: 'periurbano',
+        sectorEconomicoPrincipal: 'Comercio, aeroportuario y turismo',
+        infraestructuraTransporte: 'AP-7, aeropuerto Reus, RENFE',
+        temporadaEventos: 'Todo el año, Fira de Reus en múltiples ediciones',
+        contextoLogistico: 'A 110 min por AP-7, entregas en 24h',
       },
       {
         slug: "alt-camp",
@@ -648,6 +771,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 100,
         municipiosPrincipales: ["Valls", "El Pla de Santa Maria"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Agroalimentario y tradición castellera',
+        infraestructuraTransporte: 'AP-2, N-240, RENFE',
+        temporadaEventos: 'Enero-febrero (calçotada), otoño (castells, Santa Úrsula)',
+        contextoLogistico: 'A 100 min por AP-2, entregas en 24-48h',
       },
       {
         slug: "baix-penedes",
@@ -666,6 +794,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 70,
         municipiosPrincipales: ["El Vendrell", "Calafell", "Cunit"],
+        tipoTerritorio: 'turistico_costa',
+        sectorEconomicoPrincipal: 'Turismo de sol y playa',
+        infraestructuraTransporte: 'AP-7, RENFE R4, N-340',
+        temporadaEventos: 'Verano para turismo, otoño para cultura',
+        contextoLogistico: 'A 70 min por AP-7, entregas rápidas',
       },
       {
         slug: "baix-ebre",
@@ -686,6 +819,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 180,
         municipiosPrincipales: ["Tortosa", "Roquetes", "Deltebre"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Patrimonio monumental y agroalimentario',
+        infraestructuraTransporte: 'AP-7, RENFE, N-340',
+        temporadaEventos: 'Julio (Renaixement), otoño para ferias',
+        contextoLogistico: 'A 180 min por AP-7, entregas programadas 48h',
       },
       {
         slug: "montsia",
@@ -705,6 +843,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 200,
         municipiosPrincipales: ["Amposta", "Sant Carles de la Ràpita", "Ulldecona"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Agroalimentario (arroz) y ecoturismo',
+        infraestructuraTransporte: 'AP-7, N-340, carreteras del Delta',
+        temporadaEventos: 'Primavera-otoño para ecoturismo, otoño para gastronomía',
+        contextoLogistico: 'A 200 min por AP-7, entregas programadas 48-72h',
       },
       {
         slug: "priorat",
@@ -725,6 +868,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 150,
         municipiosPrincipales: ["Falset", "Porrera", "La Morera de Montsant"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Vitivinicultura DOQ y enoturismo premium',
+        infraestructuraTransporte: 'N-420, carreteras comarcales (sin autovía directa)',
+        temporadaEventos: 'Vendimia (sept-oct), primavera para catas',
+        contextoLogistico: 'A 150 min por AP-7 + comarcales, entregas programadas 48h',
       },
       {
         slug: "terra-alta",
@@ -743,6 +891,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 190,
         municipiosPrincipales: ["Gandesa", "Batea", "Bot"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Vitivinicultura DO y memoria histórica',
+        infraestructuraTransporte: 'N-420, T-334',
+        temporadaEventos: 'Vendimia (otoño), primavera',
+        contextoLogistico: 'A 190 min, entregas programadas 72h',
       },
       {
         slug: "ribera-ebre",
@@ -761,6 +914,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 170,
         municipiosPrincipales: ["Móra d'Ebre", "Flix", "Móra la Nova"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Industria y patrimonio fluvial',
+        infraestructuraTransporte: 'C-12, N-420, RENFE',
+        temporadaEventos: 'Primavera-verano (Descens del riu)',
+        contextoLogistico: 'A 170 min, entregas programadas 48-72h',
       },
       {
         slug: "conca-barbera",
@@ -781,6 +939,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 120,
         municipiosPrincipales: ["Montblanc", "L'Espluga de Francolí", "Santa Coloma de Queralt"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Patrimonio medieval (Montblanc, Poblet) y vino',
+        infraestructuraTransporte: 'AP-2, N-240',
+        temporadaEventos: 'Abril (Setmana Medieval), otoño (Tots Sants)',
+        contextoLogistico: 'A 120 min por AP-2, entregas en 48h',
       },
     ],
     recintosFeriales: [
@@ -830,6 +993,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 160,
         municipiosPrincipales: ["Lleida", "Alcarràs", "Almacelles"],
+        tipoTerritorio: 'urbano',
+        sectorEconomicoPrincipal: 'Agroalimentario, logística y servicios',
+        infraestructuraTransporte: 'AP-2, AVE, A-2, Eix Transversal',
+        temporadaEventos: 'Mayo (Aplec del Caragol), septiembre (Sant Miquel), todo el año',
+        contextoLogistico: 'A 160 min por AP-2, punto de distribución para Lleida provincia',
       },
       {
         slug: "noguera",
@@ -848,6 +1016,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 180,
         municipiosPrincipales: ["Balaguer", "Artesa de Segre", "Os de Balaguer"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Agricultura y patrimonio medieval',
+        infraestructuraTransporte: 'C-13, Eix Transversal',
+        temporadaEventos: 'Septiembre (Sant Miquel de Balaguer)',
+        contextoLogistico: 'A 180 min por carreteras, entregas programadas 48-72h',
       },
       {
         slug: "urgell",
@@ -867,6 +1040,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 130,
         municipiosPrincipales: ["Tàrrega", "Agramunt", "Bellpuig"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Cultura y artes escénicas (FiraTàrrega)',
+        infraestructuraTransporte: 'A-2, RENFE, Eix Transversal',
+        temporadaEventos: 'Septiembre (FiraTàrrega), todo el año',
+        contextoLogistico: 'A 130 min por A-2, entregas en 48h',
       },
       {
         slug: "pla-urgell",
@@ -885,6 +1063,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 150,
         municipiosPrincipales: ["Mollerussa", "Miralcamp", "Linyola"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Agricultura y ganadería (ferias referentes)',
+        infraestructuraTransporte: 'A-2, RENFE',
+        temporadaEventos: 'Marzo (Fira de Sant Josep), primavera',
+        contextoLogistico: 'A 150 min por A-2, entregas en 48h',
       },
       {
         slug: "garrigues",
@@ -903,6 +1086,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 150,
         municipiosPrincipales: ["Les Borges Blanques", "Juneda", "Arbeca"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Olivicultura (DOP Oli de les Garrigues)',
+        infraestructuraTransporte: 'N-240, carreteras comarcales',
+        temporadaEventos: 'Otoño-invierno (cosecha aceite, ferias)',
+        contextoLogistico: 'A 150 min, entregas programadas 48-72h',
       },
       {
         slug: "segarra",
@@ -922,6 +1110,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 110,
         municipiosPrincipales: ["Cervera", "Guissona", "Sanaüja"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Patrimonio universitario y agricultura',
+        infraestructuraTransporte: 'A-2, AP-2, RENFE',
+        temporadaEventos: 'Aquelarre (noviembre), ferias anuales',
+        contextoLogistico: 'A 110 min por AP-2, entregas en 24-48h',
       },
       {
         slug: "alt-urgell",
@@ -941,6 +1134,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 200,
         municipiosPrincipales: ["La Seu d'Urgell", "Oliana", "Organyà"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo de aventura y comercio fronterizo (Andorra)',
+        infraestructuraTransporte: 'C-16, Túnel del Cadí, N-260',
+        temporadaEventos: 'Verano (deportes), octubre (Sant Ermengol)',
+        contextoLogistico: 'A 200 min por C-16/Cadí, entregas programadas 72h',
       },
       {
         slug: "solsones",
@@ -960,6 +1158,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 120,
         municipiosPrincipales: ["Solsona", "Navès", "Olius"],
+        tipoTerritorio: 'rural',
+        sectorEconomicoPrincipal: 'Turismo cultural y patrimonio',
+        infraestructuraTransporte: 'C-16, C-55',
+        temporadaEventos: 'Febrero (Carnaval), verano (Festa Major)',
+        contextoLogistico: 'A 120 min por C-16, entregas en 48h',
       },
       {
         slug: "pallars-jussa",
@@ -978,6 +1181,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 200,
         municipiosPrincipales: ["Tremp", "Talarn", "Isona i Conca Dellà"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo de naturaleza y embalses',
+        infraestructuraTransporte: 'C-13, N-260',
+        temporadaEventos: 'Verano para naturaleza, ferias anuales',
+        contextoLogistico: 'A 200 min por C-13, entregas programadas 72h',
       },
       {
         slug: "pallars-sobira",
@@ -997,6 +1205,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 230,
         municipiosPrincipales: ["Sort", "Rialp", "Esterri d'Àneu"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo de aventura (ràfting) y deportes',
+        infraestructuraTransporte: 'C-13, N-260',
+        temporadaEventos: 'Verano (deportes acuáticos), invierno (esquí nórdico)',
+        contextoLogistico: 'A 230 min por C-13, entregas programadas 72h',
       },
       {
         slug: "val-aran",
@@ -1017,6 +1230,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 280,
         municipiosPrincipales: ["Vielha", "Bossòst", "Les"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo de esquí premium (Baqueira-Beret)',
+        infraestructuraTransporte: 'N-230, Túnel de Vielha, C-28',
+        temporadaEventos: "Invierno (esquí), verano (Hèsta d'Aran), bodas todo el año",
+        contextoLogistico: 'A 280 min por N-230, entregas programadas especiales 72h',
       },
       {
         slug: "alta-ribagorca",
@@ -1035,6 +1253,11 @@ export const provincias: Provincia[] = [
         ],
         distanciaBarcelona: 260,
         municipiosPrincipales: ["El Pont de Suert", "Vilaller", "La Vall de Boí"],
+        tipoTerritorio: 'turistico_montaña',
+        sectorEconomicoPrincipal: 'Turismo de naturaleza y patrimonio románico (UNESCO)',
+        infraestructuraTransporte: 'N-230, L-500',
+        temporadaEventos: 'Invierno (Boí Taüll), verano (patrimonio), junio (Falles)',
+        contextoLogistico: 'A 260 min, entregas especiales programadas 72h+',
       },
     ],
     recintosFeriales: ["Fira de Lleida", "Palau de Vidre"],
@@ -1056,6 +1279,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "L'Hospitalet de Llobregat es la segunda ciudad de Cataluña y limítrofe con Barcelona. Su proximidad a Fira Barcelona Gran Via la convierte en sede logística de grandes eventos y ferias internacionales.",
     zonasEventos: ["Fira Barcelona Gran Via (distrito limítrofe)", "Centre Cultural Tecla Sala", "Hotels de Gran Via L'H"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 3,
+    accesibilidad: 'Metro L1/L9, Gran Via, acceso directo Fira Gran Via',
+    eventoDestacado: 'Mobile World Congress (zona limítrofe)',
+    sectorPrincipal: 'Logística ferial y servicios',
+    tiposEventoFrecuente: ['ferias internacionales', 'congresos', 'eventos corporativos'],
   },
   {
     slug: "badalona",
@@ -1066,6 +1297,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Badalona es la tercera ciudad de Cataluña, con un frente marítimo renovado y espacios industriales reconvertidos. El Palau Olímpic y su puerto deportivo ofrecen opciones para eventos de gran formato.",
     zonasEventos: ["Palau Olímpic de Badalona", "Magic Badalona", "Port de Badalona"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 10,
+    accesibilidad: 'Metro L2/L9, Ronda Litoral, RENFE R1',
+    eventoDestacado: 'Badalona Magic (baloncesto)',
+    sectorPrincipal: 'Industria y comercio',
+    tiposEventoFrecuente: ['eventos deportivos', 'ferias comerciales', 'congresos'],
   },
   {
     slug: "terrassa",
@@ -1076,6 +1315,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Terrassa es una gran ciudad industrial del Vallès, con patrimonio modernista y una activa agenda ferial. El Firal de Terrassa y el Vapor Gran son espacios de referencia para eventos empresariales.",
     zonasEventos: ["Firal de Terrassa", "Vapor Gran", "Nova Terrassa Hotels", "Masia Freixa"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 30,
+    accesibilidad: 'C-58, FGC S1, autopista directa',
+    eventoDestacado: 'Fira de Terrassa',
+    sectorPrincipal: 'Industria textil y tecnológica',
+    tiposEventoFrecuente: ['ferias industriales', 'congresos empresariales', 'team buildings'],
   },
   {
     slug: "sabadell",
@@ -1086,6 +1333,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Sabadell es capital del Vallès Occidental, ciudad con tradición textil e industrial. Cuenta con espacios feriales modernos y una oferta hotelera que atiende congresos, ferias sectoriales y jornadas empresariales.",
     zonasEventos: ["Fira Sabadell", "Hotel-Palau de Congressos", "Espai Cultura Sabadell"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 25,
+    accesibilidad: 'C-58, FGC S1, AP-7',
+    eventoDestacado: 'Fira de Sabadell',
+    sectorPrincipal: 'Banca y servicios empresariales',
+    tiposEventoFrecuente: ['ferias sectoriales', 'jornadas empresariales', 'congresos'],
   },
   {
     slug: "mataro",
@@ -1096,6 +1351,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Mataró es la capital del Maresme, ciudad costera con un importante tejido industrial y el Tecnocampus como polo de innovación. Los eventos tecnológicos y las ferias sectoriales definen su agenda.",
     zonasEventos: ["Tecnocampus Mataró", "El Rengle", "Hotels del passeig marítim"],
+    tipoEconomia: 'tecnologia',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 30,
+    accesibilidad: 'C-32, RENFE R1, N-II',
+    eventoDestacado: 'Fira de Mataró',
+    sectorPrincipal: 'Tecnología e innovación (Tecnocampus)',
+    tiposEventoFrecuente: ['eventos tech', 'ferias comerciales', 'jornadas de innovación'],
   },
   {
     slug: "santa-coloma",
@@ -1106,6 +1369,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Santa Coloma de Gramenet es una ciudad dinámica del área metropolitana de Barcelona, con espacios culturales renovados y buena conexión de transporte para eventos urbanos.",
     zonasEventos: ["Centre Cultural Can Sisteré", "Teatre Municipal Can Fradera"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 5,
+    accesibilidad: 'Metro L1/L9, Ronda de Dalt, B-20',
+    eventoDestacado: 'Festa Major de Santa Coloma',
+    sectorPrincipal: 'Comercio y servicios',
+    tiposEventoFrecuente: ['eventos culturales', 'ferias comerciales', 'actos institucionales'],
   },
   {
     slug: "cornella",
@@ -1116,6 +1387,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Cornellà de Llobregat está en el corazón del Baix Llobregat, con la Fira de Cornellà como referente y excelentes conexiones con Barcelona. La industria y los servicios generan una activa agenda de eventos.",
     zonasEventos: ["Fira de Cornellà", "Centre Poliesportiu", "L'Auditori de Cornellà"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 8,
+    accesibilidad: 'Metro L5, RENFE, Gran Via, B-23',
+    eventoDestacado: 'Fira de Cornellà',
+    sectorPrincipal: 'Industria y distribución',
+    tiposEventoFrecuente: ['ferias comarcales', 'eventos corporativos', 'jornadas sectoriales'],
   },
   {
     slug: "sant-cugat",
@@ -1126,6 +1405,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Sant Cugat del Vallès es una ciudad residencial con alta renta per cápita y un importante parque empresarial. El turismo de negocio y los eventos corporativos son habituales en sus hoteles y espacios.",
     zonasEventos: ["Hotel Sant Cugat", "Ateneu de Sant Cugat", "Parc empresarial Can Sant Joan"],
+    tipoEconomia: 'tecnologia',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 15,
+    accesibilidad: 'FGC S1/S2, AP-7, Túnels de Vallvidrera',
+    eventoDestacado: 'Sant Cugat Business Forum',
+    sectorPrincipal: 'Tecnología y parques empresariales',
+    tiposEventoFrecuente: ['eventos corporativos', 'networking', 'presentaciones de producto'],
   },
   {
     slug: "sant-boi",
@@ -1136,6 +1423,13 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Sant Boi de Llobregat combina tradición agrícola con modernidad, muy próximo al aeropuerto del Prat. Su ubicación estratégica facilita la logística de eventos y ferias en el área metropolitana.",
     zonasEventos: ["Espai Cultural Sant Boi", "Mercat Nou"],
+    tipoEconomia: 'mixto',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 12,
+    accesibilidad: 'Metro L9/L10, RENFE, C-31, cerca aeropuerto',
+    sectorPrincipal: 'Industria y logística',
+    tiposEventoFrecuente: ['ferias comerciales', 'eventos empresariales', 'actos institucionales'],
   },
   {
     slug: "rubi",
@@ -1146,6 +1440,13 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Rubí es una ciudad industrial del Vallès Occidental con un tejido empresarial diversificado. Sus polígonos industriales y centros empresariales acogen jornadas sectoriales y eventos corporativos.",
     zonasEventos: ["Centre Cultural de Rubí", "Espais industrials reconvertits"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 22,
+    accesibilidad: 'FGC S1, AP-7, B-30',
+    sectorPrincipal: 'Industria y polígonos empresariales',
+    tiposEventoFrecuente: ['jornadas industriales', 'ferias sectoriales', 'eventos corporativos'],
   },
   {
     slug: "manresa",
@@ -1156,6 +1457,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Manresa es la capital del Bages, ciudad de referencia de la Catalunya Central. La Fira de l'Aixada y el Kursaal son motores de una activa agenda de eventos empresariales y culturales.",
     zonasEventos: ["Palau Firal de Manresa", "Kursaal Manresa", "FUB Campus"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 65,
+    accesibilidad: 'C-16, RENFE R4 (Línia Llobregat-Anoia), Eix Transversal',
+    eventoDestacado: 'Fira de l\'Aixada',
+    sectorPrincipal: 'Comercio y servicios comarcales',
+    tiposEventoFrecuente: ['ferias comarcales', 'congresos', 'eventos culturales'],
   },
   {
     slug: "vilanova",
@@ -1166,6 +1475,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Vilanova i la Geltrú es la capital del Garraf, ciudad costera con tradición marinera y un animado Carnaval. Su frente marítimo y espacios culturales acogen eventos, ferias y celebraciones.",
     zonasEventos: ["Centre Cívic de Vilanova", "Port de Vilanova", "Espai Far"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 45,
+    accesibilidad: 'C-32, RENFE R2 Sud, carretera de les costes',
+    eventoDestacado: 'Carnaval de Vilanova',
+    sectorPrincipal: 'Turismo y comercio marítimo',
+    tiposEventoFrecuente: ['fiestas populares', 'ferias náuticas', 'eventos gastronómicos'],
   },
   {
     slug: "granollers",
@@ -1176,6 +1493,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Granollers es la capital del Vallès Oriental, con un importante Palau Firal que acoge ferias, exposiciones y eventos deportivos. La Fira de l'Ascensió es una de las más antiguas de Cataluña.",
     zonasEventos: ["Palau Firal de Granollers", "Can Mulà", "Centre Cultural"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 30,
+    accesibilidad: 'AP-7, C-33, RENFE R2 Nord/R8',
+    eventoDestacado: 'Fira de l\'Ascensió',
+    sectorPrincipal: 'Comercio y PYMES',
+    tiposEventoFrecuente: ['ferias comerciales', 'eventos deportivos', 'jornadas empresariales'],
   },
   {
     slug: "viladecans",
@@ -1186,6 +1511,13 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Viladecans es una ciudad del Baix Llobregat junto al aeropuerto, con el Viladecans The Style Outlets y Gavà Mar como polos de actividad. Punto logístico para eventos en el área metropolitana sur.",
     zonasEventos: ["Viladecans The Style Outlets", "Centre Cívic", "Hotels de Gavà Mar"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 15,
+    accesibilidad: 'C-31, RENFE, Metro L9 (próxima), cerca aeropuerto',
+    sectorPrincipal: 'Outlet comercial y logística',
+    tiposEventoFrecuente: ['eventos comerciales', 'ferias outlet', 'actos corporativos'],
   },
   {
     slug: "el-prat",
@@ -1196,6 +1528,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "El Prat de Llobregat alberga el aeropuerto Josep Tarradellas Barcelona-El Prat. Su ubicación única la convierte en base logística para montajes feriales y eventos que requieren acceso aéreo directo.",
     zonasEventos: ["Hotels de l'aeroport", "Centre Cívic El Prat", "Espai Natural del Delta"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 12,
+    accesibilidad: 'Metro L9, RENFE, C-31, acceso directo aeropuerto',
+    eventoDestacado: 'Feria del aeropuerto',
+    sectorPrincipal: 'Aeroportuario y logística',
+    tiposEventoFrecuente: ['eventos corporativos', 'convenciones', 'ferias de aviación'],
   },
   {
     slug: "castelldefels",
@@ -1206,6 +1546,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Castelldefels combina playa y montaña a 20 minutos de Barcelona. Sus hoteles frente al mar y el Canal Olímpic la convierten en destino para team buildings, convenciones y eventos outdoor.",
     zonasEventos: ["Canal Olímpic de Catalunya", "Hotels de la platja", "Castell de Castelldefels"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 20,
+    accesibilidad: 'C-32, RENFE R2 Sud, C-31',
+    eventoDestacado: 'Eventos en Canal Olímpic',
+    sectorPrincipal: 'Turismo y team buildings',
+    tiposEventoFrecuente: ['team buildings', 'bodas', 'eventos outdoor'],
   },
   {
     slug: "gava",
@@ -1216,6 +1564,13 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Gavà es una ciudad del Baix Llobregat con playa propia y zona de negocios. Gavà Mar concentra hoteles y espacios para eventos corporativos con acceso directo al aeropuerto.",
     zonasEventos: ["Hotels Gavà Mar", "Centre Cívic de Gavà", "Passeig Marítim"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 18,
+    accesibilidad: 'C-32, RENFE R2 Sud, C-31, acceso aeropuerto',
+    sectorPrincipal: 'Turismo de negocios y hotelero',
+    tiposEventoFrecuente: ['convenciones', 'eventos corporativos', 'incentivos'],
   },
   {
     slug: "cerdanyola",
@@ -1226,6 +1581,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Cerdanyola del Vallès alberga el campus de la UAB y el Parc de l'Alba, polo de innovación y tecnología. Los eventos universitarios y empresariales son habituales en sus espacios modernos.",
     zonasEventos: ["Campus de la UAB", "Parc de l'Alba (Síncrotró Alba)", "Centre Cívic"],
+    tipoEconomia: 'tecnologia',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 12,
+    accesibilidad: 'FGC, RENFE, AP-7, B-30',
+    eventoDestacado: 'Jornadas ALBA Síncrotró',
+    sectorPrincipal: 'Investigación y universidad (UAB)',
+    tiposEventoFrecuente: ['congresos científicos', 'jornadas universitarias', 'eventos tech'],
   },
   {
     slug: "reus",
@@ -1236,6 +1599,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Reus es la segunda ciudad de Tarragona, cuna de Gaudí y centro modernista. La Fira Reus es un espacio ferial de referencia y la ciudad acoge ferias, congresos y eventos durante todo el año.",
     zonasEventos: ["Fira Reus", "Palau Firal", "Teatre Fortuny", "Gaudí Centre"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 110,
+    accesibilidad: 'AP-7, A-7, RENFE (AVE Camp de Tarragona), aeropuerto Reus',
+    eventoDestacado: 'Fira de Reus',
+    sectorPrincipal: 'Comercio y modernismo (Gaudí Centre)',
+    tiposEventoFrecuente: ['ferias comerciales', 'eventos culturales', 'congresos'],
   },
   {
     slug: "girona-ciudad",
@@ -1246,6 +1617,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Girona es una ciudad monumental con el Barri Vell como joya medieval. Temps de Flors, el Festival Strenes y las Festes de Sant Narcís generan una agenda cultural y de eventos de primer nivel.",
     zonasEventos: ["Palau de Fires de Girona", "Auditori de Girona", "Centre Cultural La Mercè"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 100,
+    accesibilidad: 'AP-7, AVE, aeropuerto Girona-Costa Brava',
+    eventoDestacado: 'Temps de Flors',
+    sectorPrincipal: 'Turismo cultural y gastronomía',
+    tiposEventoFrecuente: ['festivales culturales', 'congresos', 'eventos gastronómicos'],
   },
   {
     slug: "lleida-ciudad",
@@ -1256,6 +1635,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Lleida es la capital de la provincia, con La Llotja como palau de congressos de referencia en el interior de Cataluña. El Aplec del Caragol y la Fira de Sant Miquel atraen visitantes de toda España.",
     zonasEventos: ["La Llotja de Lleida", "Fira de Lleida", "Camp d'Esports", "Pavelló Barris Nord"],
+    tipoEconomia: 'agrario',
+    tipoGeografia: 'llanura',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 160,
+    accesibilidad: 'AP-2, AVE, A-2, Eix Transversal',
+    eventoDestacado: 'Aplec del Caragol',
+    sectorPrincipal: 'Agroalimentario y logística',
+    tiposEventoFrecuente: ['ferias agrícolas', 'congresos', 'festivales gastronómicos'],
   },
   {
     slug: "tarragona-ciudad",
@@ -1266,6 +1653,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Tarragona es Patrimonio de la Humanidad por su legado romano. El Amfiteatre, el Tarraco Arena Plaça y el Palau de Congressos ofrecen espacios únicos para eventos con carácter histórico.",
     zonasEventos: ["Palau de Congressos de Tarragona", "Tarraco Arena Plaça", "Amfiteatre Romà"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 100,
+    accesibilidad: 'AP-7, AVE (Camp de Tarragona), port de Tarragona',
+    eventoDestacado: 'Tarraco Viva',
+    sectorPrincipal: 'Petroquímica y turismo patrimonial',
+    tiposEventoFrecuente: ['congresos', 'eventos culturales', 'ferias industriales'],
   },
   {
     slug: "figueres",
@@ -1276,6 +1671,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Figueres es la capital del Alt Empordà y ciudad natal de Dalí. El Teatre-Museu Dalí, la Fira del Circ y las ferias comerciales generan un flujo constante de visitantes y eventos culturales.",
     zonasEventos: ["Recinte Firal de Figueres", "Teatre-Museu Dalí", "Teatre El Jardí"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 140,
+    accesibilidad: 'AP-7, AVE Figueres-Vilafant, N-II',
+    eventoDestacado: 'Fira del Circ',
+    sectorPrincipal: 'Turismo cultural (Dalí)',
+    tiposEventoFrecuente: ['festivales', 'ferias comerciales', 'eventos culturales'],
   },
   {
     slug: "blanes",
@@ -1286,6 +1689,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Blanes es la porta de la Costa Brava, con el Jardí Botànic Marimurtra como espacio emblemático. El Concurs Internacional de Focs d'Artifici y sus playas la hacen ideal para eventos estivales.",
     zonasEventos: ["Jardí Botànic Marimurtra", "Passeig de Blanes", "Hotels del litoral"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 60,
+    accesibilidad: 'AP-7, RENFE R1, GI-682',
+    eventoDestacado: 'Concurs Internacional de Focs d\'Artifici',
+    sectorPrincipal: 'Turismo y jardinería botánica',
+    tiposEventoFrecuente: ['festivales estivales', 'ferias comerciales', 'eventos outdoor'],
   },
   {
     slug: "lloret",
@@ -1296,6 +1707,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Lloret de Mar es el principal destino turístico de la Costa Brava, con una infraestructura hotelera de gran capacidad. Convenciones, team buildings y eventos corporativos a gran escala son su especialidad.",
     zonasEventos: ["Evenia Olympic Palace", "Casino de Lloret", "Gran Hotel Monterrey", "Hotels resort"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 70,
+    accesibilidad: 'AP-7, GI-682, bus directo Barcelona',
+    eventoDestacado: 'Lloret Tourism & Events',
+    sectorPrincipal: 'Turismo MICE y hotelero',
+    tiposEventoFrecuente: ['convenciones', 'team buildings', 'eventos corporativos'],
   },
   {
     slug: "vic",
@@ -1306,6 +1725,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Vic es la capital d'Osona, ciudad universitaria con un patrimonio cultural notable. El Mercat del Ram y el Mercat de Música Viva son eventos de referencia que requieren montajes profesionales.",
     zonasEventos: ["Recinte Firal El Sucre", "L'Atlàntida", "Universitat de Vic"],
+    tipoEconomia: 'mixto',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 70,
+    accesibilidad: 'C-17, RENFE R3, Eix Transversal',
+    eventoDestacado: 'Mercat del Ram',
+    sectorPrincipal: 'Cárnico y universidad',
+    tiposEventoFrecuente: ['ferias agroalimentarias', 'mercados temáticos', 'eventos universitarios'],
   },
   {
     slug: "igualada",
@@ -1316,6 +1743,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Igualada es la capital de l'Anoia, conocida por su industria del cuero y el European Balloon Festival. La Fira de la Pell y los eventos empresariales son habituales en esta ciudad dinámica.",
     zonasEventos: ["Espai Firal d'Igualada", "Ateneu Igualadí", "Cal Boyer"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 65,
+    accesibilidad: 'A-2, FGC (Línia Llobregat-Anoia), N-II',
+    eventoDestacado: 'European Balloon Festival',
+    sectorPrincipal: 'Industria del cuero y piel',
+    tiposEventoFrecuente: ['ferias sectoriales', 'festivales', 'eventos industriales'],
   },
   {
     slug: "tortosa",
@@ -1326,6 +1761,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Tortosa es la capital del Baix Ebre, ciudad monumental a orillas del río Ebre. El Parador de la Suda y el festival Renaixement ofrecen espacios históricos para eventos y celebraciones singulares.",
     zonasEventos: ["Parador de Tortosa", "Recinte Firal de Tortosa", "Auditori Felip Pedrell"],
+    tipoEconomia: 'mixto',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 180,
+    accesibilidad: 'AP-7, RENFE, N-340',
+    eventoDestacado: 'Renaixement de Tortosa',
+    sectorPrincipal: 'Patrimonio y agroalimentario',
+    tiposEventoFrecuente: ['festivales históricos', 'ferias comarcales', 'eventos gastronómicos'],
   },
   {
     slug: "cambrils",
@@ -1336,6 +1779,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Cambrils es la capital gastronómica de la Costa Daurada, con restaurantes estrella Michelin y un puerto pesquero emblemático. Los eventos gastronómicos y de turismo premium son su seña de identidad.",
     zonasEventos: ["Port de Cambrils", "Hotels del passeig marítim", "Parc del Pescador"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 115,
+    accesibilidad: 'AP-7, RENFE, N-340',
+    eventoDestacado: 'Jornades Gastronòmiques de Cambrils',
+    sectorPrincipal: 'Gastronomía y turismo de costa',
+    tiposEventoFrecuente: ['eventos gastronómicos', 'ferias comerciales', 'bodas'],
   },
   {
     slug: "salou",
@@ -1346,6 +1797,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Salou es la capital de la Costa Daurada, junto a PortAventura World. Su capacidad hotelera y el PortAventura Convention Centre la convierten en destino para convenciones y eventos de gran formato.",
     zonasEventos: ["PortAventura Convention Centre", "Hotels de Salou", "Passeig Jaume I"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 108,
+    accesibilidad: 'AP-7, RENFE, acceso directo PortAventura',
+    eventoDestacado: 'PortAventura Events',
+    sectorPrincipal: 'Turismo familiar y MICE (PortAventura)',
+    tiposEventoFrecuente: ['convenciones', 'eventos corporativos', 'incentivos'],
   },
   // ---- Barcelona: nuevos municipios ----
   {
@@ -1357,6 +1816,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Martorell es un nudo de comunicaciones clave del Baix Llobregat, con importante actividad industrial (SEAT/CUPRA). Los eventos corporativos e industriales generan demanda constante de moqueta ferial.",
     zonasEventos: ["Polígon Industrial", "Centre Cultural Municipal", "Hotels de l'àrea SEAT"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 30,
+    accesibilidad: 'A-2, AP-7, FGC, RENFE',
+    eventoDestacado: 'Eventos corporativos SEAT/CUPRA',
+    sectorPrincipal: 'Automoción (SEAT/CUPRA)',
+    tiposEventoFrecuente: ['eventos corporativos', 'jornadas industriales', 'ferias automoción'],
   },
   {
     slug: "mollet",
@@ -1367,6 +1834,13 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Mollet del Vallès es la capital del Baix Vallès, con excelente conexión ferroviaria y una actividad económica diversificada. Acoge eventos comarcales y corporativos a lo largo de todo el año.",
     zonasEventos: ["Can Mulà", "Mercat Vell", "Centre Cultural La Marineta"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 18,
+    accesibilidad: 'AP-7, C-33, RENFE R2 Nord/R8',
+    sectorPrincipal: 'Comercio y servicios',
+    tiposEventoFrecuente: ['ferias comarcales', 'eventos culturales', 'mercados'],
   },
   {
     slug: "sant-adria",
@@ -1377,6 +1851,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Sant Adrià de Besòs limita directamente con Barcelona y alberga el Fòrum, una de las zonas de eventos más grandes de la ciudad. Ideal para grandes ferias, congresos y festivales.",
     zonasEventos: ["Recinte del Fòrum", "Parc del Fòrum", "Centre Cívic La Mina"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'metropolitano',
+    temporadaAlta: 'todo_el_año',
+    distanciaBarcelona: 5,
+    accesibilidad: 'Metro L2/L4, Ronda Litoral, Trambesòs',
+    eventoDestacado: 'Eventos Fòrum',
+    sectorPrincipal: 'Eventos gran formato y festivales',
+    tiposEventoFrecuente: ['festivales', 'congresos', 'ferias gran formato'],
   },
   {
     slug: "sitges",
@@ -1387,6 +1869,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Sitges es destino premium para eventos de lujo, bodas y festivales internacionales. Su oferta hotelera de alto standing y espacios singulares la convierten en referencia para eventos exclusivos en la costa barcelonesa.",
     zonasEventos: ["Hotels del passeig marítim", "Palau de Maricel", "Melia Sitges", "Centre de Congressos"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 35,
+    accesibilidad: 'C-32, RENFE R2 Sud, carretera costera',
+    eventoDestacado: 'Festival Internacional de Cinema de Sitges',
+    sectorPrincipal: 'Turismo premium y cultura',
+    tiposEventoFrecuente: ['festivales', 'bodas de lujo', 'eventos premium'],
   },
   {
     slug: "berga",
@@ -1397,6 +1887,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Berga es la capital del Berguedà, famosa por la Patum (Patrimonio UNESCO). Los eventos culturales y festivos generan una demanda especial de moqueta para espacios institucionales y actos públicos.",
     zonasEventos: ["Plaça de Sant Pere (La Patum)", "Teatre de l'Ateneu", "Espai Viu"],
+    tipoEconomia: 'mixto',
+    tipoGeografia: 'montaña',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 110,
+    accesibilidad: 'C-16, túnel del Cadí',
+    eventoDestacado: 'La Patum (UNESCO)',
+    sectorPrincipal: 'Turismo cultural y patrimonio',
+    tiposEventoFrecuente: ['fiestas patronales', 'eventos culturales', 'ferias comarcales'],
   },
   // ---- Girona: nuevos municipios ----
   {
@@ -1408,6 +1906,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Olot es la capital de la Garrotxa, zona volcánica con una potente actividad industrial y gastronómica. Acoge ferias comarcales, eventos de producto local y congresos de turismo rural.",
     zonasEventos: ["Recinte Firal d'Olot", "Museu dels Volcans", "Hotels del centre"],
+    tipoEconomia: 'industrial',
+    tipoGeografia: 'montaña',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 130,
+    accesibilidad: 'A-26, C-152, no hay tren',
+    eventoDestacado: 'Sismògraf Festival',
+    sectorPrincipal: 'Industria cárnica y volcánica (turismo)',
+    tiposEventoFrecuente: ['ferias gastronómicas', 'festivales culturales', 'jornadas de naturaleza'],
   },
   {
     slug: "palamos",
@@ -1418,6 +1924,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Palamós es referencia en la Costa Brava por su puerto, su gamba y sus eventos gastronómicos. El Espai del Peix y los hoteles de la costa acogen eventos de turismo y gastronomía.",
     zonasEventos: ["Espai del Peix", "Port de Palamós", "Hotels de la costa"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 105,
+    accesibilidad: 'C-31, carretera de la costa',
+    eventoDestacado: 'Jornades Gastronòmiques de la Gamba',
+    sectorPrincipal: 'Puerto pesquero y gastronomía',
+    tiposEventoFrecuente: ['eventos gastronómicos', 'ferias náuticas', 'congresos marítimos'],
   },
   {
     slug: "sant-feliu-guixols",
@@ -1428,6 +1942,13 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Sant Feliu de Guíxols es la capital económica del Baix Empordà costero. Su Casino de la Constància (espacio modernista) y el paseo marítimo son escenarios habituales de eventos y ferias.",
     zonasEventos: ["Casino de la Constància", "Passeig del Mar", "Espai Port"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 100,
+    accesibilidad: 'C-65, GI-682, carretera de la costa',
+    sectorPrincipal: 'Turismo y patrimonio modernista',
+    tiposEventoFrecuente: ['eventos culturales', 'ferias comerciales', 'bodas'],
   },
   {
     slug: "palafrugell",
@@ -1438,6 +1959,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Palafrugell engloba Calella, Llafranc y Tamariu, tres de las calas más exclusivas de la Costa Brava. Los eventos de alto standing, bodas y congresos boutique son su especialidad.",
     zonasEventos: ["Jardí Botànic de Cap Roig", "Hotels boutique de Calella", "Centre Cultural"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 120,
+    accesibilidad: 'C-31, AP-7 (salida Palamós)',
+    eventoDestacado: 'Festival de Cap Roig',
+    sectorPrincipal: 'Turismo premium y eventos exclusivos',
+    tiposEventoFrecuente: ['festivales musicales', 'bodas premium', 'eventos corporativos boutique'],
   },
   {
     slug: "roses",
@@ -1448,6 +1977,13 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Roses combina turismo de costa con patrimonio histórico (Ciutadella). Su capacidad hotelera y la proximidad al Cap de Creus la hacen atractiva para convenciones y eventos corporativos.",
     zonasEventos: ["Ciutadella de Roses", "Recinte Firal", "Hotels del passeig marítim"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 160,
+    accesibilidad: 'AP-7, C-260',
+    sectorPrincipal: 'Turismo familiar y patrimonio',
+    tiposEventoFrecuente: ['ferias estivales', 'eventos náuticos', 'convenciones'],
   },
   // ---- Tarragona: nuevos municipios ----
   {
@@ -1459,6 +1995,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Valls es la capital del Alt Camp y cuna de los castellers. La Fiesta Mayor y la Calçotada son eventos de proyección internacional que requieren instalaciones feriales y revestimientos para espacios públicos.",
     zonasEventos: ["Plaça del Blat", "Recinte Firal de Valls", "Pati de l'Antic Hospital"],
+    tipoEconomia: 'agrario',
+    tipoGeografia: 'interior',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 100,
+    accesibilidad: 'AP-2, N-240, RENFE',
+    eventoDestacado: 'Gran Festa de la Calçotada',
+    sectorPrincipal: 'Agroalimentario y castellers',
+    tiposEventoFrecuente: ['fiestas gastronómicas', 'concursos de castells', 'ferias agrícolas'],
   },
   {
     slug: "el-vendrell",
@@ -1469,6 +2013,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "El Vendrell es la capital del Baix Penedès, con crecimiento demográfico sostenido y una actividad comercial en auge. Acoge ferias comarcales, eventos vinícolas y actividades culturales ligadas a Pau Casals.",
     zonasEventos: ["Auditori Pau Casals", "Recinte Firal", "Platja de Coma-ruga"],
+    tipoEconomia: 'mixto',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 70,
+    accesibilidad: 'AP-7, RENFE R4, N-340',
+    eventoDestacado: 'Festival Pau Casals',
+    sectorPrincipal: 'Turismo costero y cultura',
+    tiposEventoFrecuente: ['festivales musicales', 'ferias comarcales', 'eventos de playa'],
   },
   {
     slug: "amposta",
@@ -1479,6 +2031,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Amposta es la puerta del Delta de l'Ebre, zona de gran interés ecoturístico. Los eventos de naturaleza, agroalimentarios y de turismo sostenible son su especialidad, en sintonía con la moqueta ecológica.",
     zonasEventos: ["Museu de les Terres de l'Ebre", "Lo Pati - Centre d'Art", "Hotels del Delta"],
+    tipoEconomia: 'agrario',
+    tipoGeografia: 'llanura',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 200,
+    accesibilidad: 'AP-7, N-340, carreteras del Delta',
+    eventoDestacado: 'Fira de l\'Arròs del Delta',
+    sectorPrincipal: 'Agroalimentario (arroz) y ecoturismo',
+    tiposEventoFrecuente: ['ferias agroalimentarias', 'eventos de naturaleza', 'jornadas de ecoturismo'],
   },
   {
     slug: "vila-seca",
@@ -1489,6 +2049,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Vila-seca, junto a la Pineda Platja y PortAventura, es un polo de turismo y convenciones. Su proximidad al PortAventura Convention Centre y a la costa la posiciona como sede de eventos de gran formato.",
     zonasEventos: ["PortAventura Convention Centre", "Hotels de la Pineda", "Centre Cultural"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'costa',
+    temporadaAlta: 'verano',
+    distanciaBarcelona: 105,
+    accesibilidad: 'AP-7, RENFE, acceso PortAventura',
+    eventoDestacado: 'PortAventura Convention Centre',
+    sectorPrincipal: 'Turismo MICE (PortAventura)',
+    tiposEventoFrecuente: ['convenciones', 'congresos', 'eventos corporativos gran formato'],
   },
   // ---- Lleida: nuevos municipios ----
   {
@@ -1500,6 +2068,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Balaguer es la capital de la Noguera, con un patrimonio medieval notable y una activa vida comercial. La Fira de Sant Miquel y otros eventos comarcales generan demanda de instalaciones feriales.",
     zonasEventos: ["Recinte Firal", "Claustro de Sant Domènec", "Plaça del Mercadal"],
+    tipoEconomia: 'agrario',
+    tipoGeografia: 'llanura',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 180,
+    accesibilidad: 'C-13, Eix Transversal',
+    eventoDestacado: 'Fira de Sant Miquel',
+    sectorPrincipal: 'Agricultura y patrimonio medieval',
+    tiposEventoFrecuente: ['ferias agrícolas', 'mercados medievales', 'eventos comarcales'],
   },
   {
     slug: "tarrega",
@@ -1510,6 +2086,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Tàrrega es la capital del Urgell y sede de FiraTàrrega, el mercado de artes escénicas de calle más importante de Europa. Este evento internacional posiciona la ciudad como referente en ferias culturales.",
     zonasEventos: ["Recinte FiraTàrrega", "Teatre Ateneu", "Plaça Major"],
+    tipoEconomia: 'servicios',
+    tipoGeografia: 'llanura',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 130,
+    accesibilidad: 'A-2, RENFE, Eix Transversal',
+    eventoDestacado: 'FiraTàrrega (artes de calle)',
+    sectorPrincipal: 'Cultura y artes escénicas',
+    tiposEventoFrecuente: ['festivales culturales', 'ferias de arte', 'eventos de calle'],
   },
   {
     slug: "mollerussa",
@@ -1520,6 +2104,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Mollerussa es la capital del Pla d'Urgell y sede de la Fira de Mollerussa, una de las ferias agrícolas y ganaderas más importantes de Cataluña. Genera gran demanda estacional de moqueta ferial.",
     zonasEventos: ["Recinte Firal de Mollerussa", "Pavelló Firal", "Centre Cívic"],
+    tipoEconomia: 'agrario',
+    tipoGeografia: 'llanura',
+    temporadaAlta: 'otoño_primavera',
+    distanciaBarcelona: 150,
+    accesibilidad: 'A-2, RENFE, Eix Transversal',
+    eventoDestacado: 'Fira de Sant Josep',
+    sectorPrincipal: 'Agricultura y ganadería (ferias)',
+    tiposEventoFrecuente: ['ferias agrícolas', 'ferias ganaderas', 'jornadas agroalimentarias'],
   },
   {
     slug: "la-seu-urgell",
@@ -1530,6 +2122,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "La Seu d'Urgell es la capital del Alt Urgell y sede episcopal con catedral románica. Los eventos culturales, deportivos (Parc Olímpic del Segre) y turísticos del Pirineo generan demanda de moqueta ferial.",
     zonasEventos: ["Parc Olímpic del Segre", "Claustro de la Catedral", "Palau d'Esports"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'montaña',
+    temporadaAlta: 'invierno',
+    distanciaBarcelona: 200,
+    accesibilidad: 'C-16, Túnel del Cadí, N-260',
+    eventoDestacado: 'Fira del Formatge del Pirineu',
+    sectorPrincipal: 'Turismo de aventura y frontera (Andorra)',
+    tiposEventoFrecuente: ['eventos deportivos', 'ferias artesanales', 'congresos de turismo'],
   },
   {
     slug: "vielha",
@@ -1540,6 +2140,14 @@ export const topMunicipios: Municipio[] = [
     descripcion:
       "Vielha es la capital de la Val d'Aran, destino de turismo de montaña premium. Los eventos de esquí, congresos de turismo y bodas de alta gama en el Pirineo requieren acabados de calidad.",
     zonasEventos: ["Palai de Gèu", "Hotels de Vielha", "Musèu dera Val d'Aran"],
+    tipoEconomia: 'turismo',
+    tipoGeografia: 'montaña',
+    temporadaAlta: 'invierno',
+    distanciaBarcelona: 280,
+    accesibilidad: 'N-230, Túnel de Vielha, C-28',
+    eventoDestacado: 'Eventos Baqueira-Beret',
+    sectorPrincipal: 'Turismo de esquí y lujo',
+    tiposEventoFrecuente: ['eventos de esquí', 'bodas de alta gama', 'congresos de turismo premium'],
   },
 ];
 

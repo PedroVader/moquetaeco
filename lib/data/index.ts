@@ -4,6 +4,7 @@ export * from "./ubicaciones";
 export * from "./faqs";
 export * from "./certificaciones";
 export * from "./precios";
+export * from "./contenido-uso";
 
 // Información de la empresa
 export const empresa = {

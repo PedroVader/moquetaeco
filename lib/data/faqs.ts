@@ -258,3 +258,145 @@ export function getFaqsMunicipio(municipio: string, provincia: string): FAQ[] {
   };
   return [faqMunicipio, faqPresupuesto, ...faqsGenerales.slice(0, 4)];
 }
+
+/**
+ * FAQs dinámicas generadas a partir de los datos específicos del municipio.
+ * Produce 5 custom FAQs + 2 genéricas rotadas según atributos.
+ */
+export function getFaqsMunicipioEnriquecidas(
+  municipio: {
+    nombre: string;
+    distanciaBarcelona: number;
+    accesibilidad: string;
+    zonasEventos: string[];
+    tiposEventoFrecuente: string[];
+    tipoEconomia: string;
+    sectorPrincipal?: string;
+    temporadaAlta: string;
+    poblacion: number;
+  },
+  provincia: string
+): FAQ[] {
+  const faqs: FAQ[] = [];
+
+  // FAQ 1: Entrega específica
+  const tiempoEntrega = municipio.distanciaBarcelona <= 15 ? "el mismo día"
+    : municipio.distanciaBarcelona <= 50 ? "en 24h"
+    : municipio.distanciaBarcelona <= 120 ? "en 24-48h"
+    : "en 48-72h";
+
+  faqs.push({
+    pregunta: `¿Cuánto tarda la entrega de moqueta en ${municipio.nombre}?`,
+    respuesta: `La moqueta ferial Rewind llega a ${municipio.nombre} ${tiempoEntrega} desde nuestro almacén en Barcelona. Accedemos por ${municipio.accesibilidad}. Para pedidos urgentes en ${municipio.nombre}, disponemos de servicio express con entrega en pocas horas (sujeto a disponibilidad). Puedes comprar moqueta online y recibirla directamente.`,
+  });
+
+  // FAQ 2: Tipo de evento frecuente
+  const tipoEvento = municipio.tiposEventoFrecuente[0] || "eventos";
+  const tipoEvento2 = municipio.tiposEventoFrecuente[1] || "ferias";
+  faqs.push({
+    pregunta: `¿Qué moqueta necesito para ${tipoEvento} en ${municipio.nombre}?`,
+    respuesta: `Para ${tipoEvento} en ${municipio.nombre} recomendamos Rewind Flat (desde 2,20€/m²) en gris o el color corporativo del evento. Si el evento requiere mayor confort (${tipoEvento2}, zonas VIP), la opción Dilour (4mm, desde 4,05€/m²) ofrece mejor absorción acústica y pisada más confortable. Ambas cuentan con certificación Bfl-s1 obligatoria en espacios públicos.`,
+  });
+
+  // FAQ 3: Zona de eventos específica
+  if (municipio.zonasEventos.length > 0) {
+    const zona = municipio.zonasEventos[0];
+    faqs.push({
+      pregunta: `¿Instaláis moqueta en ${zona}?`,
+      respuesta: `Sí, suministramos e instalamos moqueta ferial ecológica Rewind en ${zona} y todos los espacios de eventos de ${municipio.nombre}. Nuestro equipo de instaladores profesionales (más de 25 años de experiencia) se desplaza a cualquier punto de ${provincia}. El servicio de montaje está disponible para profesionales del sector ferial.`,
+    });
+  }
+
+  // FAQ 4: Presupuesto contextual
+  const superficieRef = municipio.poblacion > 100000 ? "500 m² (evento mediano)" : "100 m² (stand o evento pequeño)";
+  const precioRef = municipio.poblacion > 100000 ? "1.100€" : "220€";
+  faqs.push({
+    pregunta: `¿Cuánto cuesta la moqueta para un evento de ${superficieRef.split(' (')[0]} en ${municipio.nombre}?`,
+    respuesta: `Cubrir ${superficieRef} con Rewind Flat cuesta aproximadamente ${precioRef} (IVA no incluido, a 2,20€/m²). El precio incluye la moqueta con certificación Bfl-s1 y entrega en ${municipio.nombre}. La instalación profesional y la recogida post-evento se presupuestan aparte. Solicita presupuesto personalizado al 934 850 085.`,
+  });
+
+  // FAQ 5: Eco + sector local
+  const sector = municipio.sectorPrincipal || "el sector empresarial local";
+  faqs.push({
+    pregunta: `¿La moqueta ecológica es adecuada para ${tipoEvento} en ${municipio.nombre}?`,
+    respuesta: `La moqueta Rewind es ideal para ${tipoEvento} en ${municipio.nombre}. Siendo 100% reciclable y fabricada sin látex, se alinea con las políticas de sostenibilidad de ${sector}. Al finalizar el evento, el material se recicla completamente. Podemos emitir certificado de reciclaje para empresas con compromisos ESG o memorias de sostenibilidad.`,
+  });
+
+  // Rotar 2 genéricas según atributos del municipio
+  const genericas = seleccionarFaqsGenericasRotadas(municipio.tipoEconomia, municipio.temporadaAlta);
+  faqs.push(...genericas);
+
+  return faqs;
+}
+
+/**
+ * Selecciona 2 FAQs genéricas rotadas según atributos del municipio,
+ * evitando que todas las páginas tengan las mismas preguntas genéricas.
+ */
+function seleccionarFaqsGenericasRotadas(tipoEconomia: string, temporada: string): FAQ[] {
+  const pool: FAQ[] = [
+    {
+      pregunta: "¿La moqueta se puede reutilizar en varios eventos?",
+      respuesta: "Sí, si la moqueta Rewind se recoge y almacena correctamente (enrollada, en lugar seco), puede reutilizarse en 2-3 eventos. Esto reduce el coste por evento y el impacto ambiental. Ofrecemos servicio de recogida y almacenaje entre eventos para clientes habituales.",
+    },
+    {
+      pregunta: "¿Qué diferencia hay entre la moqueta ferial normal y la ecológica?",
+      respuesta: "La moqueta ferial convencional usa látex como aglutinante, lo que impide su reciclaje. La moqueta Rewind es monomaterial (100% polipropileno), fabricada sin látex, sin agua y con un 80% menos de energía. Mismo aspecto y prestaciones, pero completamente reciclable al final de su vida útil.",
+    },
+    {
+      pregunta: "¿Puedo pedir muestras antes de decidir?",
+      respuesta: "Sí, enviamos muestras gratuitas de los colores que te interesen. Disponemos de 30 colores en stock permanente en ambas líneas (Flat y Dilour). Las muestras te ayudan a validar el color bajo la iluminación real de tu espacio de evento.",
+    },
+    {
+      pregunta: "¿Ofrecéis certificado de reciclaje?",
+      respuesta: "Sí, para empresas con compromisos ESG o políticas de sostenibilidad, emitimos certificado de reciclaje tras la recogida del material post-evento. El certificado documenta los kg reciclados y el destino del material (granza para nuevos productos).",
+    },
+    {
+      pregunta: "¿Se puede instalar moqueta sobre césped o tierra?",
+      respuesta: "Sí, la moqueta Rewind se puede instalar sobre césped, tierra compactada, arena o superficies irregulares para eventos outdoor. Se fija con piquetas o cinta de gran adherencia según el terreno. Ideal para bodas al aire libre, eventos en jardines y festivales.",
+    },
+    {
+      pregunta: "¿Cuál es el pedido mínimo?",
+      respuesta: "No tenemos pedido mínimo para profesionales del sector. Puedes adquirir desde unos metros lineales (mínimo práctico: 2x3m = 6 m²) hasta miles de metros cuadrados para grandes ferias. Los precios mejoran a partir de 100 m² (rollo completo de 2x50m).",
+    },
+    {
+      pregunta: "¿Hacéis instalaciones nocturnas?",
+      respuesta: "Sí, nuestro equipo está habituado a montajes en horario nocturno. Muchos recintos feriales solo permiten instalaciones fuera de horario de visitas (22:00-06:00). No hay recargo por horario nocturno en instalaciones profesionales.",
+    },
+    {
+      pregunta: "¿Qué pasa si necesito más moqueta de la presupuestada?",
+      respuesta: "Siempre recomendamos un 10% extra sobre la superficie calculada para cubrir recortes y márgenes. Si durante el montaje falta material, podemos enviar un refuerzo urgente desde nuestro stock permanente (30 colores disponibles). En Barcelona y área metropolitana, la entrega urgente se realiza en menos de 2 horas.",
+    },
+    {
+      pregunta: "¿La moqueta ecológica tiene el mismo aspecto que la convencional?",
+      respuesta: "Visualmente son indistinguibles. La moqueta Rewind tiene el mismo aspecto, tacto y prestaciones que una moqueta ferial convencional. La diferencia está en su composición (sin látex, monomaterial reciclable) y en su proceso de fabricación (sin agua, 80% menos energía). El público no nota diferencia alguna.",
+    },
+  ];
+
+  // Seleccionar 2 según hash de los atributos para que sea determinista pero variado
+  let index1 = 0;
+  let index2 = 1;
+
+  switch (tipoEconomia) {
+    case 'industrial': index1 = 0; break;
+    case 'tecnologia': index1 = 1; break;
+    case 'turismo': index1 = 4; break;
+    case 'servicios': index1 = 2; break;
+    case 'agrario': index1 = 3; break;
+    case 'mixto': index1 = 5; break;
+  }
+
+  switch (temporada) {
+    case 'todo_el_año': index2 = 6; break;
+    case 'verano': index2 = 4; break;
+    case 'otoño_primavera': index2 = 7; break;
+    case 'invierno': index2 = 8; break;
+  }
+
+  // Evitar duplicados
+  if (index1 === index2) {
+    index2 = (index2 + 1) % pool.length;
+  }
+
+  return [pool[index1], pool[index2]];
+}

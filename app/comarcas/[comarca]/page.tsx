@@ -263,6 +263,40 @@ export default async function ComarcaPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Sección: Cómo llegamos */}
+      {contenido.seccionComoLlegamos && (
+        <section className="py-12 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-dark mb-4">
+              Cómo llegamos a {comarca.nombre}
+            </h2>
+            <p
+              className="text-slate leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html: contenido.seccionComoLlegamos.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"),
+              }}
+            />
+          </div>
+        </section>
+      )}
+
+      {/* Sección: Temporada de eventos */}
+      {contenido.seccionTemporadaEventos && (
+        <section className="py-12 bg-light">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-dark mb-4">
+              Temporada de eventos en {comarca.nombre}
+            </h2>
+            <p
+              className="text-slate leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html: contenido.seccionTemporadaEventos.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"),
+              }}
+            />
+          </div>
+        </section>
+      )}
+
       {/* Productos */}
       <ProductShowcase />
 

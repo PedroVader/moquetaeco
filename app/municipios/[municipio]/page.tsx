@@ -22,7 +22,7 @@ import {
   tiposUso,
   empresa,
 } from "@/lib/data";
-import { getFaqsMunicipio } from "@/lib/data/faqs";
+import { getFaqsMunicipioEnriquecidas } from "@/lib/data/faqs";
 import { generarMetadataMunicipio } from "@/lib/seo/metadata";
 import { generarContenidoMunicipio } from "@/lib/generators/contenido";
 import {
@@ -79,7 +79,7 @@ export default async function MunicipioPage({ params }: Props) {
     comarcaResult?.comarca.nombre
   );
   const nearbyMunicipios = getNearbyMunicipios(municipioSlug, 6);
-  const faqs = getFaqsMunicipio(municipio.nombre, provincia.nombre);
+  const faqs = getFaqsMunicipioEnriquecidas(municipio, provincia.nombre);
 
   const localBusinessSchema = generarLocalBusinessSchema();
   const productSchema = generarProductSchema(moquetaFerialEco);
@@ -257,6 +257,51 @@ export default async function MunicipioPage({ params }: Props) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Sección: Logística y entrega */}
+      {contenido.seccionLogistica && (
+        <section className="py-12 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-dark mb-4">
+              Logística y entrega en {municipio.nombre}
+            </h2>
+            <p className="text-slate leading-relaxed">
+              {contenido.seccionLogistica}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Sección: ¿Por qué ecológica? */}
+      {contenido.seccionPorQueEco && (
+        <section className="py-12 bg-light">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-dark mb-4">
+              ¿Por qué moqueta ecológica en {municipio.nombre}?
+            </h2>
+            <p className="text-slate leading-relaxed">
+              {contenido.seccionPorQueEco}
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Sección: Guía de eventos */}
+      {contenido.seccionGuiaEventos && (
+        <section className="py-12 bg-white">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-2xl font-bold text-dark mb-4">
+              Guía de eventos en {municipio.nombre}
+            </h2>
+            <p
+              className="text-slate leading-relaxed"
+              dangerouslySetInnerHTML={{
+                __html: contenido.seccionGuiaEventos.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>"),
+              }}
+            />
           </div>
         </section>
       )}
